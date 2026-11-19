@@ -3,19 +3,20 @@
   "version": "0.0.1",
   "type": "module",
   "private": true,
+  "packageManager": "bun@1.4.3",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/build-skills.mjs",
+    "prebuild": "bun scripts/build-skills.mjs",
     "build": "next build",
     "start": "next start",
-    "skills:build": "node scripts/build-skills.mjs",
-    "skills:check": "node scripts/build-skills.mjs --check",
-    "test:skills": "node scripts/test-theme-script.mjs",
+    "skills:build": "bun scripts/build-skills.mjs",
+    "skills:check": "bun scripts/build-skills.mjs --check",
+    "test:skills": "bun scripts/test-theme-script.mjs",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
-    "registry:generate": "node scripts/generate-registry.mjs",
-    "registry:build": "node scripts/generate-registry.mjs && shadcn build"
+    "registry:generate": "bun scripts/generate-registry.mjs",
+    "registry:build": "bun scripts/generate-registry.mjs && shadcn build"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

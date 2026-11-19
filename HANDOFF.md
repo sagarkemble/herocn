@@ -7,7 +7,7 @@ The remote assistant ("heroui" on Grok Bot) stopped mid-work because usage ran o
 - `handoff/landing-audit.md`: the audit of what counts as "overriding the skill" (rules for every page).
 
 ## Project context
-- **Demo app (this repo):** Next.js 16 App Router, Turbopack, TypeScript, Tailwind v4, and shadcn/ui on Base UI (`@base-ui/react`) with the nova preset. Run it with `npm install && npm run dev`, or `npm run build && npx next start -p 3103`.
+- **Demo app (this repo):** Next.js 16 App Router, Turbopack, TypeScript, Tailwind v4, and shadcn/ui on Base UI (`@base-ui/react`) with the nova preset. Run it with `bun install && bun run dev`, or `bun run build && bunx next start -p 3103`.
 - **Skill:** `~/Documents/projects/on-going/shadcn-to-heroui` (NOT under git). It restyles shadcn into HeroUI v3 using herocn (github.com/Maqed/herocn, MIT) as the primary source, with HeroUI v3.2.7 for spot-checks.
   - Tokens are in `reference/tokens.md`, motion in `reference/motion.md`.
   - Each component has a "Target file" in `reference/components/<name>.md`.

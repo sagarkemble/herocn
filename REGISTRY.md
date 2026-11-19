@@ -88,8 +88,8 @@ Prefer the `@herocn/` namespace so `registryDependencies` resolve to this regist
 ## Maintainers
 
 ```bash
-npm run registry:generate   # rewrite registry.json from source files
-npm run registry:build      # generate + write public/r/*.json
+bun run registry:generate   # rewrite registry.json from source files
+bun run registry:build      # generate + write public/r/*.json
 ```
 
 Commit **both** `registry.json` and `public/r/`, then deploy so `https://herocn.sagarkemble.dev/r/*.json` stays in sync.

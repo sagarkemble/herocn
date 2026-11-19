@@ -10,8 +10,8 @@
  *    marketing landing and /themes builder for the visualize-design-system skill.
  * 4. public/skills/<name>.zip — one deterministic zip per skill folder (fixed timestamps).
  *
- * Usage: node scripts/build-skills.mjs          (write everything)
- *        node scripts/build-skills.mjs --check  (exit 1 if any generated file is stale)
+ * Usage: bun scripts/build-skills.mjs          (write everything)
+ *        bun scripts/build-skills.mjs --check  (exit 1 if any generated file is stale)
  */
 import {createRequire} from "node:module";
 import {existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync} from "node:fs";
@@ -419,6 +419,6 @@ for (const name of readdirSync(join(root, "skills")).sort()) {
 }
 
 if (check && stale.length) {
-  console.error(`Stale generated files (run npm run skills:build):\n  ${stale.join("\n  ")}`);
+  console.error(`Stale generated files (run bun run skills:build):\n  ${stale.join("\n  ")}`);
   process.exit(1);
 }

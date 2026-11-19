@@ -9,6 +9,20 @@ npx shadcn@latest registry add "@herocn=https://herocn.sagarkemble.dev/r/{name}.
 npx shadcn@latest add @herocn/button
 ```
 
+## Local development
+
+This repo uses [Bun](https://bun.sh).
+
+```bash
+bun install
+bun run dev
+```
+
+```bash
+bun run build
+bun run start
+```
+
 ## Agent skills
 
 Docs: [/docs/skills](https://herocn.sagarkemble.dev/docs/skills). After this repo is on GitHub:
