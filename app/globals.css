@@ -304,3 +304,140 @@
 .skeleton--shimmer:has(.skeleton) .skeleton::after {
 	content: none;
 }
+
+
+/* =====================================================================
+   Landing page-level styles (app code for the heroui.com sample page).
+   NOT part of the shadcn-to-heroui skill token block above.
+   Values from heroui.com CSS (.site-container, .section-gap, .display-*,
+   .lead, .agents-scope, .herospace-scope).
+   ===================================================================== */
+@theme inline {
+	--font-display: var(--font-display);
+}
+
+@utility site-container {
+	width: 100%;
+	max-width: 75rem;
+	margin-inline: auto;
+	padding-inline: calc(var(--spacing) * 5);
+	@media (width >= 40rem) {
+		padding-inline: calc(var(--spacing) * 6);
+	}
+}
+@utility section-gap {
+	margin-top: 72px;
+	@media (width >= 40rem) {
+		margin-top: calc(var(--spacing) * 40);
+	}
+}
+@utility display-hero {
+	font-family: var(--font-display);
+	font-weight: 500;
+	letter-spacing: -0.022em;
+	font-size: clamp(2rem, 9.6vw, 5rem);
+	line-height: 1;
+	@media (width < 40rem) {
+		font-size: 11.25vw;
+		line-height: 1.05;
+	}
+}
+@utility display-statement {
+	font-family: var(--font-display);
+	font-weight: 500;
+	text-wrap: balance;
+	letter-spacing: -0.72px;
+	font-size: 2.25rem;
+	line-height: normal;
+	@media (width < 40rem) {
+		letter-spacing: -0.02em;
+		font-size: 2.125rem;
+		line-height: 38px;
+	}
+	@media (width >= 48rem) {
+		font-size: 3rem;
+	}
+}
+@utility display-closing {
+	font-family: var(--font-display);
+	font-weight: 500;
+	text-wrap: balance;
+	letter-spacing: -0.02em;
+	font-size: clamp(2.5rem, 7.4vw, 4rem);
+	line-height: 1;
+}
+@utility lead {
+	font-size: var(--text-base);
+	line-height: 1.5;
+	text-wrap: pretty;
+	color: var(--muted-foreground);
+}
+/* Section accent scopes: heroui.com overrides its accent per section.
+   Explicit colors copied from heroui.com CSS: agents #7828c8, herospace #6466e9. */
+.agents-scope {
+	--primary: #7828c8;
+	--primary-foreground: var(--snow);
+	--ring: var(--primary);
+}
+.herospace-scope {
+	--primary: #6466e9;
+	--primary-foreground: var(--snow);
+	--ring: var(--primary);
+}
+/* Explicit-color wallpaper gradients (stand-ins for heroui.com's image wallpapers). */
+.wall-blue {
+	background:
+		radial-gradient(60% 80% at 15% 20%, #7fb2ff 0%, transparent 60%),
+		radial-gradient(50% 70% at 85% 80%, #c6b6ff 0%, transparent 60%),
+		linear-gradient(135deg, #2f55d4 0%, #4f8cff 45%, #a9cbff 75%, #d9ccff 100%);
+}
+.wall-pro {
+	background: linear-gradient(180deg, #a8a1c6 0%, #cdb6c4 45%, #f2b27c 80%, #f59e55 100%);
+}
+.wall-agents {
+	background: linear-gradient(165deg, #c4b2f6 0%, #e4d6ff 45%, #f6d3e8 100%);
+}
+.wall-space {
+	background:
+		radial-gradient(70% 60% at 85% 15%, #e9f1ff 0%, transparent 55%),
+		radial-gradient(50% 60% at 10% 85%, #1f4fc4 0%, transparent 60%),
+		linear-gradient(170deg, #a8c8ef 0%, #5b8fe1 40%, #2d5fcb 70%, #93bdf0 100%);
+}
+.wall-pastel {
+	background:
+		radial-gradient(45% 60% at 10% 10%, #f5c9f0 0%, transparent 60%),
+		radial-gradient(45% 60% at 90% 20%, #e3c8ff 0%, transparent 60%),
+		radial-gradient(60% 70% at 50% 100%, #c9e6ff 0%, transparent 60%),
+		#eceaf4;
+}
+.wall-template {
+	background:
+		radial-gradient(35% 45% at 8% 70%, #f97316 0%, transparent 70%),
+		radial-gradient(40% 50% at 95% 55%, #8b7fc9 0%, transparent 70%),
+		#e7e6f2;
+}
+.dark :is(.wall-blue, .wall-pro, .wall-agents, .wall-space, .wall-pastel, .wall-template) {
+	filter: brightness(0.55) saturate(1.1);
+}
+@keyframes marquee-y {
+	from { transform: translateY(0); }
+	to { transform: translateY(-50%); }
+}
+.marquee-y {
+	animation: marquee-y 90s linear infinite;
+}
+.marquee-y:hover {
+	animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+	.marquee-y { animation: none; }
+}
+/* Re-derive the soft/ring tokens inside scopes that override --primary
+   (custom properties resolve where they are declared, so :root's values would stay blue). */
+.agents-scope,
+.herospace-scope,
+.theme-scope {
+	--primary-soft: color-mix(in oklab, var(--primary) 15%, transparent);
+	--primary-soft-foreground: color-mix(in oklab, var(--primary) 70%, var(--foreground) 30%);
+	--ring: var(--primary);
+}

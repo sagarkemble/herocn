@@ -1,24 +1,17 @@
-import { SiteHeader, Wordmark } from "@/components/landing/header"
+import { SiteHeader } from "@/components/landing/header"
 import { Hero, TrustedBy } from "@/components/landing/hero"
 import { Products } from "@/components/landing/products"
 import { OpenSource } from "@/components/landing/open-source"
-import {
-  Agents,
-  AiTooling,
-  Blog,
-  Community,
-  FinalCta,
-  HeroSpace,
-  Pro,
-  SiteFooter,
-  Testimonials,
-} from "@/components/landing/more"
+import { Pro } from "@/components/landing/pro"
+import { Agents } from "@/components/landing/agents"
+import { HeroSpace } from "@/components/landing/herospace"
+import { AiTooling, Blog, Community, FinalCta, SiteFooter, Testimonials } from "@/components/landing/rest"
 
 export default function Page() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-svh flex-col items-center overflow-x-clip">
       <SiteHeader />
-      <main className="flex flex-col">
+      <main className="w-full flex-1">
         <Hero />
         <TrustedBy />
         <Products />
@@ -32,7 +25,7 @@ export default function Page() {
         <Blog />
         <FinalCta />
       </main>
-      <SiteFooter wordmark={<Wordmark />} />
+      <SiteFooter />
     </div>
   )
 }
