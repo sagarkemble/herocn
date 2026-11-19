@@ -1,0 +1,70 @@
+{
+ "button": {
+  "usage": "button-usage",
+  "description": "Displays a button or a component that looks like a button.",
+  "rename": {
+   "With icons": "With Icons",
+   "As Link": "As Link"
+  },
+  "add": [
+   {
+    "h3": "Icon Only",
+    "name": "button-icon-only",
+    "after": "With icons"
+   },
+   {
+    "h3": "Loading",
+    "name": "button-loading",
+    "after": "Icon Only"
+   },
+   {
+    "h3": "Loading State",
+    "name": "button-loading-state",
+    "after": "Loading"
+   },
+   {
+    "h3": "Full Width",
+    "name": "button-full-width",
+    "after": "Loading State"
+   },
+   {
+    "h3": "Disabled State",
+    "name": "button-disabled",
+    "after": "Full Width"
+   },
+   {
+    "h3": "Social Buttons",
+    "name": "button-social",
+    "after": "Disabled State"
+   }
+  ]
+ },
+ "card": {
+  "add": [
+   {
+    "h3": "With Avatar",
+    "name": "card-with-avatar",
+    "after": "Size"
+   },
+   {
+    "h3": "With Form",
+    "name": "card-with-form",
+    "after": "With Avatar"
+   }
+  ]
+ },
+ "direction": {
+  "usage": "direction-demo",
+  "description": "Sets the reading direction (LTR or RTL) for Base UI components inside it.",
+  "add": [
+   {
+    "h3": "Right to left",
+    "name": "direction-demo"
+   },
+   {
+    "h3": "Left to right",
+    "name": "direction-ltr"
+   }
+  ]
+ }
+}

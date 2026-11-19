@@ -1,0 +1,46 @@
+/* Docs chrome tokens, derived from the skill tokens the same way heroui.com derives them from HeroUI's
+   (measured: --docs-* = color-mix of foreground into background). Docs chrome only; no component is restyled. */
+.docs-root {
+	--docs-fg: color-mix(in oklab, var(--foreground) 90%, var(--background));
+	--docs-fg-muted: var(--muted-foreground);
+	--docs-fg-subtle: color-mix(in oklab, var(--muted-foreground) 82%, var(--background));
+	--docs-item-hover: color-mix(in oklab, var(--foreground) 3%, var(--background));
+	--docs-item-active: color-mix(in oklab, var(--foreground) 5%, var(--background));
+	--docs-demo: color-mix(in oklab, var(--foreground) 3%, var(--background));
+}
+.dark .docs-root {
+	--docs-item-hover: color-mix(in oklab, var(--foreground) 6%, var(--background));
+	--docs-item-active: color-mix(in oklab, var(--foreground) 11%, var(--background));
+	--docs-demo: color-mix(in oklab, var(--foreground) 10%, var(--background));
+}
+
+/* Shiki dual theme (colors resolved per token on the server). */
+.docs-code pre {
+	min-width: 100%;
+	width: max-content;
+	padding-inline: 0.5rem 2rem;
+	background: transparent !important;
+	counter-reset: line;
+}
+.docs-code pre code {
+	display: flex;
+	flex-direction: column;
+}
+.docs-code .shiki,
+.docs-code .shiki span {
+	color: var(--shiki-light);
+}
+.dark .docs-code .shiki,
+.dark .docs-code .shiki span {
+	color: var(--shiki-dark);
+}
+.docs-code .line::before {
+	counter-increment: line;
+	content: counter(line);
+	display: inline-block;
+	width: 1.5rem;
+	margin-inline-end: 1rem;
+	text-align: end;
+	color: var(--docs-fg-subtle) !important;
+	opacity: 0.7;
+}

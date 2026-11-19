@@ -6,7 +6,7 @@ import { EqualIcon, MonitorIcon, MoonIcon, SunIcon } from "lucide-react"
 import { siGithub } from "simple-icons"
 import { cn } from "cn"
 
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -20,7 +20,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { BrandIcon, ctaPrimary } from "./ui-bits"
 
-const menus: Record<string, { title: string; description: string }[]> = {
+const menus: Record<string, { title: string; description: string; href?: string }[]> = {
   Products: [
     { title: "HeroUI Open Source", description: "Free components for React and React Native." },
     { title: "HeroUI Pro", description: "Premium components, templates, themes, and more." },
@@ -28,7 +28,7 @@ const menus: Record<string, { title: string; description: string }[]> = {
     { title: "HeroSpace", description: "Mail, calendar, and tasks in one Mac app." },
   ],
   Docs: [
-    { title: "HeroUI React", description: "Quick start, components, theming, styling." },
+    { title: "HeroUI React", description: "Quick start, components, theming, styling.", href: "/docs" },
     { title: "HeroUI Native", description: "Components for React Native." },
     { title: "HeroUI Pro", description: "Components, templates, Figma, licensing." },
     { title: "HeroUI Agents", description: "Installation, generative UI, API reference." },
@@ -115,7 +115,7 @@ export function SiteHeader() {
                   <ul className="grid w-[30rem] grid-cols-2 gap-1 p-1">
                     {items.map((p) => (
                       <li key={p.title}>
-                        <NavigationMenuLink href="#" className="flex flex-col items-start gap-1">
+                        <NavigationMenuLink href={p.href ?? "#"} className="flex flex-col items-start gap-1">
                           <span className="font-medium text-sm">{p.title}</span>
                           <span className="text-muted-foreground text-xs leading-snug">{p.description}</span>
                         </NavigationMenuLink>
@@ -155,11 +155,17 @@ export function SiteHeader() {
                 <SheetTitle>Menu</SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-4">
-                {["Products", "Docs", "Resources", "Enterprise"].map((l) => (
-                  <Button key={l} variant="ghost" className="justify-start">
-                    {l}
-                  </Button>
-                ))}
+                {["Products", "Docs", "Resources", "Enterprise"].map((l) =>
+                  l === "Docs" ? (
+                    <a key={l} href="/docs" className={buttonVariants({ variant: "ghost", className: "justify-start" })}>
+                      {l}
+                    </a>
+                  ) : (
+                    <Button key={l} variant="ghost" className="justify-start">
+                      {l}
+                    </Button>
+                  )
+                )}
                 <Separator className="my-2" />
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground text-sm">Theme</span>

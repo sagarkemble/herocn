@@ -1,0 +1,4184 @@
+{
+ "groups": [
+  [
+   "Buttons",
+   [
+    "button",
+    "button-group",
+    "toggle",
+    "toggle-group"
+   ]
+  ],
+  [
+   "Forms",
+   [
+    "checkbox",
+    "combobox",
+    "field",
+    "input",
+    "input-group",
+    "input-otp",
+    "label",
+    "native-select",
+    "radio-group",
+    "select",
+    "textarea"
+   ]
+  ],
+  [
+   "Date and Time",
+   [
+    "calendar"
+   ]
+  ],
+  [
+   "Navigation",
+   [
+    "accordion",
+    "breadcrumb",
+    "collapsible",
+    "menubar",
+    "navigation-menu",
+    "pagination",
+    "sidebar",
+    "tabs"
+   ]
+  ],
+  [
+   "Overlays",
+   [
+    "alert-dialog",
+    "dialog",
+    "drawer",
+    "hover-card",
+    "popover",
+    "sheet",
+    "toast",
+    "tooltip"
+   ]
+  ],
+  [
+   "Collections",
+   [
+    "command",
+    "context-menu",
+    "dropdown-menu",
+    "item"
+   ]
+  ],
+  [
+   "Controls",
+   [
+    "slider",
+    "switch"
+   ]
+  ],
+  [
+   "Data Display",
+   [
+    "avatar",
+    "badge",
+    "chart",
+    "empty",
+    "kbd",
+    "marker",
+    "table"
+   ]
+  ],
+  [
+   "Feedback",
+   [
+    "alert",
+    "progress",
+    "skeleton",
+    "spinner"
+   ]
+  ],
+  [
+   "Layout",
+   [
+    "aspect-ratio",
+    "card",
+    "carousel",
+    "direction",
+    "resizable",
+    "scroll-area",
+    "separator",
+    "surface"
+   ]
+  ],
+  [
+   "AI",
+   [
+    "attachment",
+    "bubble",
+    "code-block",
+    "message",
+    "message-scroller",
+    "questionnaire",
+    "trace"
+   ]
+  ]
+ ],
+ "pages": [
+  {
+   "slug": "button",
+   "title": "Button",
+   "group": "Buttons",
+   "description": "Displays a button or a component that looks like a button.",
+   "usage": {
+    "name": "button-usage",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "button-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sizes",
+     "id": "sizes",
+     "examples": [
+      "button-sizes"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "With Icons",
+     "id": "with-icons",
+     "examples": [
+      "button-icons"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Icon Only",
+     "id": "icon-only",
+     "examples": [
+      "button-icon-only"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Loading",
+     "id": "loading",
+     "examples": [
+      "button-loading"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Loading State",
+     "id": "loading-state",
+     "examples": [
+      "button-loading-state"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Full Width",
+     "id": "full-width",
+     "examples": [
+      "button-full-width"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled State",
+     "id": "disabled-state",
+     "examples": [
+      "button-disabled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Social Buttons",
+     "id": "social-buttons",
+     "examples": [
+      "button-social"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "As Link",
+     "id": "as-link",
+     "examples": [
+      "button-render"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "button-group",
+   "title": "ButtonGroup",
+   "group": "Buttons",
+   "description": "A container that groups related buttons together with consistent styling.",
+   "usage": {
+    "name": "button-group-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Orientation",
+     "id": "orientation",
+     "examples": [
+      "button-group-orientation"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Size",
+     "id": "size",
+     "examples": [
+      "button-group-size"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Separator",
+     "id": "separator",
+     "examples": [
+      "button-group-separator"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Split",
+     "id": "split",
+     "examples": [
+      "button-group-split"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Input",
+     "id": "input",
+     "examples": [
+      "button-group-input"
+     ],
+     "pc": "*:max-w-full"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Input group",
+     "id": "input-group",
+     "examples": [
+      "button-group-input-group"
+     ],
+     "pc": "*:max-w-full"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Dropdown menu",
+     "id": "dropdown-menu",
+     "examples": [
+      "button-group-dropdown"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Popover",
+     "id": "popover",
+     "examples": [
+      "button-group-popover"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "toggle",
+   "title": "Toggle",
+   "group": "Buttons",
+   "description": "A two-state button that can be either on or off.",
+   "usage": {
+    "name": "toggle-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Ghost",
+     "id": "ghost",
+     "examples": [
+      "toggle-ghost"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sizes",
+     "id": "sizes",
+     "examples": [
+      "toggle-sizes"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "toggle-disabled"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "toggle-group",
+   "title": "ToggleGroup",
+   "group": "Buttons",
+   "description": "A set of two-state buttons that can be toggled on or off.",
+   "usage": {
+    "name": "toggle-group-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Ghost",
+     "id": "ghost",
+     "examples": [
+      "toggle-group-ghost"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sizes",
+     "id": "sizes",
+     "examples": [
+      "toggle-group-sizes"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Spacing",
+     "id": "spacing",
+     "examples": [
+      "toggle-group-spacing"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Vertical",
+     "id": "vertical",
+     "examples": [
+      "toggle-group-vertical"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "toggle-group-disabled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Custom",
+     "id": "custom",
+     "examples": [
+      "toggle-group-custom"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "checkbox",
+   "title": "Checkbox",
+   "group": "Forms",
+   "description": "A control that allows the user to toggle between checked and not checked.",
+   "usage": {
+    "name": "checkbox-demo",
+    "pc": "*:max-w-sm"
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Basic",
+     "id": "basic",
+     "examples": [
+      "checkbox-basic"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "checkbox-variants"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Description",
+     "id": "description",
+     "examples": [
+      "checkbox-description"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "checkbox-disabled"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Invalid",
+     "id": "invalid",
+     "examples": [
+      "checkbox-invalid"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Group",
+     "id": "group",
+     "examples": [
+      "field-checkbox"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "In surface",
+     "id": "in-surface",
+     "examples": [
+      "checkbox-in-surface"
+     ],
+     "pc": "*:max-w-sm"
+    }
+   ]
+  },
+  {
+   "slug": "combobox",
+   "title": "Combobox",
+   "group": "Forms",
+   "description": "Autocomplete input with a list of suggestions.",
+   "usage": {
+    "name": "combobox-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Multiple",
+     "id": "multiple",
+     "examples": [
+      "combobox-multiple"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Groups",
+     "id": "groups",
+     "examples": [
+      "combobox-groups"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Clear Button",
+     "id": "clear-button",
+     "examples": [
+      "combobox-clear"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "combobox-disabled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Invalid",
+     "id": "invalid",
+     "examples": [
+      "combobox-invalid"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Auto Highlight",
+     "id": "auto-highlight",
+     "examples": [
+      "combobox-auto-highlight"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Popup",
+     "id": "popup",
+     "examples": [
+      "combobox-popup"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "combobox-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "In Surface",
+     "id": "in-surface",
+     "examples": [
+      "combobox-surface"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "field",
+   "title": "Field",
+   "group": "Forms",
+   "description": "Combine labels, controls, and helper text to compose accessible form fields and grouped inputs.",
+   "usage": {
+    "name": "field-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Input",
+     "id": "input",
+     "examples": [
+      "field-input"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Textarea",
+     "id": "textarea",
+     "examples": [
+      "field-textarea"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Select",
+     "id": "select",
+     "examples": [
+      "field-select"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Slider",
+     "id": "slider",
+     "examples": [
+      "field-slider"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Fieldset",
+     "id": "fieldset",
+     "examples": [
+      "field-fieldset"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Checkbox",
+     "id": "checkbox",
+     "examples": [
+      "field-checkbox"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Radio",
+     "id": "radio",
+     "examples": [
+      "field-radio"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Switch",
+     "id": "switch",
+     "examples": [
+      "field-switch"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Choice Card",
+     "id": "choice-card",
+     "examples": [
+      "field-choice-card"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Field Group",
+     "id": "field-group",
+     "examples": [
+      "field-group"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "input",
+   "title": "Input",
+   "group": "Forms",
+   "description": "A text input component for forms and user data entry with built-in styling and accessibility features.",
+   "usage": {
+    "name": "input-demo",
+    "pc": "*:max-w-xs"
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "input-variants"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "States",
+     "id": "states",
+     "examples": [
+      "input-states"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "With field",
+     "id": "with-field",
+     "examples": [
+      "input-field"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Field group",
+     "id": "field-group",
+     "examples": [
+      "input-fieldgroup"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Label with badge",
+     "id": "label-with-badge",
+     "examples": [
+      "input-badge"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Input group",
+     "id": "input-group",
+     "examples": [
+      "input-input-group"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Button group",
+     "id": "button-group",
+     "examples": [
+      "input-button-group"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "In surface",
+     "id": "in-surface",
+     "examples": [
+      "input-in-surface"
+     ],
+     "pc": "*:max-w-xs"
+    }
+   ]
+  },
+  {
+   "slug": "input-group",
+   "title": "InputGroup",
+   "group": "Forms",
+   "description": "Add addons, buttons, and helper content to inputs.",
+   "usage": {
+    "name": "input-group-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Align",
+     "h3": "inline-start",
+     "id": "inline-start",
+     "examples": [
+      "input-group-inline-start"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Align",
+     "h3": "inline-end",
+     "id": "inline-end",
+     "examples": [
+      "input-group-inline-end"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Align",
+     "h3": "block-start",
+     "id": "block-start",
+     "examples": [
+      "input-group-block-start"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Align",
+     "h3": "block-end",
+     "id": "block-end",
+     "examples": [
+      "input-group-block-end"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "input-group-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Invalid",
+     "id": "invalid",
+     "examples": [
+      "input-group-invalid"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "input-group-disabled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Icon",
+     "id": "icon",
+     "examples": [
+      "input-group-icon"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Text",
+     "id": "text",
+     "examples": [
+      "input-group-text"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Button",
+     "id": "button",
+     "examples": [
+      "input-group-button"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Spinner",
+     "id": "spinner",
+     "examples": [
+      "input-group-spinner"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Textarea",
+     "id": "textarea",
+     "examples": [
+      "input-group-textarea"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Dropdown",
+     "id": "dropdown",
+     "examples": [
+      "input-group-dropdown"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "In surface",
+     "id": "in-surface",
+     "examples": [
+      "input-group-in-surface"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "input-otp",
+   "title": "InputOtp",
+   "group": "Forms",
+   "description": "Accessible one-time password component with copy-paste functionality.",
+   "usage": {
+    "name": "input-otp-demo",
+    "pc": "*:justify-center"
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "input-otp-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Separator",
+     "id": "separator",
+     "examples": [
+      "input-otp-separator"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "input-otp-disabled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Controlled",
+     "id": "controlled",
+     "examples": [
+      "input-otp-controlled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Invalid",
+     "id": "invalid",
+     "examples": [
+      "input-otp-invalid"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Four Digits",
+     "id": "four-digits",
+     "examples": [
+      "input-otp-four-digits"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Alphanumeric",
+     "id": "alphanumeric",
+     "examples": [
+      "input-otp-alphanumeric"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "In Surface",
+     "id": "in-surface",
+     "examples": [
+      "input-otp-in-surface"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Form",
+     "id": "form",
+     "examples": [
+      "input-otp-form"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "label",
+   "title": "Label",
+   "group": "Forms",
+   "description": "Renders an accessible label associated with controls.",
+   "usage": {
+    "name": "label-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Label in Field",
+     "id": "label-in-field",
+     "examples": [
+      "label-in-field"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "native-select",
+   "title": "NativeSelect",
+   "group": "Forms",
+   "description": "A styled native HTML select element with consistent design system integration.",
+   "usage": {
+    "name": "native-select-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "native-select-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Groups",
+     "id": "groups",
+     "examples": [
+      "native-select-groups"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "native-select-disabled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Invalid",
+     "id": "invalid",
+     "examples": [
+      "native-select-invalid"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "In a Surface",
+     "id": "in-a-surface",
+     "examples": [
+      "native-select-in-surface"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "radio-group",
+   "title": "RadioGroup",
+   "group": "Forms",
+   "description": "A set of checkable buttons\u2014known as radio buttons\u2014where no more than one of the buttons can be checked at a time.",
+   "usage": {
+    "name": "radio-group-demo",
+    "pc": "*:max-w-sm"
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "radio-group-variants"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Description",
+     "id": "description",
+     "examples": [
+      "radio-group-description"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Choice card",
+     "id": "choice-card",
+     "examples": [
+      "field-choice-card"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Fieldset",
+     "id": "fieldset",
+     "examples": [
+      "field-radio"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "radio-group-disabled"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Invalid",
+     "id": "invalid",
+     "examples": [
+      "radio-group-invalid"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "In surface",
+     "id": "in-surface",
+     "examples": [
+      "radio-group-in-surface"
+     ],
+     "pc": "*:max-w-sm"
+    }
+   ]
+  },
+  {
+   "slug": "select",
+   "title": "Select",
+   "group": "Forms",
+   "description": "Displays a list of options for the user to pick from\u2014triggered by a button.",
+   "usage": {
+    "name": "select-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Groups",
+     "id": "groups",
+     "examples": [
+      "select-groups"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Multiple",
+     "id": "multiple",
+     "examples": [
+      "select-multiple"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Scrollable",
+     "id": "scrollable",
+     "examples": [
+      "select-scrollable"
+     ],
+     "pc": "*:max-w-md"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "select-disabled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Invalid",
+     "id": "invalid",
+     "examples": [
+      "select-invalid"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "textarea",
+   "title": "Textarea",
+   "group": "Forms",
+   "description": "Displays a form textarea or a component that looks like a textarea.",
+   "usage": {
+    "name": "textarea-demo",
+    "pc": "*:max-w-xs"
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "textarea-variants"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "States",
+     "id": "states",
+     "examples": [
+      "textarea-states"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "With field",
+     "id": "with-field",
+     "examples": [
+      "textarea-field"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "With button",
+     "id": "with-button",
+     "examples": [
+      "textarea-button"
+     ],
+     "pc": "*:max-w-xs"
+    },
+    {
+     "h2": "Examples",
+     "h3": "In surface",
+     "id": "in-surface",
+     "examples": [
+      "textarea-in-surface"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "calendar",
+   "title": "Calendar",
+   "group": "Date and Time",
+   "description": "A calendar component that allows users to select a date or a range of dates.",
+   "usage": {
+    "name": "calendar-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Basic",
+     "id": "basic",
+     "examples": [
+      "calendar-basic"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Range Calendar",
+     "id": "range-calendar",
+     "examples": [
+      "calendar-range"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Month and Year Selector",
+     "id": "month-and-year-selector",
+     "examples": [
+      "calendar-caption"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Presets",
+     "id": "presets",
+     "examples": [
+      "calendar-with-presets"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Date and Time Picker",
+     "id": "date-and-time-picker",
+     "examples": [
+      "calendar-with-time"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Booked dates",
+     "id": "booked-dates",
+     "examples": [
+      "calendar-booked-dates"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Custom Cell Size",
+     "id": "custom-cell-size",
+     "examples": [
+      "calendar-custom-days"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Week Numbers",
+     "id": "week-numbers",
+     "examples": [
+      "calendar-week-numbers"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "accordion",
+   "title": "Accordion",
+   "group": "Navigation",
+   "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
+   "usage": {
+    "name": "accordion-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Basic",
+     "id": "basic",
+     "examples": [
+      "accordion-basic"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Surface",
+     "id": "surface",
+     "examples": [
+      "accordion-surface"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Multiple",
+     "id": "multiple",
+     "examples": [
+      "accordion-multiple"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "accordion-disabled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Borders",
+     "id": "borders",
+     "examples": [
+      "accordion-borders"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Card",
+     "id": "card",
+     "examples": [
+      "accordion-card"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "breadcrumb",
+   "title": "Breadcrumb",
+   "group": "Navigation",
+   "description": "Displays the path to the current resource using a hierarchy of links.",
+   "usage": {
+    "name": "breadcrumb-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Basic",
+     "id": "basic",
+     "examples": [
+      "breadcrumb-basic"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Custom separator",
+     "id": "custom-separator",
+     "examples": [
+      "breadcrumb-separator"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Dropdown",
+     "id": "dropdown",
+     "examples": [
+      "breadcrumb-dropdown"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Collapsed",
+     "id": "collapsed",
+     "examples": [
+      "breadcrumb-collapsed"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Link component",
+     "id": "link-component",
+     "examples": [
+      "breadcrumb-link"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "collapsible",
+   "title": "Collapsible",
+   "group": "Navigation",
+   "description": "An interactive component which expands/collapses a panel.",
+   "usage": {
+    "name": "collapsible-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Basic",
+     "id": "basic",
+     "examples": [
+      "collapsible-basic"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Settings Panel",
+     "id": "settings-panel",
+     "examples": [
+      "collapsible-settings"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "File Tree",
+     "id": "file-tree",
+     "examples": [
+      "collapsible-file-tree"
+     ],
+     "pc": "h-[36rem]"
+    }
+   ]
+  },
+  {
+   "slug": "menubar",
+   "title": "Menubar",
+   "group": "Navigation",
+   "description": "A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.",
+   "usage": {
+    "name": "menubar-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Checkbox",
+     "id": "checkbox",
+     "examples": [
+      "menubar-checkbox"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Radio",
+     "id": "radio",
+     "examples": [
+      "menubar-radio"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Submenu",
+     "id": "submenu",
+     "examples": [
+      "menubar-submenu"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "With Icons",
+     "id": "with-icons",
+     "examples": [
+      "menubar-icons"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "menubar-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "In Surface",
+     "id": "in-surface",
+     "examples": [
+      "menubar-in-surface"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "navigation-menu",
+   "title": "NavigationMenu",
+   "group": "Navigation",
+   "description": "A collection of links for navigating websites.",
+   "usage": {
+    "name": "navigation-menu-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Link Component",
+     "id": "link-component",
+     "examples": [
+      "navigation-menu-link"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "pagination",
+   "title": "Pagination",
+   "group": "Navigation",
+   "description": "Pagination with page navigation, next and previous links.",
+   "usage": {
+    "name": "pagination-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Simple",
+     "id": "simple",
+     "examples": [
+      "pagination-simple"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Icons Only",
+     "id": "icons-only",
+     "examples": [
+      "pagination-icons-only"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sizes",
+     "id": "sizes",
+     "examples": [
+      "pagination-sizes"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "With Ellipsis",
+     "id": "with-ellipsis",
+     "examples": [
+      "pagination-ellipsis"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "sidebar",
+   "title": "Sidebar",
+   "group": "Navigation",
+   "description": "A composable, themeable and customizable sidebar component.",
+   "usage": {
+    "name": "sidebar-demo",
+    "pc": "h-[30rem] p-0! [transform:translate(0)] [&_[data-slot=sidebar-container]]:h-full [&_[data-slot=sidebar-wrapper]]:h-full [&_[data-slot=sidebar-wrapper]]:min-h-0"
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Floating",
+     "id": "floating",
+     "examples": [
+      "sidebar-floating"
+     ],
+     "pc": "h-[30rem] p-0! [transform:translate(0)] [&_[data-slot=sidebar-container]]:h-full [&_[data-slot=sidebar-wrapper]]:h-full [&_[data-slot=sidebar-wrapper]]:min-h-0"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Inset",
+     "id": "inset",
+     "examples": [
+      "sidebar-inset"
+     ],
+     "pc": "h-[30rem] p-0! [transform:translate(0)] [&_[data-slot=sidebar-container]]:h-full [&_[data-slot=sidebar-wrapper]]:h-full [&_[data-slot=sidebar-wrapper]]:min-h-0"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Collapsible",
+     "id": "collapsible",
+     "examples": [
+      "sidebar-collapsible"
+     ],
+     "pc": "h-[30rem] p-0! [transform:translate(0)] [&_[data-slot=sidebar-container]]:h-full [&_[data-slot=sidebar-wrapper]]:h-full [&_[data-slot=sidebar-wrapper]]:min-h-0"
+    }
+   ]
+  },
+  {
+   "slug": "tabs",
+   "title": "Tabs",
+   "group": "Navigation",
+   "description": "A set of layered sections of content\u2014known as tab panels\u2014that are displayed one at a time.",
+   "usage": {
+    "name": "tabs-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Vertical",
+     "id": "vertical",
+     "examples": [
+      "tabs-vertical"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Line",
+     "id": "line",
+     "examples": [
+      "tabs-line"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Vertical Line",
+     "id": "vertical-line",
+     "examples": [
+      "tabs-vertical-line"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "tabs-disabled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Icons",
+     "id": "icons",
+     "examples": [
+      "tabs-icons"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "alert-dialog",
+   "title": "AlertDialog",
+   "group": "Overlays",
+   "description": "A modal dialog that interrupts the user with important content and expects a response.",
+   "usage": {
+    "name": "alert-dialog-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Basic",
+     "id": "basic",
+     "examples": [
+      "alert-dialog-basic"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Overlay variant",
+     "id": "overlay-variant",
+     "examples": [
+      "alert-dialog-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Small",
+     "id": "small",
+     "examples": [
+      "alert-dialog-small"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Media",
+     "id": "media",
+     "examples": [
+      "alert-dialog-with-media"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Small with Media",
+     "id": "small-with-media",
+     "examples": [
+      "alert-dialog-small-with-media"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Destructive",
+     "id": "destructive",
+     "examples": [
+      "alert-dialog-destructive"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "dialog",
+   "title": "Dialog",
+   "group": "Overlays",
+   "description": "A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.",
+   "usage": {
+    "name": "dialog-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Overlay variant",
+     "id": "overlay-variant",
+     "examples": [
+      "dialog-overlay-variant"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Custom Close Button",
+     "id": "custom-close-button",
+     "examples": [
+      "dialog-close-button"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "No Close Button",
+     "id": "no-close-button",
+     "examples": [
+      "dialog-no-close-button"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sticky Footer",
+     "id": "sticky-footer",
+     "examples": [
+      "dialog-sticky-footer"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Scrollable Content",
+     "id": "scrollable-content",
+     "examples": [
+      "dialog-scrollable-content"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Stacked",
+     "id": "stacked",
+     "examples": [
+      "dialog-nested"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "drawer",
+   "title": "Drawer",
+   "group": "Overlays",
+   "description": "A panel that slides in from any edge of the screen to reveal supporting content.",
+   "usage": {
+    "name": "drawer-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Directions",
+     "id": "directions",
+     "examples": [
+      "drawer-direction"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Overlay variant",
+     "id": "overlay-variant",
+     "examples": [
+      "drawer-overlay-variant"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Scrollable content",
+     "id": "scrollable-content",
+     "examples": [
+      "drawer-scrollable-content"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Swipe handle",
+     "id": "swipe-handle",
+     "examples": [
+      "drawer-swipe-handle"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Nested",
+     "id": "nested",
+     "examples": [
+      "drawer-nested"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Non modal",
+     "id": "non-modal",
+     "examples": [
+      "drawer-non-modal"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Snap points",
+     "id": "snap-points",
+     "examples": [
+      "drawer-snap-points"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Responsive",
+     "id": "responsive",
+     "examples": [
+      "drawer-responsive-dialog"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "hover-card",
+   "title": "HoverCard",
+   "group": "Overlays",
+   "description": "For sighted users to preview content available behind a link.",
+   "usage": {
+    "name": "hover-card-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Sides",
+     "id": "sides",
+     "examples": [
+      "hover-card-sides"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "With arrow",
+     "id": "with-arrow",
+     "examples": [
+      "hover-card-with-arrow"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "popover",
+   "title": "Popover",
+   "group": "Overlays",
+   "description": "Displays rich content in a portal, triggered by a button.",
+   "usage": {
+    "name": "popover-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Basic",
+     "id": "basic",
+     "examples": [
+      "popover-basic"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Align",
+     "id": "align",
+     "examples": [
+      "popover-align"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "With form",
+     "id": "with-form",
+     "examples": [
+      "popover-form"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "With arrow",
+     "id": "with-arrow",
+     "examples": [
+      "popover-with-arrow"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "sheet",
+   "title": "Sheet",
+   "group": "Overlays",
+   "description": "Extends the Dialog component to display content that complements the main content of the screen.",
+   "usage": {
+    "name": "sheet-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Side",
+     "id": "side",
+     "examples": [
+      "sheet-side"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Overlay variant",
+     "id": "overlay-variant",
+     "examples": [
+      "sheet-overlay-variant"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "No Close Button",
+     "id": "no-close-button",
+     "examples": [
+      "sheet-no-close-button"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "toast",
+   "title": "Toast",
+   "group": "Overlays",
+   "description": "A succinct message that is displayed temporarily.",
+   "usage": {
+    "name": "toast-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Types",
+     "id": "types",
+     "examples": [
+      "toast-types"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Action",
+     "id": "action",
+     "examples": [
+      "toast-action"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Promise",
+     "id": "promise",
+     "examples": [
+      "toast-promise"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "tooltip",
+   "title": "Tooltip",
+   "group": "Overlays",
+   "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+   "usage": {
+    "name": "tooltip-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Side",
+     "id": "side",
+     "examples": [
+      "tooltip-sides"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Arrow",
+     "id": "arrow",
+     "examples": [
+      "tooltip-arrow"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "With keyboard shortcut",
+     "id": "with-keyboard-shortcut",
+     "examples": [
+      "tooltip-keyboard"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled button",
+     "id": "disabled-button",
+     "examples": [
+      "tooltip-disabled"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "command",
+   "title": "Command",
+   "group": "Collections",
+   "description": "Command menu for search and quick actions.",
+   "usage": {
+    "name": "command-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Basic",
+     "id": "basic",
+     "examples": [
+      "command-basic"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Shortcuts",
+     "id": "shortcuts",
+     "examples": [
+      "command-shortcuts"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Groups",
+     "id": "groups",
+     "examples": [
+      "command-groups"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Scrollable",
+     "id": "scrollable",
+     "examples": [
+      "command-scrollable"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Overlay Variant",
+     "id": "overlay-variant",
+     "examples": [
+      "command-overlay-variant"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "context-menu",
+   "title": "ContextMenu",
+   "group": "Collections",
+   "description": "Displays a menu of actions triggered by a right click.",
+   "usage": {
+    "name": "context-menu-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Basic",
+     "id": "basic",
+     "examples": [
+      "context-menu-basic"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Submenu",
+     "id": "submenu",
+     "examples": [
+      "context-menu-submenu"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Shortcuts",
+     "id": "shortcuts",
+     "examples": [
+      "context-menu-shortcuts"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Groups",
+     "id": "groups",
+     "examples": [
+      "context-menu-groups"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Icons",
+     "id": "icons",
+     "examples": [
+      "context-menu-icons"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Checkboxes",
+     "id": "checkboxes",
+     "examples": [
+      "context-menu-checkboxes"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Radio",
+     "id": "radio",
+     "examples": [
+      "context-menu-radio"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Destructive",
+     "id": "destructive",
+     "examples": [
+      "context-menu-destructive"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sides",
+     "id": "sides",
+     "examples": [
+      "context-menu-sides"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "dropdown-menu",
+   "title": "DropdownMenu",
+   "group": "Collections",
+   "description": "Displays a menu to the user \u2014 such as a set of actions or functions \u2014 triggered by a button.",
+   "usage": {
+    "name": "dropdown-menu-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Basic",
+     "id": "basic",
+     "examples": [
+      "dropdown-menu-basic"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Submenu",
+     "id": "submenu",
+     "examples": [
+      "dropdown-menu-submenu"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Shortcuts",
+     "id": "shortcuts",
+     "examples": [
+      "dropdown-menu-shortcuts"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Icons",
+     "id": "icons",
+     "examples": [
+      "dropdown-menu-icons"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Checkboxes",
+     "id": "checkboxes",
+     "examples": [
+      "dropdown-menu-checkboxes"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Checkboxes Icons",
+     "id": "checkboxes-icons",
+     "examples": [
+      "dropdown-menu-checkboxes-icons"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Radio Group",
+     "id": "radio-group",
+     "examples": [
+      "dropdown-menu-radio-group"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Radio Icons",
+     "id": "radio-icons",
+     "examples": [
+      "dropdown-menu-radio-icons"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Destructive",
+     "id": "destructive",
+     "examples": [
+      "dropdown-menu-destructive"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Avatar",
+     "id": "avatar",
+     "examples": [
+      "dropdown-menu-avatar"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Complex",
+     "id": "complex",
+     "examples": [
+      "dropdown-menu-complex"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Filterable",
+     "id": "filterable",
+     "examples": [
+      "dropdown-menu-filterable"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "item",
+   "title": "Item",
+   "group": "Collections",
+   "description": "A versatile component for displaying content with media, title, description, and actions.",
+   "usage": {
+    "name": "item-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variant",
+     "id": "variant",
+     "examples": [
+      "item-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Size",
+     "id": "size",
+     "examples": [
+      "item-sizes"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Icon",
+     "id": "icon",
+     "examples": [
+      "item-icon"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Avatar",
+     "id": "avatar",
+     "examples": [
+      "item-avatar"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Image",
+     "id": "image",
+     "examples": [
+      "item-image"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Group",
+     "id": "group",
+     "examples": [
+      "item-group"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Header",
+     "id": "header",
+     "examples": [
+      "item-header"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Link",
+     "id": "link",
+     "examples": [
+      "item-link"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Dropdown",
+     "id": "dropdown",
+     "examples": [
+      "item-dropdown"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "slider",
+   "title": "Slider",
+   "group": "Controls",
+   "description": "An input where the user selects a value from within a given range.",
+   "usage": {
+    "name": "slider-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Range",
+     "id": "range",
+     "examples": [
+      "slider-range"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Multiple Thumbs",
+     "id": "multiple-thumbs",
+     "examples": [
+      "slider-multiple"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Vertical",
+     "id": "vertical",
+     "examples": [
+      "slider-vertical"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Controlled",
+     "id": "controlled",
+     "examples": [
+      "slider-controlled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "slider-disabled"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "switch",
+   "title": "Switch",
+   "group": "Controls",
+   "description": "A control that allows the user to toggle between checked and not checked.",
+   "usage": {
+    "name": "switch-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Description",
+     "id": "description",
+     "examples": [
+      "switch-description"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Choice Card",
+     "id": "choice-card",
+     "examples": [
+      "switch-choice-card"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Disabled",
+     "id": "disabled",
+     "examples": [
+      "switch-disabled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Invalid",
+     "id": "invalid",
+     "examples": [
+      "switch-invalid"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Size",
+     "id": "size",
+     "examples": [
+      "switch-sizes"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "avatar",
+   "title": "Avatar",
+   "group": "Data Display",
+   "description": "An image element with a fallback for representing the user.",
+   "usage": {
+    "name": "avatar-demo",
+    "pc": "h-72"
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Basic",
+     "id": "basic",
+     "examples": [
+      "avatar-basic"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Badge",
+     "id": "badge",
+     "examples": [
+      "avatar-badge"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Badge with Icon",
+     "id": "badge-with-icon",
+     "examples": [
+      "avatar-badge-icon"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Avatar Group",
+     "id": "avatar-group",
+     "examples": [
+      "avatar-group"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Avatar Group Count",
+     "id": "avatar-group-count",
+     "examples": [
+      "avatar-group-count"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Avatar Group with Icon",
+     "id": "avatar-group-with-icon",
+     "examples": [
+      "avatar-group-count-icon"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sizes",
+     "id": "sizes",
+     "examples": [
+      "avatar-size"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Dropdown",
+     "id": "dropdown",
+     "examples": [
+      "avatar-dropdown"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "badge",
+   "title": "Badge",
+   "group": "Data Display",
+   "description": "Same look of HeroUI's badge",
+   "usage": {
+    "name": "badge-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "badge-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sizes",
+     "id": "sizes",
+     "examples": [
+      "badge-sizes"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "With Icon",
+     "id": "with-icon",
+     "examples": [
+      "badge-icon"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Custom Colors",
+     "id": "custom-colors",
+     "examples": [
+      "badge-colors"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "chart",
+   "title": "Chart",
+   "group": "Data Display",
+   "description": "Beautiful charts. Built using Recharts. Copy and paste into your apps.",
+   "usage": {
+    "name": "chart-demo",
+    "pc": "p-0!"
+   },
+   "sections": [
+    {
+     "h2": "Your First Chart",
+     "h3": "Basic bar chart",
+     "id": "basic-bar-chart",
+     "examples": [
+      "chart-bar-demo"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Your First Chart",
+     "h3": "Add a Grid",
+     "id": "add-a-grid",
+     "examples": [
+      "chart-bar-demo-grid"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Your First Chart",
+     "h3": "Add an Axis",
+     "id": "add-an-axis",
+     "examples": [
+      "chart-bar-demo-axis"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Your First Chart",
+     "h3": "Add a Tooltip",
+     "id": "add-a-tooltip",
+     "examples": [
+      "chart-bar-demo-tooltip"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Your First Chart",
+     "h3": "Add a Legend",
+     "id": "add-a-legend",
+     "examples": [
+      "chart-bar-demo-legend"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Tooltip",
+     "id": "tooltip",
+     "examples": [
+      "chart-tooltip-demo"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "empty",
+   "title": "Empty",
+   "group": "Data Display",
+   "description": "Display an empty state with media, text, and actions.",
+   "usage": {
+    "name": "empty-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Outline",
+     "id": "outline",
+     "examples": [
+      "empty-outline"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Background",
+     "id": "background",
+     "examples": [
+      "empty-background"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Avatar",
+     "id": "avatar",
+     "examples": [
+      "empty-avatar"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Avatar Group",
+     "id": "avatar-group",
+     "examples": [
+      "empty-avatar-group"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Input Group",
+     "id": "input-group",
+     "examples": [
+      "empty-input-group"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "kbd",
+   "title": "Kbd",
+   "group": "Data Display",
+   "description": "Used to display textual user input from the keyboard.",
+   "usage": {
+    "name": "kbd-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "kbd-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Group",
+     "id": "group",
+     "examples": [
+      "kbd-group"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Button",
+     "id": "button",
+     "examples": [
+      "kbd-button"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Tooltip",
+     "id": "tooltip",
+     "examples": [
+      "kbd-tooltip"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Input group",
+     "id": "input-group",
+     "examples": [
+      "kbd-input-group"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "marker",
+   "title": "Marker",
+   "group": "Data Display",
+   "description": "Displays an inline status, system note, bordered row, or labeled separator in a conversation.",
+   "usage": {
+    "name": "marker-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "marker-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Status",
+     "id": "status",
+     "examples": [
+      "marker-status"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Shimmer",
+     "id": "shimmer",
+     "examples": [
+      "marker-shimmer"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Separator",
+     "id": "separator",
+     "examples": [
+      "marker-separator"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Border",
+     "id": "border",
+     "examples": [
+      "marker-border"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "With Icon",
+     "id": "with-icon",
+     "examples": [
+      "marker-icon"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Links and Buttons",
+     "id": "links-and-buttons",
+     "examples": [
+      "marker-link-button"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "table",
+   "title": "Table",
+   "group": "Data Display",
+   "description": "A responsive table component.",
+   "usage": {
+    "name": "table-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Secondary",
+     "id": "secondary",
+     "examples": [
+      "table-secondary"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Secondary with Footer",
+     "id": "secondary-with-footer",
+     "examples": [
+      "table-secondary-footer"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Footer",
+     "id": "footer",
+     "examples": [
+      "table-footer"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Actions",
+     "id": "actions",
+     "examples": [
+      "table-actions"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "alert",
+   "title": "Alert",
+   "group": "Feedback",
+   "description": "Displays a callout for user attention.",
+   "usage": {
+    "name": "alert-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variant",
+     "id": "variant",
+     "examples": [
+      "alert-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Action",
+     "id": "action",
+     "examples": [
+      "alert-action"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Custom Colors",
+     "id": "custom-colors",
+     "examples": [
+      "alert-colors"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "progress",
+   "title": "Progress",
+   "group": "Feedback",
+   "description": "Displays an indicator showing the completion progress of a task, typically as a progress bar.",
+   "usage": {
+    "name": "progress-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Label",
+     "id": "label",
+     "examples": [
+      "progress-label"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "progress-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sizes",
+     "id": "sizes",
+     "examples": [
+      "progress-sizes"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Controlled",
+     "id": "controlled",
+     "examples": [
+      "progress-controlled"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "skeleton",
+   "title": "Skeleton",
+   "group": "Feedback",
+   "description": "Use to show a placeholder while content is loading.",
+   "usage": {
+    "name": "skeleton-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Animation types",
+     "id": "animation-types",
+     "examples": [
+      "skeleton-animation-types"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Avatar",
+     "id": "avatar",
+     "examples": [
+      "skeleton-avatar"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Card",
+     "id": "card",
+     "examples": [
+      "skeleton-card"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Text",
+     "id": "text",
+     "examples": [
+      "skeleton-text"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Form",
+     "id": "form",
+     "examples": [
+      "skeleton-form"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Table",
+     "id": "table",
+     "examples": [
+      "skeleton-table"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Single shimmer",
+     "id": "single-shimmer",
+     "examples": [
+      "skeleton-single-shimmer"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "spinner",
+   "title": "Spinner",
+   "group": "Feedback",
+   "description": "An indicator that can be used to show a loading state.",
+   "usage": {
+    "name": "spinner-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "spinner-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Size",
+     "id": "size",
+     "examples": [
+      "spinner-sizes"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Button",
+     "id": "button",
+     "examples": [
+      "spinner-button"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Badge",
+     "id": "badge",
+     "examples": [
+      "spinner-badge"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Input Group",
+     "id": "input-group",
+     "examples": [
+      "spinner-input-group"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Empty",
+     "id": "empty",
+     "examples": [
+      "spinner-empty"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "aspect-ratio",
+   "title": "AspectRatio",
+   "group": "Layout",
+   "description": "Displays content within a desired ratio.",
+   "usage": {
+    "name": "aspect-ratio-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Square",
+     "id": "square",
+     "examples": [
+      "aspect-ratio-square"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Portrait",
+     "id": "portrait",
+     "examples": [
+      "aspect-ratio-portrait"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "card",
+   "title": "Card",
+   "group": "Layout",
+   "description": "Displays a card with header, content, and footer.",
+   "usage": {
+    "name": "card-demo",
+    "pc": "h-[30rem]"
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "card-variants"
+     ],
+     "pc": "overflow-auto h-[50rem] sm:h-[40rem] lg:h-[25rem]"
+    },
+    {
+     "h2": "Examples",
+     "h3": "Size",
+     "id": "size",
+     "examples": [
+      "card-small"
+     ],
+     "pc": "h-96"
+    },
+    {
+     "h2": "Examples",
+     "h3": "With Avatar",
+     "id": "with-avatar",
+     "examples": [
+      "card-with-avatar"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "With Form",
+     "id": "with-form",
+     "examples": [
+      "card-with-form"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Image",
+     "id": "image",
+     "examples": [
+      "card-image"
+     ],
+     "pc": "h-[32rem]"
+    }
+   ]
+  },
+  {
+   "slug": "carousel",
+   "title": "Carousel",
+   "group": "Layout",
+   "description": "A carousel with motion and swipe built using Embla.",
+   "usage": {
+    "name": "carousel-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Sizes",
+     "id": "sizes",
+     "examples": [
+      "carousel-size"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Spacing",
+     "id": "spacing",
+     "examples": [
+      "carousel-spacing"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Orientation",
+     "id": "orientation",
+     "examples": [
+      "carousel-orientation"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "API",
+     "id": "api",
+     "examples": [
+      "carousel-api"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "direction",
+   "title": "Direction",
+   "group": "Layout",
+   "description": "Sets the reading direction (LTR or RTL) for Base UI components inside it.",
+   "usage": {
+    "name": "direction-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Right to left",
+     "id": "right-to-left",
+     "examples": [
+      "direction-demo"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Left to right",
+     "id": "left-to-right",
+     "examples": [
+      "direction-ltr"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "resizable",
+   "title": "Resizable",
+   "group": "Layout",
+   "description": "Accessible resizable panel groups and layouts with keyboard support.",
+   "usage": {
+    "name": "resizable-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Vertical",
+     "id": "vertical",
+     "examples": [
+      "resizable-vertical"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Handle",
+     "id": "handle",
+     "examples": [
+      "resizable-handle"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "scroll-area",
+   "title": "ScrollArea",
+   "group": "Layout",
+   "description": "Augments native scroll functionality for custom, cross-browser styling.",
+   "usage": {
+    "name": "scroll-area-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Horizontal",
+     "id": "horizontal",
+     "examples": [
+      "scroll-area-horizontal"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "separator",
+   "title": "Separator",
+   "group": "Layout",
+   "description": "Visually or semantically separates content.",
+   "usage": {
+    "name": "separator-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Vertical",
+     "id": "vertical",
+     "examples": [
+      "separator-vertical"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Menu",
+     "id": "menu",
+     "examples": [
+      "separator-menu"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "List",
+     "id": "list",
+     "examples": [
+      "separator-list"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Surface",
+     "id": "surface",
+     "examples": [
+      "separator-surface"
+     ],
+     "pc": "min-h-[28rem]"
+    }
+   ]
+  },
+  {
+   "slug": "surface",
+   "title": "Surface",
+   "group": "Layout",
+   "description": "A simple container that applies surface background variants.",
+   "usage": {
+    "name": "surface-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "surface-variants"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "attachment",
+   "title": "Attachment",
+   "group": "AI",
+   "description": "Displays a file or image attachment with media, metadata, upload states, and actions.",
+   "usage": {
+    "name": "attachment-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Image",
+     "id": "image",
+     "examples": [
+      "attachment-image"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "States",
+     "id": "states",
+     "examples": [
+      "attachment-states"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sizes",
+     "id": "sizes",
+     "examples": [
+      "attachment-sizes"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Group",
+     "id": "group",
+     "examples": [
+      "attachment-group"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Trigger",
+     "id": "trigger",
+     "examples": [
+      "attachment-trigger"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "bubble",
+   "title": "Bubble",
+   "group": "AI",
+   "description": "Displays conversational content in a message bubble. Supports variants, alignment, grouping, reactions, and collapsible content.",
+   "usage": {
+    "name": "bubble-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Variants",
+     "id": "variants",
+     "examples": [
+      "bubble-variants"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Alignment",
+     "id": "alignment",
+     "examples": [
+      "bubble-alignment"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Bubble Group",
+     "id": "bubble-group",
+     "examples": [
+      "bubble-group"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Links and Buttons",
+     "id": "links-and-buttons",
+     "examples": [
+      "bubble-link-button"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Reactions",
+     "id": "reactions",
+     "examples": [
+      "bubble-reactions"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Collapsible",
+     "id": "collapsible",
+     "examples": [
+      "bubble-collapsible"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Tooltip",
+     "id": "tooltip",
+     "examples": [
+      "bubble-tooltip"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Popover",
+     "id": "popover",
+     "examples": [
+      "bubble-popover"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "code-block",
+   "title": "CodeBlock",
+   "group": "AI",
+   "description": "Displays code, terminal output and diffs with an optional header, line numbers and a copy button.",
+   "usage": {
+    "h2": "Examples",
+    "h3": "Basic",
+    "name": "code-block-basic",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Actions",
+     "id": "actions",
+     "examples": [
+      "code-block-actions"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Line numbers",
+     "id": "line-numbers",
+     "examples": [
+      "code-block-line-numbers"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Start line",
+     "id": "start-line",
+     "examples": [
+      "code-block-start-line"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Wrap",
+     "id": "wrap",
+     "examples": [
+      "code-block-wrap"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Highlighted lines",
+     "id": "highlighted-lines",
+     "examples": [
+      "code-block-highlighted"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Diff",
+     "id": "diff",
+     "examples": [
+      "code-block-diff"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Height",
+     "id": "height",
+     "examples": [
+      "code-block-height"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Destructive",
+     "id": "destructive",
+     "examples": [
+      "code-block-destructive"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Trace",
+     "id": "trace",
+     "examples": [
+      "code-block-trace"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Syntax Highlighting",
+     "id": "syntax-highlighting",
+     "examples": [
+      "code-block-highlighting"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Syntax Highlighting",
+     "h3": "Languages",
+     "id": "languages",
+     "examples": [
+      "code-block-languages"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Syntax Highlighting",
+     "h3": "Terminal output",
+     "id": "terminal-output",
+     "examples": [
+      "code-block-ansi"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "message",
+   "title": "Message",
+   "group": "AI",
+   "description": "Displays a message in a conversation, with optional avatar, header, footer, and alignment.",
+   "usage": {
+    "name": "message-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Avatar",
+     "id": "avatar",
+     "examples": [
+      "message-avatar"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Group",
+     "id": "group",
+     "examples": [
+      "message-group"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Header and Footer",
+     "id": "header-and-footer",
+     "examples": [
+      "message-header-footer"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Actions",
+     "id": "actions",
+     "examples": [
+      "message-actions"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Attachment",
+     "id": "attachment",
+     "examples": [
+      "message-attachment"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "message-scroller",
+   "title": "MessageScroller",
+   "group": "AI",
+   "description": "A chat scroll container that anchors turns, opens saved transcripts, follows streamed responses, loads history without jumping, and jumps to any message.",
+   "usage": {
+    "h2": "Examples",
+    "h3": "Group Chat",
+    "name": "message-scroller-group-chat",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Opening Saved Threads",
+     "id": "opening-saved-threads",
+     "examples": [
+      "message-scroller-opening-position"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "questionnaire",
+   "title": "Questionnaire",
+   "group": "AI",
+   "description": "A multi-step questionnaire with single-choice, multiple-choice, freeform, and skippable questions.",
+   "usage": {
+    "name": "questionnaire-demo",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Multiple Selection",
+     "id": "multiple-selection",
+     "examples": [
+      "questionnaire-multiple"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Freeform Answer",
+     "id": "freeform-answer",
+     "examples": [
+      "questionnaire-freeform"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Explicit Skip",
+     "id": "explicit-skip",
+     "examples": [
+      "questionnaire-skip"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Shortcuts",
+     "id": "shortcuts",
+     "examples": [
+      "questionnaire-shortcuts"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Custom Validation",
+     "id": "custom-validation",
+     "examples": [
+      "questionnaire-validation"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Controlled",
+     "id": "controlled",
+     "examples": [
+      "questionnaire-controlled"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Resume",
+     "id": "resume",
+     "examples": [
+      "questionnaire-resume"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Conditional Items",
+     "id": "conditional-items",
+     "examples": [
+      "questionnaire-conditional"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Navigation State",
+     "id": "navigation-state",
+     "examples": [
+      "questionnaire-navigation-state"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Custom Progress",
+     "id": "custom-progress",
+     "examples": [
+      "questionnaire-progress"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Animated Items",
+     "id": "animated-items",
+     "examples": [
+      "questionnaire-animated"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Card",
+     "id": "card",
+     "examples": [
+      "questionnaire-card"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Dialog",
+     "id": "dialog",
+     "examples": [
+      "questionnaire-dialog"
+     ],
+     "pc": null
+    }
+   ]
+  },
+  {
+   "slug": "trace",
+   "title": "Trace",
+   "group": "AI",
+   "description": "Displays the steps an agent takes, such as reasoning, tool calls, and sources, as a list of rows.",
+   "usage": {
+    "h2": "Examples",
+    "h3": "Trace Line",
+    "name": "trace-static",
+    "pc": null
+   },
+   "sections": [
+    {
+     "h2": "Examples",
+     "h3": "Status",
+     "id": "status",
+     "examples": [
+      "trace-status"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Description",
+     "id": "description",
+     "examples": [
+      "trace-description"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Collapsible",
+     "id": "collapsible",
+     "examples": [
+      "trace-collapsible"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Open State",
+     "id": "open-state",
+     "examples": [
+      "trace-open"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Link",
+     "id": "link",
+     "examples": [
+      "trace-link"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Dialog",
+     "id": "dialog",
+     "examples": [
+      "trace-dialog"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sheet",
+     "id": "sheet",
+     "examples": [
+      "trace-sheet"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Group",
+     "id": "group",
+     "examples": [
+      "trace-group"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Sources",
+     "id": "sources",
+     "examples": [
+      "trace-sources"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Chain of Thought",
+     "id": "chain-of-thought",
+     "examples": [
+      "trace-steps"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Commit",
+     "id": "commit",
+     "examples": [
+      "trace-commit"
+     ],
+     "pc": null
+    },
+    {
+     "h2": "Examples",
+     "h3": "Whole Turn",
+     "id": "whole-turn",
+     "examples": [
+      "trace-turn"
+     ],
+     "pc": null
+    }
+   ]
+  }
+ ]
+}

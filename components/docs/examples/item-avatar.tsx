@@ -1,0 +1,72 @@
+"use client";
+
+import { PlusIcon } from "lucide-react";
+import {
+	Avatar,
+	AvatarFallback,
+	AvatarGroup,
+	AvatarImage,
+} from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import {
+	Item,
+	ItemActions,
+	ItemContent,
+	ItemDescription,
+	ItemMedia,
+	ItemTitle,
+} from "@/components/ui/item";
+
+export default function ItemAvatar() {
+	return (
+		<div className="flex w-full max-w-lg flex-col gap-6">
+			<Item>
+				<ItemMedia>
+					<Avatar>
+						<AvatarImage src="https://github.com/evilrabbit.png" alt="" />
+						<AvatarFallback>ER</AvatarFallback>
+					</Avatar>
+				</ItemMedia>
+				<ItemContent>
+					<ItemTitle>Evil Rabbit</ItemTitle>
+					<ItemDescription>Last seen 5 months ago</ItemDescription>
+				</ItemContent>
+				<ItemActions>
+					<Button size="icon-sm" className="rounded-full" aria-label="Invite">
+						<PlusIcon />
+					</Button>
+				</ItemActions>
+			</Item>
+			<Item>
+				<ItemMedia>
+					<AvatarGroup>
+						<Avatar className="hidden sm:flex">
+							<AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+							<AvatarFallback>CN</AvatarFallback>
+						</Avatar>
+						<Avatar className="hidden sm:flex">
+							<AvatarImage
+								src="https://github.com/maxleiter.png"
+								alt="@maxleiter"
+							/>
+							<AvatarFallback>LR</AvatarFallback>
+						</Avatar>
+						<Avatar>
+							<AvatarImage src="https://github.com/Maqed.png" alt="@0xMaqed" />
+							<AvatarFallback>Mqd</AvatarFallback>
+						</Avatar>
+					</AvatarGroup>
+				</ItemMedia>
+				<ItemContent>
+					<ItemTitle>No team members</ItemTitle>
+					<ItemDescription>
+						Invite your team to collaborate on this project.
+					</ItemDescription>
+				</ItemContent>
+				<ItemActions>
+					<Button size="sm">Invite</Button>
+				</ItemActions>
+			</Item>
+		</div>
+	);
+}
