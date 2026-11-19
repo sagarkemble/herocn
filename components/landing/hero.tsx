@@ -1,43 +1,200 @@
 "use client"
 
 import * as React from "react"
-import { ArrowRightIcon, Grid2x2Icon, PaletteIcon, SlidersVerticalIcon, SparklesIcon, type LucideIcon } from "lucide-react"
-import { siApple, siBytedance, siHitachi, siIeee, siReact, siToptal } from "simple-icons"
+import { ArrowRightIcon, XIcon } from "lucide-react"
+import { siApple, siBytedance, siHitachi, siIeee, siToptal } from "simple-icons"
 import { cn } from "cn"
 
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { BrandIcon, ctaPrimary, ctaSecondary } from "./ui-bits"
 
-/* Inline glyph tile inside the headline (heroui.com .hero-slot: 0.72em tile, ±8deg, click cycles). */
-type Glyph = { label: string; className: string; node: React.ReactNode }
+/* Inline glyph slot inside the headline. Technique matches heroui.com's .hero-slot (0.72em tile, white-outlined
+   gradient "sticker" glyphs, blur/scale cross-fade between layers, -8/+8deg rotation); the glyph drawings are our own. */
+type Glyph = { label: string; fill: string; draw: (paint: string) => React.ReactNode }
+const strokeOnly = (paint: string, d: React.ReactNode) => (
+  <>
+    <g stroke="#fff" strokeWidth={4.6} fill="none">{d}</g>
+    <g stroke={paint} strokeWidth={1.8} fill="none">{d}</g>
+  </>
+)
+const filled = (paint: string, d: React.ReactNode) => (
+  <g fill={paint} stroke="#fff" strokeWidth={1.6} paintOrder="stroke">{d}</g>
+)
 const glyphsA: Glyph[] = [
-  { label: "React", className: "text-primary", node: <BrandIcon path={siReact.path} title="React" className="size-full" /> },
-  { label: "Palette", className: "text-warning", node: <PaletteIcon className="size-full" strokeWidth={2.4} /> },
-  { label: "Sparkles", className: "text-primary", node: <SparklesIcon className="size-full" strokeWidth={2.4} /> },
+  {
+    label: "Atom",
+    fill: "#0485f7",
+    draw: (p) => (
+      <>
+        {strokeOnly(p, [0, 60, 120].map((r) => <ellipse key={r} cx="12" cy="12" rx="9" ry="3.6" transform={`rotate(${r} 12 12)`} />))}
+        <circle cx="12" cy="12" r="2.4" fill={p} stroke="#fff" strokeWidth={1.2} />
+      </>
+    ),
+  },
+  {
+    label: "Robot",
+    fill: "#0485f7",
+    draw: (p) =>
+      filled(
+        p,
+        <>
+          <rect x="2.5" y="6" width="19" height="15" rx="5" />
+          <circle cx="12" cy="3.2" r="1.8" />
+          <circle cx="8.8" cy="13.5" r="1.7" fill="#fff" stroke="none" />
+          <circle cx="15.2" cy="13.5" r="1.7" fill="#fff" stroke="none" />
+        </>
+      ),
+  },
+  {
+    label: "Code",
+    fill: "#0485f7",
+    draw: (p) => strokeOnly(p, <path d="M8.5 6.5 3 12l5.5 5.5M15.5 6.5 21 12l-5.5 5.5" strokeLinecap="round" strokeLinejoin="round" />),
+  },
+  {
+    label: "Terminal",
+    fill: "#18181b",
+    draw: (p) =>
+      filled(
+        p,
+        <>
+          <rect x="2.5" y="4" width="19" height="16" rx="4.5" />
+          <path d="m7 9.5 3 2.5-3 2.5M12.5 15h4.5" fill="none" stroke="#fff" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" />
+        </>
+      ),
+  },
 ]
 const glyphsB: Glyph[] = [
-  { label: "Sliders", className: "text-success", node: <SlidersVerticalIcon className="size-full" strokeWidth={2.6} /> },
-  { label: "Grid", className: "text-primary", node: <Grid2x2Icon className="size-full" strokeWidth={2.4} /> },
+  {
+    label: "Sparkle",
+    fill: "#7828c8",
+    draw: (p) =>
+      filled(
+        p,
+        <>
+          <path d="M10 3.5Q11.4 10.6 18.5 12 11.4 13.4 10 20.5 8.6 13.4 1.5 12 8.6 10.6 10 3.5Z" strokeLinejoin="round" />
+          <path d="M18.5 2.5Q19 5 21.5 5.5 19 6 18.5 8.5 18 6 15.5 5.5 18 5 18.5 2.5Z" strokeLinejoin="round" />
+        </>
+      ),
+  },
+  {
+    label: "Chat",
+    fill: "#7828c8",
+    draw: (p) => filled(p, <path d="M5.5 4h13A3.5 3.5 0 0 1 22 7.5v7a3.5 3.5 0 0 1-3.5 3.5H11l-4.5 3.2V18h-1A3.5 3.5 0 0 1 2 14.5v-7A3.5 3.5 0 0 1 5.5 4Z" strokeLinejoin="round" />),
+  },
+  {
+    label: "Layers",
+    fill: "#7828c8",
+    draw: (p) =>
+      filled(
+        p,
+        <>
+          <path d="m12 12.5 9 4.5-9 4.5-9-4.5Z" strokeLinejoin="round" opacity={0.7} />
+          <path d="m12 2.5 9 4.5-9 4.5L3 7Z" strokeLinejoin="round" />
+        </>
+      ),
+  },
+  {
+    label: "Wand",
+    fill: "#17c964",
+    draw: (p) =>
+      filled(
+        p,
+        <>
+          <rect x="9.6" y="1.8" width="4.8" height="20.4" rx="2.4" transform="rotate(45 12 12)" />
+          <circle cx="5" cy="5" r="1.6" />
+          <circle cx="19.5" cy="17" r="1.3" />
+        </>
+      ),
+  },
 ]
 
-function Slot({ glyphs, rotate }: { glyphs: Glyph[]; rotate: number }) {
-  const [i, setI] = React.useState(0)
-  const g = glyphs[i % glyphs.length]
+function GlyphSvg({ g, id }: { g: Glyph; id: string }) {
+  const grad = `url(#${id})`
   return (
-    <span className="relative inline-block h-[0.72em] px-[0.36em] align-middle">
+    <svg viewBox="0 0 24 24" className="hero-slot__icon size-full" aria-hidden>
+      <defs>
+        <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor={`color-mix(in oklab, ${g.fill} 80%, white)`} />
+          <stop offset="1" stopColor={g.fill} />
+        </linearGradient>
+      </defs>
+      {g.draw(grad)}
+    </svg>
+  )
+}
+
+function Slot({ glyphs, rotate, delay, slotId }: { glyphs: Glyph[]; rotate: number; delay: number; slotId: string }) {
+  const [i, setI] = React.useState(0)
+  React.useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+    let t: ReturnType<typeof setInterval>
+    const start = setTimeout(() => {
+      t = setInterval(() => setI((n) => n + 1), 2600)
+    }, delay)
+    return () => {
+      clearTimeout(start)
+      clearInterval(t)
+    }
+  }, [delay])
+  const active = i % glyphs.length
+  return (
+    <span className="hero-slot">
       <button
         type="button"
-        aria-label={`Change glyph (${g.label})`}
+        aria-label={`Change glyph (${glyphs[active].label})`}
         onClick={() => setI((n) => n + 1)}
-        style={{ rotate: `${rotate}deg` }}
-        className={cn(
-          "absolute top-0 left-1/2 -ml-[0.36em] size-[0.72em] cursor-pointer rounded-[28%] transition-transform duration-300 hover:scale-110",
-          g.className
-        )}
+        style={{ ["--glyph-rotation" as string]: `${rotate}deg`, animationDelay: `${delay}ms` }}
+        className="hero-slot__tile cursor-pointer"
       >
-        {g.node}
+        {glyphs.map((g, k) => (
+          <span key={g.label} className="hero-slot__layer" data-active={k === active}>
+            <GlyphSvg g={g} id={`${slotId}-${k}`} />
+          </span>
+        ))}
       </button>
     </span>
+  )
+}
+
+/* Floating promo card (heroui.com shows a dismissible "Build faster with HeroUI Pro" card bottom-left). */
+export function ProPromo() {
+  const [open, setOpen] = React.useState(true)
+  if (!open) return null
+  return (
+    <Card className="fixed bottom-6 left-6 z-40 w-72 gap-0 overflow-hidden p-0 shadow-xl">
+      <div className="relative flex h-[170px] flex-col items-center justify-center gap-2 bg-linear-to-br from-[#e0f2fe] via-[#dbeafe] to-[#c4b5fd]">
+        <div aria-hidden className="absolute -top-10 right-0 size-40 rounded-full bg-[#6366f1]/50 blur-3xl" />
+        <button
+          type="button"
+          aria-label="Dismiss"
+          onClick={() => setOpen(false)}
+          className="absolute top-2.5 right-2.5 grid size-6 place-items-center rounded-full text-white/90 hover:bg-white/20"
+        >
+          <XIcon className="size-4" />
+        </button>
+        <span className="relative flex items-center gap-2.5 font-display font-semibold text-[44px] text-primary leading-none tracking-[-0.04em]">
+          <span aria-hidden className="flex h-[0.85em] w-[0.7em] items-end gap-[0.12em] opacity-80">
+            <span className="h-full w-[0.24em] rounded-[0.08em] bg-current" />
+            <span className="h-3/4 w-[0.24em] rounded-[0.08em] bg-current" />
+          </span>
+          Pro
+        </span>
+        <span className="relative font-medium text-[#3b5b8c] text-sm">Now available</span>
+      </div>
+      <CardContent className="flex flex-col gap-2 px-4 pt-4 pb-4">
+        <p className="font-medium text-base">Build faster with HeroUI Pro</p>
+        <p className="text-muted-foreground text-sm leading-6">
+          Components, templates, and AI tooling for React and React Native. Made for teams that care about the details.
+        </p>
+        <div className="mt-2 flex gap-2">
+          <Button variant="outline" className="flex-none" onClick={() => setOpen(false)}>
+            Close
+          </Button>
+          <Button className={cn(ctaPrimary, "flex-1")}>Explore Pro</Button>
+        </div>
+      </CardContent>
+    </Card>
   )
 }
 
@@ -49,12 +206,12 @@ export function Hero() {
           <span className="sr-only">Never start from scratch again.</span>
           <span aria-hidden className="block whitespace-nowrap">
             Never start{" "}
-            <Slot glyphs={glyphsA} rotate={-8} />
+            <Slot glyphs={glyphsA} rotate={-8} delay={1200} slotId="ga" />
             {" "}from
           </span>
           <span aria-hidden className="block whitespace-nowrap text-muted-foreground/70">
             scratch{" "}
-            <Slot glyphs={glyphsB} rotate={8} />
+            <Slot glyphs={glyphsB} rotate={8} delay={1250} slotId="gb" />
             {" "}again.
           </span>
         </h1>

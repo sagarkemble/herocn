@@ -49,7 +49,7 @@ const meetings = [
 
 function SpaceApp() {
   return (
-    <div className="flex size-full flex-col bg-background text-[11px]">
+    <div className="flex size-full flex-col bg-background text-[11px] lg:h-[125%] lg:w-[125%] lg:origin-top-left lg:scale-[0.8]">
       {/* title bar */}
       <div className="flex h-10 shrink-0 items-center gap-3 border-border border-b px-3">
         <WindowDots color />
@@ -62,9 +62,9 @@ function SpaceApp() {
         <PlusIcon className="size-3.5 text-muted-foreground max-md:hidden" />
         <Button size="xs" variant="outline" className="ms-auto h-6 text-[11px]"><MessageCircleIcon data-icon="inline-start" />Ask Agent</Button>
       </div>
-      <div className="flex min-h-0 flex-1 gap-4 p-3">
+      <div className="flex min-h-0 flex-1 gap-4 p-3 lg:gap-12">
         <SpaceSidebar counts className="max-md:hidden" />
-        <div className="flex min-w-0 flex-1 flex-col gap-3">
+        <div className="flex min-w-0 flex-1 flex-col gap-3 lg:max-w-[1000px] lg:ps-10 lg:pt-6">
           <div className="flex items-end justify-between gap-2">
             <div>
               <p className="font-semibold text-lg">Good morning, Junior</p>
@@ -77,7 +77,7 @@ function SpaceApp() {
               </TabsList>
             </Tabs>
           </div>
-          <div className="grid min-h-0 gap-3 lg:grid-cols-[1fr_260px]">
+          <div className="grid min-h-0 gap-3 lg:grid-cols-[1fr_330px]">
             <div className="flex min-w-0 flex-col gap-3">
               <Card size="sm" className="flex-row items-center gap-3 px-3">
                 <div className="leading-tight">
@@ -206,7 +206,7 @@ export function HeroSpace() {
         ]}
       />
       <div className="mt-10 flex flex-wrap items-center justify-center gap-3 max-sm:flex-nowrap max-sm:gap-2.5 sm:mt-12">
-        <Button className="max-sm:flex-1">Request early access</Button>
+        <Button className="max-sm:h-10 max-sm:flex-1">Request early access</Button>
         <Button variant="tertiary" className={cn(ctaSecondary, "max-sm:flex-1")}>Explore HeroSpace</Button>
       </div>
     </section>

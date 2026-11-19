@@ -348,7 +348,8 @@
 	text-wrap: balance;
 	letter-spacing: -0.72px;
 	font-size: 2.25rem;
-	line-height: normal;
+	/* heroui.com uses line-height:normal, which is ~1.0 for Britti Sans; Inter Tight's "normal" is ~1.21, so pin 1. */
+	line-height: 1;
 	@media (width < 40rem) {
 		letter-spacing: -0.02em;
 		font-size: 2.125rem;
@@ -416,8 +417,41 @@
 		radial-gradient(40% 50% at 95% 55%, #8b7fc9 0%, transparent 70%),
 		#e7e6f2;
 }
-.dark :is(.wall-blue, .wall-pro, .wall-agents, .wall-space, .wall-pastel, .wall-template) {
-	filter: brightness(0.55) saturate(1.1);
+/* Dark wallpapers: explicit deep, saturated colours (heroui.com swaps to dark wallpaper images). */
+.dark .wall-blue {
+	background:
+		radial-gradient(55% 70% at 12% 30%, #1d4ed8 0%, transparent 60%),
+		radial-gradient(50% 70% at 90% 85%, #3730a3 0%, transparent 60%),
+		linear-gradient(135deg, #050b2e 0%, #0b1f6b 45%, #1e3a8a 75%, #0a0f2c 100%);
+}
+.dark .wall-pro {
+	background:
+		radial-gradient(60% 50% at 30% 30%, #be185d 0%, transparent 65%),
+		linear-gradient(180deg, #3b0764 0%, #4c0f4f 50%, #1a0b2e 100%);
+}
+.dark .wall-agents {
+	background:
+		radial-gradient(60% 60% at 40% 20%, #6d28d9 0%, transparent 65%),
+		linear-gradient(165deg, #2e1065 0%, #1e0b3d 60%, #0d0718 100%);
+}
+.dark .wall-space {
+	background:
+		radial-gradient(45% 55% at 90% 15%, #6366f1 0%, transparent 60%),
+		radial-gradient(50% 60% at 10% 85%, #1d4ed8 0%, transparent 60%),
+		linear-gradient(170deg, #0b1033 0%, #1e1b6b 45%, #312e81 70%, #0b1033 100%);
+}
+.dark .wall-pastel {
+	background:
+		radial-gradient(45% 60% at 10% 10%, #701a75 0%, transparent 60%),
+		radial-gradient(45% 60% at 90% 20%, #4c1d95 0%, transparent 60%),
+		radial-gradient(60% 70% at 50% 100%, #1e3a8a 0%, transparent 60%),
+		#0f0b1d;
+}
+.dark .wall-template {
+	background:
+		radial-gradient(35% 45% at 12% 35%, #a21caf 0%, transparent 70%),
+		radial-gradient(40% 50% at 92% 40%, #4c1d95 0%, transparent 70%),
+		#0d0a14;
 }
 @keyframes marquee-y {
 	from { transform: translateY(0); }
@@ -441,3 +475,13 @@
 	--primary-soft-foreground: color-mix(in oklab, var(--primary) 70%, var(--foreground) 30%);
 	--ring: var(--primary);
 }
+
+/* Hero glyph slot - values from heroui.com's live CSS (.hero-slot*). */
+.hero-slot{white-space:pre;vertical-align:middle;height:.72em;padding-inline:.36em;display:inline-block;position:relative}
+.hero-slot__tile{width:.72em;height:.72em;border-radius:28%;margin-left:-.36em;position:absolute;top:0;left:50%;animation:.44s cubic-bezier(.23,1,.32,1) both slot-in}
+.hero-slot__layer{opacity:0;filter:blur(7px);transform:scale(.78);transition:opacity .42s,filter .42s,transform .42s cubic-bezier(.16,1,.3,1);position:absolute;inset:0}
+.hero-slot__layer[data-active=true]{opacity:1;filter:none;transform:scale(1)}
+.hero-slot__icon{filter:drop-shadow(0 1px 1px #0000001a) drop-shadow(0 3px 6px #00000024);rotate:var(--glyph-rotation)}
+.dark .hero-slot__icon{filter:drop-shadow(0 1px 1px #0006) drop-shadow(0 3px 6px #0008)}
+@keyframes slot-in{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){.hero-slot__tile{animation:none}.hero-slot__layer{transition:none}}

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { useTheme } from "next-themes"
-import { MenuIcon, MonitorIcon, MoonIcon, SunIcon } from "lucide-react"
+import { EqualIcon, MonitorIcon, MoonIcon, SunIcon } from "lucide-react"
 import { siGithub } from "simple-icons"
 import { cn } from "cn"
 
@@ -44,10 +44,10 @@ const menus: Record<string, { title: string; description: string }[]> = {
 /** Text wordmark (no logo artwork copied). */
 export function Wordmark({ className }: { className?: string }) {
   return (
-    <a href="#" aria-label="hero home" className={cn("flex items-center gap-1.5 font-display font-semibold text-[22px] leading-none tracking-[-0.04em]", className)}>
-      <span aria-hidden className="flex h-5 w-4 items-end gap-[3px]">
-        <span className="h-full w-[5px] rounded-[2px] bg-foreground" />
-        <span className="h-3/4 w-[5px] rounded-[2px] bg-foreground" />
+    <a href="#" aria-label="hero home" className={cn("flex items-center gap-2 font-display font-semibold text-[24px] leading-none sm:text-[30px] tracking-[-0.04em]", className)}>
+      <span aria-hidden className="flex h-[0.85em] w-[0.7em] items-end gap-[0.12em]">
+        <span className="h-full w-[0.24em] rounded-[0.08em] bg-foreground" />
+        <span className="h-3/4 w-[0.24em] rounded-[0.08em] bg-foreground" />
       </span>
       hero
     </a>
@@ -134,7 +134,7 @@ export function SiteHeader() {
           <Button className={cn(ctaPrimary, "max-md:h-9 max-md:px-3 max-sm:w-auto")}>Get started</Button>
           <Sheet>
             <SheetTrigger render={<Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu" />}>
-              <MenuIcon />
+              <EqualIcon />
             </SheetTrigger>
             <SheetContent side="right">
               <SheetHeader>

@@ -295,7 +295,7 @@ const dashNav: { i: LucideIcon; l: string; badge?: string }[] = [
 
 function DashboardTemplate() {
   return (
-    <div className="flex size-full gap-3 bg-background/80 p-3 text-sm backdrop-blur-xl">
+    <div className="flex size-full gap-3 bg-background/55 p-3 text-sm backdrop-blur-xl [&_[data-slot=card]]:bg-surface/70">
       <aside className="flex w-[200px] shrink-0 flex-col gap-1 max-md:hidden">
         <div className="mb-3 flex items-center gap-2 px-1">
           <Avatar><AvatarFallback className="bg-primary-soft text-primary-soft-foreground">KM</AvatarFallback></Avatar>
@@ -370,13 +370,19 @@ function DashboardTemplate() {
                 </div>
               ))}
             </div>
-            <ChartContainer config={salesConfig} className="aspect-auto h-[150px] w-full">
+            <ChartContainer config={salesConfig} className="aspect-auto h-[200px] w-full">
               <BarChart data={salesData} margin={{ left: -24, right: 0, top: 4, bottom: 0 }}>
                 <CartesianGrid vertical={false} />
                 <XAxis dataKey="d" tickLine={false} axisLine={false} fontSize={10} />
                 <YAxis tickLine={false} axisLine={false} fontSize={10} />
                 <ChartTooltip content={<ChartTooltipContent hideLabel />} />
-                <Bar isAnimationActive={false} dataKey="v" fill="var(--color-v)" fillOpacity={0.55} radius={6} />
+                <defs>
+                  <linearGradient id="bar-fade" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stopColor="var(--color-v)" stopOpacity={0.75} />
+                    <stop offset="1" stopColor="var(--color-v)" stopOpacity={0.18} />
+                  </linearGradient>
+                </defs>
+                <Bar isAnimationActive={false} dataKey="v" fill="url(#bar-fade)" barSize={12} radius={6} />
               </BarChart>
             </ChartContainer>
           </Card>
@@ -392,7 +398,7 @@ function DashboardTemplate() {
               <p className="font-semibold text-sm">231,856</p>
               <p className="text-muted-foreground text-xs">Sessions</p>
             </div>
-            <ChartContainer config={trafficConfig} className="aspect-auto h-[150px] w-full">
+            <ChartContainer config={trafficConfig} className="aspect-auto h-[200px] w-full">
               <LineChart data={trafficData} margin={{ left: -24, right: 4, top: 4, bottom: 0 }}>
                 <CartesianGrid vertical={false} />
                 <XAxis dataKey="m" tickLine={false} axisLine={false} fontSize={10} />
@@ -463,12 +469,12 @@ export function Pro() {
           muted="with HeroUI Pro."
           description="Components, templates, and AI tooling for React and React Native. Made for teams that care about the details."
         />
-        <ul className="relative mt-5 flex gap-3 max-sm:-mx-5 max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-auto max-sm:px-5 max-sm:pt-3 max-sm:pb-4 max-sm:[scrollbar-width:none] sm:mt-12 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="relative mt-5 flex gap-3 max-sm:-mx-5 max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-auto max-sm:px-5 max-sm:pt-3 max-sm:pb-4 max-sm:[scrollbar-width:none] sm:mt-12 sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {previews.map((p) => (
             <li key={p.name} className="max-sm:w-[280px] max-sm:shrink-0 max-sm:snap-start">
               <a href="#" className="group flex flex-col overflow-hidden rounded-3xl bg-surface shadow-sm">
-                <div className="relative m-1 flex h-64 items-center justify-center overflow-hidden rounded-[20px] bg-background">
-                  <div className="pointer-events-none scale-[0.85] transition-transform duration-[400ms] ease-out group-hover:scale-[0.87]">{p.node}</div>
+                <div className="relative m-1 flex items-center justify-center overflow-hidden rounded-[20px] bg-background max-sm:aspect-[360/256] sm:h-64">
+                  <div className="pointer-events-none scale-[0.85] max-sm:scale-[0.64] transition-transform duration-[400ms] ease-out group-hover:scale-[0.87]">{p.node}</div>
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-surface to-transparent" />
                 </div>
                 <div className="flex items-center justify-between px-4 py-3">
@@ -482,14 +488,20 @@ export function Pro() {
             </li>
           ))}
         </ul>
+        {/* mobile scroll indicator (decorative) */}
+        <div aria-hidden className="mt-1 flex justify-center gap-1.5 sm:hidden">
+          {previews.map((p, k) => (
+            <span key={p.name} className={cn("h-1 rounded-full bg-foreground/15", k === 0 ? "w-5 bg-foreground/70" : "w-1")} />
+          ))}
+        </div>
       </section>
 
       {/* full-bleed templates frame */}
-      <div className="relative mt-14 w-full px-4 sm:mt-20">
-        <div className="relative flex flex-col items-center overflow-hidden rounded-[48px] border border-foreground/10 px-4 pt-12 [mask-image:linear-gradient(black_88%,transparent)] max-lg:rounded-[36px] max-md:rounded-[28px] max-md:pt-8">
+      <div className="relative mt-14 w-full sm:mt-20 sm:px-4">
+        <div className="relative flex flex-col items-center overflow-hidden rounded-[48px] border border-foreground/10 px-4 pt-12 [mask-image:linear-gradient(black_88%,transparent)] max-lg:rounded-[36px] max-md:rounded-[28px] max-md:pt-8 max-sm:h-[620px] max-sm:[mask-image:none] max-sm:pt-11">
           <div aria-hidden className="absolute inset-0 wall-template" />
           <span aria-hidden className="absolute inset-0 bg-[linear-gradient(to_bottom,var(--background),transparent_39.5%)]" />
-          <div className="relative flex flex-col items-center text-center">
+          <div className="relative flex flex-col items-center text-center max-sm:[&_h2]:text-[30px] max-sm:[&_h2]:leading-[34px]">
             <SectionHeader
               align="center"
               eyebrow="Pro templates"
@@ -505,15 +517,17 @@ export function Pro() {
             </TabsList>
             {templates.map((t) => (
               <TabsContent key={t} value={t} className="w-full p-0">
-                <div className="relative mx-auto mt-10 aspect-[1192/700] w-full max-w-[1192px] overflow-hidden rounded-[28px] shadow-[0_1px_2px_rgb(0_0_0/0.04),0_40px_80px_rgb(29_15_53/0.14)] max-lg:rounded-[20px] max-md:aspect-auto max-md:h-[640px]">
-                  <TemplateBody name={t} />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[200px] bg-[linear-gradient(to_top,var(--background)_15%,color-mix(in_oklab,var(--background)_70%,transparent)_60%,transparent)] max-sm:h-[120px]" />
+                <div className="relative mx-auto mt-1 aspect-[1192/700] w-full max-w-[1192px] overflow-hidden rounded-[28px] shadow-[0_1px_2px_rgb(0_0_0/0.04),0_40px_80px_rgb(29_15_53/0.14)] max-lg:rounded-[20px] max-sm:mt-7 max-sm:aspect-auto max-sm:h-[628px] max-sm:w-[290px] max-sm:rounded-[32px]">
+                  <div className="size-full max-sm:h-[133.33%] max-sm:w-[133.33%] max-sm:origin-top-left max-sm:scale-75">
+                    <TemplateBody name={t} />
+                  </div>
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[280px] bg-[linear-gradient(to_top,var(--background)_25%,color-mix(in_oklab,var(--background)_70%,transparent)_60%,transparent)] max-sm:h-[120px]" />
                 </div>
               </TabsContent>
             ))}
           </Tabs>
         </div>
-        <div className="relative -mt-8 flex justify-center">
+        <div className="relative flex justify-center max-sm:mt-6 sm:-mt-[52px]">
           <Tabs value={theme} onValueChange={(v) => setTheme(v as string)}>
             <TabsList variant="line" className="border-0">
               {["Glass", "Mouve", "Brutalism", "Default"].map((t) => (
@@ -524,8 +538,9 @@ export function Pro() {
         </div>
       </div>
 
-      <div className="site-container">
+      <div className="site-container sm:pt-3">
         <FeatureRow
+          grid
           items={[
             { icon: PaletteIcon, title: "Premium components", description: "Kanban, data grid, charts, command menu, and more." },
             { icon: LayoutTemplateIcon, title: "Full templates", description: "Complete apps for web and mobile, ready to make your own." },
@@ -534,7 +549,7 @@ export function Pro() {
           ]}
         />
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3 max-sm:flex-nowrap max-sm:gap-2.5 sm:mt-12">
-          <Button className="max-sm:flex-1">Explore HeroUI Pro</Button>
+          <Button className="max-sm:h-10 max-sm:flex-1">Explore HeroUI Pro</Button>
           <Button variant="tertiary" className={cn(ctaSecondary, "max-sm:flex-1")}>View pricing</Button>
         </div>
       </div>

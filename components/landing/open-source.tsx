@@ -49,14 +49,18 @@ const mails = [
   { from: "Stripe", time: "Apr 18", subject: "$2,450 was deposited to your account", preview: "A transfer of $2,450.00 landed in your account" },
   { from: "Emma Park", time: "Apr 15", subject: "Conference CFP deadline reminder", preview: "Friendly reminder: the CFP for Summit closes Friday" },
 ]
-// Avatar fills cycle through theme tokens (site uses gradient avatar images).
-const tone = ["bg-success-soft text-success-soft-foreground", "bg-warning-soft text-warning-soft-foreground", "bg-primary-soft text-primary-soft-foreground"]
+// Avatar fills: explicit-colour gradient blobs (the site uses gradient avatar images; no letters).
+const tone = [
+  "bg-linear-to-br from-[#a7f3d0] via-[#34d399] to-[#0ea5e9]",
+  "bg-linear-to-br from-[#fde68a] via-[#fb923c] to-[#f43f5e]",
+  "bg-linear-to-br from-[#c4b5fd] via-[#8b5cf6] to-[#6366f1]",
+]
 
 function MailAvatar({ m, i, className }: { m: (typeof mails)[number]; i: number; className?: string }) {
   return (
     <Avatar size="sm" className={className}>
       <AvatarFallback className={cn("font-semibold text-[10px]", m.github ? "bg-foreground text-background" : tone[i % 3])}>
-        {m.github ? <BrandIcon path={siGithub.path} title="GitHub" className="size-3" /> : m.from.slice(0, 1)}
+        {m.github ? <BrandIcon path={siGithub.path} title="GitHub" className="size-3" /> : null}
       </AvatarFallback>
     </Avatar>
   )
@@ -81,7 +85,7 @@ export function DesktopMail({ selected, onSelect }: { selected: number; onSelect
         {/* sidebar */}
         <div className="flex w-[150px] shrink-0 flex-col gap-0.5 px-1 pt-1.5">
           <div className="mb-3 flex items-center gap-2">
-            <Avatar size="sm"><AvatarFallback className="bg-warning-soft text-[10px] text-warning-soft-foreground">Y</AvatarFallback></Avatar>
+            <Avatar size="sm"><AvatarFallback className={tone[1]} /></Avatar>
             <div className="leading-tight">
               <p className="font-semibold">You</p>
               <p className="text-[10px] text-muted-foreground">you@heroui.dev</p>
@@ -172,10 +176,10 @@ export function DesktopMail({ selected, onSelect }: { selected: number; onSelect
 function PhoneMail({ selected, onSelect }: { selected: number; onSelect: (i: number) => void }) {
   return (
     <div className="relative flex size-full flex-col overflow-hidden rounded-[44px] border-[6px] border-surface bg-background text-xs shadow-xl">
-      <div className="flex h-11 shrink-0 items-center justify-between px-6 font-semibold text-[11px]">
+      <div className="flex h-12 shrink-0 items-center justify-between px-6 font-semibold text-[14px] text-muted-foreground">
         <span>1:36</span>
-        <span className="absolute top-2 left-1/2 h-6 w-20 -translate-x-1/2 rounded-full bg-foreground" />
-        <span className="flex items-center gap-1"><SignalIcon className="size-3" /><WifiIcon className="size-3" /></span>
+        <span className="absolute top-2.5 left-1/2 h-6 w-[88px] -translate-x-1/2 rounded-full bg-muted-foreground/25" />
+        <span className="flex items-center gap-1"><SignalIcon className="size-3.5" /><WifiIcon className="size-3.5" /></span>
       </div>
       <div className="flex items-center justify-between px-4 pt-2">
         <p className="font-bold text-2xl">Inbox</p>
@@ -292,25 +296,25 @@ export function OpenSource() {
               <PhoneMail selected={selected} onSelect={setSelected} />
             </div>
             {/* toolbar */}
-            <div className="absolute bottom-[46px] left-[134px] flex items-center gap-2 rounded-2xl bg-foreground/80 p-1.5 pl-3 text-background text-xs shadow-xl backdrop-blur-md max-sm:hidden">
+            <div className="absolute bottom-[46px] left-[134px] flex items-center gap-2 dark rounded-2xl bg-background/80 p-1.5 pl-3 text-foreground text-xs shadow-xl backdrop-blur-md max-sm:hidden">
               <span className="opacity-70">Accent</span>
               <ToggleGroup
                 aria-label="Accent"
                 spacing={1}
                 value={[accent]}
                 onValueChange={(v) => v[0] && setAccent(v[0] as string)}
-                className="gap-0.5 rounded-full bg-background/15 p-0.5"
+                className="gap-0.5 rounded-full bg-foreground/10 p-0.5"
               >
                 {accents.map((a) => (
                   <ToggleGroupItem key={a.name} value={a.value} aria-label={a.name} variant="ghost" size="icon-xs" className="size-5 rounded-full p-0 hover:bg-transparent aria-pressed:bg-transparent">
-                    <span className={cn("size-3.5 rounded-full ring-2 ring-transparent transition", accent === a.value && "ring-background")} style={{ background: a.value }} />
+                    <span className={cn("size-3.5 rounded-full ring-2 ring-transparent transition", accent === a.value && "ring-foreground")} style={{ background: a.value }} />
                   </ToggleGroupItem>
                 ))}
               </ToggleGroup>
               <span className="ms-1 opacity-70">Base</span>
               <Slider aria-label="Base tint" value={base} onValueChange={(v) => setBase(Array.isArray(v) ? [...v] : [v])} min={0} max={30} className="w-16 data-[orientation=horizontal]:w-16" />
               <Select items={fonts.map((f) => ({ label: f.k, value: f.k }))} value={font} onValueChange={(v) => v && setFont(v as string)}>
-                <SelectTrigger size="sm" aria-label="Font" className="h-7 gap-1 border-0 bg-background/15 text-background text-xs">
+                <SelectTrigger size="sm" aria-label="Font" className="h-7 gap-1 border-0 bg-foreground/10 text-foreground text-xs">
                   <TypeIcon className="size-3.5 opacity-70" />
                   <SelectValue />
                 </SelectTrigger>
@@ -321,7 +325,7 @@ export function OpenSource() {
                 </SelectContent>
               </Select>
               <Select items={radii.map((r) => ({ label: r.k, value: r.k }))} value={radius} onValueChange={(v) => v && setRadius(v as string)}>
-                <SelectTrigger size="sm" aria-label="Radius" className="h-7 gap-1 border-0 bg-background/15 text-background text-xs">
+                <SelectTrigger size="sm" aria-label="Radius" className="h-7 gap-1 border-0 bg-foreground/10 text-foreground text-xs">
                   <RadiusIcon className="size-3.5 opacity-70" />
                   <SelectValue />
                 </SelectTrigger>
@@ -333,13 +337,13 @@ export function OpenSource() {
               </Select>
               <Tooltip>
                 <TooltipTrigger
-                  render={<Button size="icon-xs" variant="ghost" aria-label="Toggle preview mode" onClick={() => setDark((d) => !d)} className="text-background hover:bg-background/15 hover:text-background" />}
+                  render={<Button size="icon-xs" variant="ghost" aria-label="Toggle preview mode" onClick={() => setDark((d) => !d)} className="text-foreground hover:bg-foreground/10 hover:text-foreground" />}
                 >
                   {dark ? <MoonIcon /> : <SunIcon />}
                 </TooltipTrigger>
                 <TooltipContent>{dark ? "Dark preview" : "Light preview"}</TooltipContent>
               </Tooltip>
-              <Badge size="sm" className="bg-background/15 text-background">Default</Badge>
+              <Badge size="sm" className="bg-foreground/10 text-foreground">Default</Badge>
             </div>
           </div>
         </div>
@@ -357,13 +361,13 @@ export function OpenSource() {
             <span className="flex h-9 w-[92px] items-center justify-center">
               <span className="flex -space-x-2">
                 {[siCursor, siClaude].map((ic) => (
-                  <span key={ic.slug} className="flex size-9 items-center justify-center rounded-full border-2 border-default bg-surface">
+                  <span key={ic.slug} style={{ color: ic.slug === "claude" ? `#${ic.hex}` : undefined }} className="flex size-9 items-center justify-center rounded-full border-2 border-default bg-surface">
                     <BrandIcon path={ic.path} title={ic.title} className="size-4" />
                   </span>
                 ))}
                 {/* Codex: no open icon available (simple-icons has no OpenAI mark) */}
                 <span className="flex size-9 items-center justify-center rounded-full border-2 border-default bg-surface" aria-label="Codex">
-                  <SquareTerminalIcon className="size-4" />
+                  <SquareTerminalIcon className="size-4 text-[#4f6bf6]" />
                 </span>
               </span>
             </span>

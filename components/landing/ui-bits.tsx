@@ -4,8 +4,8 @@ import { cn } from "cn"
 
 /** heroui.com marketing CTA classes (page-level, keeps the skill's --primary blue untouched). */
 export const ctaPrimary =
-  "bg-foreground text-background hover:bg-foreground/85 active:bg-foreground/80 aria-expanded:bg-foreground/80 max-sm:w-full"
-export const ctaSecondary = "max-sm:w-full"
+  "bg-foreground text-background hover:bg-foreground/85 active:bg-foreground/80 aria-expanded:bg-foreground/80 max-sm:h-10 max-sm:w-full"
+export const ctaSecondary = "max-sm:h-10 max-sm:w-full"
 
 export function Section({
   id,
@@ -97,19 +97,27 @@ export function TextLink({ children, className, href = "#" }: { children: React.
 /** Four-up feature row used under Pro / Agents / HeroSpace on heroui.com. */
 export function FeatureRow({
   items,
+  grid = false,
 }: {
   items: { icon: React.ComponentType<{ className?: string }>; title: string; description: string }[]
+  /** heroui.com Pro section: 2-column grid on mobile with the icon above the title */
+  grid?: boolean
 }) {
   return (
-    <ul className="mt-12 grid gap-8 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+    <ul
+      className={cn(
+        "grid gap-10 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4",
+        grid ? "mt-16 grid-cols-2 max-sm:gap-x-5 max-sm:gap-y-8" : "mt-10 grid-cols-1 max-sm:gap-6"
+      )}
+    >
       {items.map((it) => (
-        <li key={it.title} className="max-sm:flex max-sm:gap-4">
+        <li key={it.title} className={cn(!grid && "max-sm:flex max-sm:gap-4")}>
           <span className="flex size-11 shrink-0 items-center justify-center rounded-[14px] bg-default sm:size-10 sm:rounded-2xl">
             <it.icon className="size-4" />
           </span>
           <div className="max-sm:min-w-0 max-sm:flex-1">
-            <h3 className="mt-5 font-medium text-base text-foreground leading-[22px] max-sm:mt-0 sm:mt-6 sm:leading-normal">{it.title}</h3>
-            <p className="mt-2 text-pretty text-muted-foreground text-sm leading-[21px] max-sm:mt-1 sm:leading-6">{it.description}</p>
+            <h3 className={cn("mt-5 font-medium text-base text-foreground leading-[22px] sm:mt-6 sm:leading-normal", !grid && "max-sm:mt-0")}>{it.title}</h3>
+            <p className={cn("mt-2 text-pretty text-muted-foreground text-sm leading-[21px] sm:leading-6", !grid && "max-sm:mt-1")}>{it.description}</p>
           </div>
         </li>
       ))}

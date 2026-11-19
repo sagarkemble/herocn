@@ -18,8 +18,8 @@ const products = [
     wall: "wall-blue",
     mock: (
       <div className="flex items-start gap-0">
-        <CalendarMock className="relative z-0 mt-12" />
-        <ColorPickerMock className="relative z-10 -ml-3" />
+        <CalendarMock className="relative z-0 mt-12 max-sm:mt-0" />
+        <ColorPickerMock className="relative z-10 -ml-3 max-sm:hidden" />
       </div>
     ),
   },
@@ -31,8 +31,8 @@ const products = [
     wall: "wall-pro",
     mock: (
       <div className="flex items-start gap-6">
-        <ProChatMock className="mt-6" />
-        <MusicPlayerMock />
+        <MusicPlayerMock className="mt-6" />
+        <ProChatMock />
       </div>
     ),
   },
@@ -114,7 +114,7 @@ export function Products() {
                     <span aria-hidden className={cn("absolute inset-0", p.wall)} />
                     <span
                       className={cn(
-                        "absolute transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-sm:top-1/2 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:-translate-y-1/2 max-sm:scale-[0.7]",
+                        "absolute transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-sm:top-1/2 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:-translate-y-1/2 max-sm:scale-[0.86]",
                         isActive
                           ? "sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2"
                           : "sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 lg:top-[50px] lg:left-6 lg:translate-x-0 lg:translate-y-0 lg:scale-[0.82] lg:origin-top-left"
@@ -137,7 +137,7 @@ export function Products() {
                 <span className={cn(isActive ? "inline" : "max-lg:inline lg:hidden")}>{p.description}</span>
                 <span className={cn(isActive ? "hidden" : "max-lg:hidden lg:inline")}>{p.short}</span>
               </p>
-              <div className={cn("transition-opacity duration-500", isActive ? "opacity-100" : "max-lg:opacity-100 lg:invisible lg:opacity-0")}>
+              <div className={cn("transition-opacity duration-500", isActive ? "opacity-100" : "max-lg:opacity-100 lg:invisible lg:h-0 lg:overflow-hidden lg:opacity-0")}>
                 <TextLink className="mt-3">{p.link}</TextLink>
               </div>
             </li>

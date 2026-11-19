@@ -1,5 +1,5 @@
 import { SiteHeader } from "@/components/landing/header"
-import { Hero, TrustedBy } from "@/components/landing/hero"
+import { Hero, ProPromo, TrustedBy } from "@/components/landing/hero"
 import { Products } from "@/components/landing/products"
 import { OpenSource } from "@/components/landing/open-source"
 import { Pro } from "@/components/landing/pro"
@@ -13,6 +13,7 @@ export default function Page() {
       <SiteHeader />
       <main className="w-full flex-1">
         <Hero />
+        <ProPromo />
         <TrustedBy />
         <Products />
         <OpenSource />

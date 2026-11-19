@@ -195,12 +195,12 @@ export function Agents() {
       />
       <div className="mt-8 flex flex-col items-center gap-5 sm:mt-12">
         <div className="relative isolate w-full">
-          <div className="relative h-[600px] [mask-image:linear-gradient(to_bottom,#000_80%,transparent)] max-sm:h-[668px] lg:h-[620px]">
+          <div className="relative h-[600px] [mask-image:linear-gradient(to_bottom,#000_80%,transparent)] max-sm:h-[668px] lg:h-[740px]">
             <div className="absolute inset-0 pe-0 lg:pe-[120px]">
               <BankingApp />
             </div>
             <div className="absolute top-4 right-0 bottom-auto max-md:inset-x-3 max-md:top-24 md:right-4">
-              <AgentChatPanel key={demo} product={demo} className="w-[360px] max-md:w-full" />
+              <AgentChatPanel key={demo} product={demo} className="w-[360px] max-md:w-full md:min-h-[656px]" />
             </div>
           </div>
         </div>
@@ -223,7 +223,7 @@ export function Agents() {
         ]}
       />
       <div className="mt-10 flex flex-wrap items-center justify-center gap-3 max-sm:flex-nowrap max-sm:gap-2.5 sm:mt-12">
-        <Button className="max-sm:flex-1">Request access</Button>
+        <Button className="max-sm:h-10 max-sm:flex-1">Request access</Button>
         <Button variant="tertiary" className={cn(ctaSecondary, "max-sm:flex-1")}>View all examples</Button>
       </div>
     </section>

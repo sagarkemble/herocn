@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { ArrowUpRightIcon, CodeXmlIcon, ShieldCheckIcon, SquareTerminalIcon } from "lucide-react"
+import { ArrowUpRightIcon, CodeXmlIcon, SquareTerminalIcon } from "lucide-react"
 import { Area, AreaChart, XAxis } from "recharts"
 import { siClaude, siCursor, siDiscord, siGithub, siModelcontextprotocol, siNpm, siX, siYcombinator } from "simple-icons"
 import { cn } from "cn"
@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart"
 import { Switch } from "@/components/ui/switch"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { ThemeSegment, Wordmark } from "./header"
 import { testimonials } from "./testimonials-data"
 import { BrandIcon, SectionHeader, TextLink, ctaPrimary, ctaSecondary } from "./ui-bits"
@@ -111,8 +112,13 @@ const stats = [
   { icon: siDiscord, color: `#${siDiscord.hex}`, v: "10k+", t: "Discord members", d: "Get help, share what you ship, and shape what comes next." },
 ]
 // heroui.com: "Illustrative growth curve" — shape only, no recorded values are shown here.
-const curve = [4, 5, 5.5, 6.5, 7, 8.5, 9, 11, 12.5, 14, 17, 19, 22, 24, 27, 30, 33].map((v, i) => ({ i: String(i), v }))
-const curveConfig = { v: { label: "Downloads", color: "var(--primary)" } } satisfies ChartConfig
+const curve = [1, 1, 1.1, 1.2, 1.2, 1.4, 1.3, 1.6, 1.5, 2, 2.6, 2.3, 3.4, 4.4, 3.9, 5.6, 7.3, 6.6, 8.8, 9.6, 12.5, 14.2, 13, 17.5, 21, 19, 25.5, 30, 33].map((v, i) => ({ i: String(i), v }))
+const curveConfig = { v: { label: "Downloads", color: "var(--muted-foreground)" } } satisfies ChartConfig
+// end-point dot on the last sample (primary token)
+function EndDot(props: { cx?: number; cy?: number; index?: number }) {
+  if (props.index !== curve.length - 1 || props.cx == null || props.cy == null) return null
+  return <circle cx={props.cx - 3} cy={props.cy} r={4} fill="var(--primary)" />
+}
 
 export function Community() {
   return (
@@ -123,9 +129,9 @@ export function Community() {
       <ul className="site-container mt-8 grid grid-cols-1 sm:mt-16 md:grid-cols-3">
         {stats.map((s) => (
           <li key={s.t} className="border-border border-t first:border-t-0 max-sm:last:border-b md:border-t-0 md:border-l md:px-10 md:first:border-l-0 md:first:pl-0 md:last:pr-0">
-            <a href="#" className="flex h-full flex-col items-start py-6 sm:py-8 md:py-0">
+            <a href="#" className="flex h-full flex-col items-start py-6 sm:py-8 md:py-0 max-sm:[li:first-child>&]:pt-0">
               <span style={s.color ? { color: s.color } : undefined}>
-                <BrandIcon path={s.icon.path} title={s.icon.title} className="size-5" />
+                <BrandIcon path={s.icon.path} title={s.icon.title} className="size-7" />
               </span>
               <span className="mt-5 font-display font-medium text-[52px] tabular-nums leading-[54px] tracking-[-0.04em] sm:mt-6 sm:text-6xl sm:leading-none">{s.v}</span>
               <h3 className="mt-3 font-medium text-base">{s.t}</h3>
@@ -134,28 +140,34 @@ export function Community() {
           </li>
         ))}
       </ul>
-      <div className="site-container relative isolate mt-16 h-[420px] sm:mt-20">
-        <span style={{ color: `#${siNpm.hex}` }}>
-          <BrandIcon path={siNpm.path} title="npm" className="size-5" />
-        </span>
-        <h3 className="mt-5 font-medium text-base">A growing developer community.</h3>
-        <p className="mt-1.5 text-muted-foreground text-sm sm:mt-2 sm:max-w-md">Monthly npm downloads across our open source projects.</p>
-        <p className="mt-6 font-display font-medium text-[52px] tabular-nums leading-[54px] tracking-[-0.04em] sm:text-6xl sm:leading-none">33.3M+</p>
-        <p className="mt-1.5 text-muted-foreground text-sm sm:mt-2">Monthly downloads, combined</p>
-        <p className="sr-only">Illustrative growth curve.</p>
-        <ChartContainer config={curveConfig} className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 aspect-auto h-[300px] w-full">
+      <figure className="relative isolate mt-8 h-[420px] sm:mt-20 sm:h-[400px]">
+        <figcaption className="site-container pointer-events-none relative z-10 flex flex-col items-start gap-6 pt-2 sm:gap-8 sm:pt-6">
+          <span style={{ color: `#${siNpm.hex}` }}>
+            <BrandIcon path={siNpm.path} title="npm" className="size-6" />
+          </span>
+          <div>
+            <h3 className="font-medium text-base">A growing developer community.</h3>
+            <p className="mt-1.5 text-muted-foreground text-sm sm:mt-2 sm:max-w-md">Monthly npm downloads across our open source projects.</p>
+          </div>
+          <div>
+            <p className="font-display font-medium text-[52px] tabular-nums leading-[54px] tracking-[-0.04em] sm:text-6xl sm:leading-none">33.3M+</p>
+            <p className="mt-1.5 text-muted-foreground text-sm sm:mt-2">Monthly downloads, combined</p>
+          </div>
+          <p className="sr-only">Illustrative growth curve.</p>
+        </figcaption>
+        <ChartContainer config={curveConfig} className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 aspect-auto h-[200px] w-full sm:h-[400px]">
           <AreaChart data={curve} margin={{ left: 0, right: 0, top: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="npm" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stopColor="var(--color-v)" stopOpacity={0.22} />
+                <stop offset="0%" stopColor="var(--color-v)" stopOpacity={0.12} />
                 <stop offset="100%" stopColor="var(--color-v)" stopOpacity={0} />
               </linearGradient>
             </defs>
             <XAxis dataKey="i" hide />
-            <Area isAnimationActive={false} dataKey="v" type="natural" stroke="var(--color-v)" strokeWidth={2} fill="url(#npm)" />
+            <Area isAnimationActive={false} dataKey="v" type="natural" stroke="var(--color-v)" strokeOpacity={0.45} strokeWidth={1.5} fill="url(#npm)" dot={<EndDot />} activeDot={false} />
           </AreaChart>
         </ChartContainer>
-      </div>
+      </figure>
     </section>
   )
 }
@@ -287,7 +299,7 @@ const posts = [
 
 export function Blog() {
   return (
-    <section id="blog" className="site-container section-gap scroll-mt-24">
+    <section id="blog" className="site-container mt-[72px] scroll-mt-24 sm:mt-28">
       <SectionHeader
         eyebrow="Blog"
         title="From the blog."
@@ -335,11 +347,24 @@ export function FinalCta() {
           <li key={c.l}>
             <a href="#" className="flex flex-col items-center gap-2 text-muted-foreground text-xs transition-colors hover:text-foreground">
               {/* certification seal drawn with tokens (no badge artwork copied) */}
-              <span className="flex size-[60px] flex-col items-center justify-center rounded-full border border-border border-dashed bg-surface text-[8px] leading-tight">
-                <ShieldCheckIcon className="mb-0.5 size-3.5" />
-                <span className="font-semibold">{c.l}</span>
-                <span>{c.sub}</span>
-              </span>
+              <svg viewBox="0 0 60 60" className="size-14" aria-hidden>
+                <circle cx="30" cy="30" r="29" fill="var(--surface)" stroke="var(--border)" />
+                {c.l === "GDPR" ? (
+                  <>
+                    {Array.from({ length: 12 }).map((_, k) => {
+                      const a = (k / 12) * Math.PI * 2
+                      return <circle key={k} cx={30 + Math.sin(a) * 17} cy={30 - Math.cos(a) * 17} r="1.3" fill="currentColor" />
+                    })}
+                    <text x="30" y="32.5" textAnchor="middle" fontSize="7.5" fontWeight="700" fill="currentColor">GDPR</text>
+                  </>
+                ) : (
+                  <>
+                    <text x="30" y="22" textAnchor="middle" fontSize="6" fontWeight="600" fill="currentColor">AICPA</text>
+                    <text x="30" y="32" textAnchor="middle" fontSize="8" fontWeight="700" fill="currentColor">SOC 2</text>
+                    <text x="30" y="41" textAnchor="middle" fontSize="6" fill="currentColor">Type II</text>
+                  </>
+                )}
+              </svg>
               <span className="sr-only">{c.l === "SOC 2" ? "SOC 2 Type II" : c.l}</span>
               In progress
             </a>
@@ -363,7 +388,26 @@ const footer: Record<string, string[]> = {
 export function SiteFooter() {
   return (
     <footer className="mx-auto flex w-full max-w-5xl flex-col items-center gap-5 px-5 max-sm:pb-10 sm:gap-6 sm:px-6">
-      <nav aria-label="Ecosystem directory" className="mt-24 w-full border-border border-t pt-12">
+      {/* mobile: one accordion per group, first open (heroui.com: nav.mt-14 border-t sm:hidden) */}
+      <nav aria-label="Ecosystem directory" className="mt-14 w-full border-border border-y sm:hidden">
+        <Accordion defaultValue={["HeroUI React"]}>
+          {Object.entries(footer).map(([h, links]) => (
+            <AccordionItem key={h} value={h}>
+              <AccordionTrigger className="px-0 py-[18px] text-[15px] hover:bg-transparent">{h}</AccordionTrigger>
+              <AccordionContent className="px-0">
+                <ul className="grid grid-flow-col grid-cols-2 grid-rows-5 gap-y-3 pb-1 text-sm leading-5">
+                  {links.map((l) => (
+                    <li key={l}>
+                      <a href="#" className="text-muted-foreground no-underline! transition-colors hover:text-foreground">{l}</a>
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </nav>
+      <nav aria-label="Ecosystem directory" className="mt-24 w-full border-border border-t pt-12 max-sm:hidden">
         <ul className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
           {Object.entries(footer).map(([h, links]) => (
             <li key={h}>
@@ -389,8 +433,13 @@ export function SiteFooter() {
       <p className="text-center font-normal text-[13px] text-muted-foreground leading-[18px] sm:text-xs sm:leading-[1.34]">© 2026 NextUI Inc. All rights reserved.</p>
       <ThemeSegment />
       {/* oversized text wordmark, clipped (heroui.com shows its logo here; we use text only) */}
-      <div aria-hidden className="mx-auto mt-4 flex h-[200px] w-full max-w-5xl items-start justify-center overflow-hidden max-md:h-[120px] max-sm:hidden">
-        <span className="select-none font-display font-semibold text-[300px] text-foreground/5 leading-[0.8] tracking-[-0.06em] max-md:text-[180px]">hero</span>
+      <div aria-hidden className="mx-auto -mt-2 h-[200px] w-full max-w-5xl overflow-hidden max-md:h-[120px] max-sm:hidden">
+        {/* dashed-outline text wordmark (heroui.com draws its logo this way; we use our own bars + text) */}
+        <svg viewBox="0 0 1000 400" className="w-full select-none text-foreground/15" fill="none" stroke="currentColor" strokeWidth="1.6" strokeDasharray="6 5">
+          <rect x="4" y="4" width="92" height="396" rx="28" />
+          <rect x="112" y="84" width="92" height="316" rx="28" />
+          <text x="232" y="350" fontSize="420" fontWeight="600" letterSpacing="-22" style={{ fontFamily: "var(--font-display)" }}>hero</text>
+        </svg>
       </div>
     </footer>
   )
