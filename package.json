@@ -5,8 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/build-skills.mjs",
     "build": "next build",
     "start": "next start",
+    "skills:build": "node scripts/build-skills.mjs",
+    "skills:check": "node scripts/build-skills.mjs --check",
+    "test:skills": "node scripts/test-theme-script.mjs",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
