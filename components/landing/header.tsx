@@ -136,6 +136,11 @@ export function SiteHeader() {
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
+              <NavigationMenuLink href="/docs/skills" className="h-8 px-2 font-medium text-muted-foreground text-sm hover:bg-transparent hover:text-foreground">
+                Skills
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <NavigationMenuLink href="#" className="h-8 px-2 font-medium text-muted-foreground text-sm hover:bg-transparent hover:text-foreground">
                 Enterprise
               </NavigationMenuLink>
@@ -165,11 +170,11 @@ export function SiteHeader() {
                 <SheetTitle>Menu</SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-4">
-                {["Products", "Docs", "Themes", "Registry", "Resources", "Enterprise"].map((l) =>
-                  l === "Docs" || l === "Themes" || l === "Registry" ? (
+                {["Products", "Docs", "Themes", "Registry", "Skills", "Resources", "Enterprise"].map((l) =>
+                  l === "Docs" || l === "Themes" || l === "Registry" || l === "Skills" ? (
                     <a
                       key={l}
-                      href={l === "Docs" ? "/docs" : l === "Themes" ? "/themes" : "/registry"}
+                      href={l === "Docs" ? "/docs" : l === "Themes" ? "/themes" : l === "Skills" ? "/docs/skills" : "/registry"}
                       className={buttonVariants({ variant: "ghost", className: "justify-start" })}
                     >
                       {l}

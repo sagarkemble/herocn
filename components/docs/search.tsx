@@ -41,6 +41,17 @@ export function DocsSearch() {
 					<CommandInput placeholder="Search components..." />
 					<CommandList>
 						<CommandEmpty>No components found.</CommandEmpty>
+						<CommandGroup heading="Guides">
+							<CommandItem
+								value="agent skills docs skills shadcn-to-heroui heroui-customize"
+								onSelect={() => {
+									setOpen(false);
+									router.push("/docs/skills");
+								}}
+							>
+								Agent skills
+							</CommandItem>
+						</CommandGroup>
 						{groups.map(([group, slugs]) => (
 							<CommandGroup key={group} heading={group}>
 								{slugs.map((slug) => (

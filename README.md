@@ -9,6 +9,17 @@ npx shadcn@latest registry add "@herocn=https://herocn.sagarkemble.dev/r/{name}.
 npx shadcn@latest add @herocn/button
 ```
 
+## Agent skills
+
+Docs: [/docs/skills](https://herocn.sagarkemble.dev/docs/skills). After this repo is on GitHub:
+
+```bash
+npx skills add sagarkemble/herocn --skill shadcn-to-heroui
+npx skills add sagarkemble/herocn --skill heroui-customize
+```
+
+Zips: [`/skills/shadcn-to-heroui.zip`](https://herocn.sagarkemble.dev/skills/shadcn-to-heroui.zip), [`/skills/heroui-customize.zip`](https://herocn.sagarkemble.dev/skills/heroui-customize.zip).
+
 ## Adding components (this repo)
 
 ```bash

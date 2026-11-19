@@ -42,7 +42,8 @@ export default function RegistryPage() {
           <h1 className="font-semibold text-4xl tracking-tight">shadcn registry</h1>
           <p className="max-w-2xl text-muted-foreground">
             Install HeroUI-styled shadcn primitives, tokens, and app templates with the CLI. {registry.items.length}{" "}
-            items. Source catalog also lives at <code className="text-foreground">/r/registry.json</code>.
+            items. Source catalog also lives at <code className="text-foreground">/r/registry.json</code>. Agent skills
+            (migrate + re-theme) are on <a className="text-foreground underline-offset-4 hover:underline" href="/docs/skills">/docs/skills</a>.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">

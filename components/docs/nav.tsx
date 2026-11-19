@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "cn";
 
 import { docsHref, groups, pageBySlug } from "./data";
 
@@ -24,9 +23,21 @@ export function DocsNav({ onNavigate }: { onNavigate?: () => void }) {
 	}, [pathname]);
 	return (
 		<nav ref={ref} aria-label="Components" className="flex w-full flex-col gap-0.5 pt-1 pb-14">
-			{groups.map(([group, slugs], gi) => (
+			<div className="flex flex-col gap-0.5">
+				<p className="flex h-7 items-center px-2 font-medium text-(--docs-fg-subtle) text-[13px] leading-[18px]">Guides</p>
+				<Link
+					href="/docs/skills"
+					onClick={onNavigate}
+					data-active={pathname === "/docs/skills"}
+					aria-current={pathname === "/docs/skills" ? "page" : undefined}
+					className="relative flex min-h-7 w-full items-center gap-2 rounded-lg px-2 py-[5px] text-start font-medium text-(--docs-fg) text-[13px] leading-[18px] outline-none transition-colors hover:bg-(--docs-item-hover) focus-visible:focus-ring data-[active=true]:bg-(--docs-item-active) data-[active=true]:text-foreground"
+				>
+					Agent skills
+				</Link>
+			</div>
+			{groups.map(([group, slugs]) => (
 				<div key={group} className="flex flex-col gap-0.5">
-					<p className={cn("flex h-7 items-center px-2 font-medium text-(--docs-fg-subtle) text-[13px] leading-[18px]", gi > 0 && "mt-2")}>
+					<p className="mt-2 flex h-7 items-center px-2 font-medium text-(--docs-fg-subtle) text-[13px] leading-[18px]">
 						{group}
 					</p>
 					{slugs.map((slug) => {

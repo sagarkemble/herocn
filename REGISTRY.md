@@ -102,3 +102,7 @@ npx shadcn@latest view http://localhost:3103/r/button.json
 ```
 
 Optional: submit `@herocn` to the [shadcn registry index](https://ui.shadcn.com/docs/registry/registry-index) with URL `https://herocn.sagarkemble.dev/r/{name}.json`.
+
+## Agent skills
+
+Same GitHub repo can also be installed as skills (`npx skills add sagarkemble/herocn --skill shadcn-to-heroui` or `heroui-customize`). Page: [https://herocn.sagarkemble.dev/docs/skills](https://herocn.sagarkemble.dev/docs/skills).
