@@ -53,3 +53,10 @@ The remote assistant ("heroui" on Grok Bot) stopped mid-work because usage ran o
 3. Make sure there are zero hydration errors, and no `<button>` inside `<button>` or `<a>` inside `<a>` (use `inert` previews plus a stretched trigger, as on the landing page).
 4. Take side-by-side screenshots against heroui.com.
 5. Amend or replace this WIP commit with clean commits: `Pass 5: docs pages` and `Pass 6: theme editor`. Delete `HANDOFF.md` and `handoff/` when done, or keep them as notes.
+
+---
+## UPDATE (Nov 19, 6:55 PM IST): skills work (latest, read this first)
+The library is now the @herocn registry. Commits must use Conventional Commits (see `.cursor/rules`).
+The current task is in **`handoff/skills.md`**: two agent skills, `skills/shadcn-to-heroui` (migrate) and `skills/heroui-customize` (theme link, pasted CSS or preset), plus publishing them on a `/docs/skills` page.
+- **Done:** both skills are built. The customize script matches the theme page's View code in 41/41 cases. `scripts/build-skills.mjs` produces the zips in `public/skills/`.
+- **Todo:** the `/docs/skills` page and its links, the `package.json` scripts, verification, and the e2e test on a fresh shadcn app. Then squash or replace the WIP commit with clean conventional commits.
