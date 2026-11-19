@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 
 import {Toaster} from "@/components/ui/toast";
 import {TooltipProvider} from "@/components/ui/tooltip";
+import {cn} from "cn";
 import {
   THEME_BUILDER_CONTENT_ID,
   THEME_BUILDER_PAGE_ID,
@@ -22,6 +23,7 @@ import {MobileFooter} from "./mobile-footer";
 import {Onboarding} from "./onboarding";
 import {FontFamilyPopover, RadiusPopover, ThemePopover} from "./option-popovers";
 import {t} from "./strings";
+import {DemoTemplates} from "./templates";
 import {toastManager} from "./toast";
 
 export function ThemeBuilder() {
@@ -49,20 +51,20 @@ export function ThemeBuilder() {
         >
           <BuilderHeader codeOpen={codeOpen} onToggleCode={() => setCodeOpen((o) => !o)} />
           <div className="mx-auto flex h-full min-h-0 w-full max-w-[1400px] flex-col">
-            <div className="overflow-scroll rounded-2xl border border-border/50 [scrollbar-width:none]">
+            <div
+              className={cn(
+                "rounded-2xl border border-border/50 [scrollbar-width:none]",
+                tab === "components" ? "overflow-scroll" : "min-h-0 flex-1 overflow-hidden",
+              )}
+            >
               <div
-                className="flex min-h-full w-full flex-1 bg-background px-4 py-8 font-sans"
+                className={cn(
+                  "flex w-full bg-background font-sans",
+                  tab === "components" ? "min-h-full flex-1 px-4 py-8" : "h-full min-h-0 overflow-hidden",
+                )}
                 id={THEME_BUILDER_CONTENT_ID}
               >
-                {tab === "components" ? (
-                  mounted ? (
-                    <DemoComponents />
-                  ) : null
-                ) : (
-                  <div className="flex flex-1 items-center justify-center p-8 text-center text-muted-foreground">
-                    HeroUI Pro templates are not part of this clone
-                  </div>
-                )}
+                {tab === "components" ? mounted ? <DemoComponents /> : null : mounted ? <DemoTemplates tab={tab} /> : null}
               </div>
             </div>
           </div>
