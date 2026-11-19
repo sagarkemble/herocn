@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { useTheme } from "next-themes"
 import { EqualIcon, MonitorIcon, MoonIcon, SunIcon } from "lucide-react"
 import { siGithub } from "simple-icons"
@@ -20,26 +21,15 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { BrandIcon, ctaPrimary } from "./ui-bits"
 
-const menus: Record<string, { title: string; description: string; href?: string }[]> = {
-  Products: [
-    { title: "HeroUI Open Source", description: "Free components for React and React Native." },
-    { title: "HeroUI Pro", description: "Premium components, templates, themes, and more." },
-    { title: "HeroUI Agents", description: "An embeddable agent that takes action inside your product." },
-    { title: "HeroSpace", description: "Mail, calendar, and tasks in one Mac app." },
-  ],
-  Docs: [
-    { title: "HeroUI React", description: "Quick start, components, theming, styling.", href: "/docs" },
-    { title: "HeroUI Native", description: "Components for React Native." },
-    { title: "HeroUI Pro", description: "Components, templates, Figma, licensing." },
-    { title: "HeroUI Agents", description: "Installation, generative UI, API reference." },
-  ],
-  Resources: [
-    { title: "Blog", description: "Guides and updates." },
-    { title: "For coding agents", description: "MCPs, agent skills, llms.txt, AGENTS.md." },
-    { title: "Discord", description: "Get help and share what you ship." },
-    { title: "Releases", description: "What's new across HeroUI." },
-  ],
-}
+const resources = [
+  { title: "Blog", description: "Guides and updates." },
+  { title: "For coding agents", description: "MCPs, agent skills, llms.txt, AGENTS.md.", href: "/docs/skills" },
+  { title: "Discord", description: "Get help and share what you ship." },
+  { title: "Releases", description: "What's new across HeroUI." },
+]
+
+const navLinkClass =
+  "inline-flex h-8 items-center px-2 font-medium text-muted-foreground text-sm hover:text-foreground"
 
 /** Text wordmark (no logo artwork copied). */
 export function Wordmark({ className }: { className?: string }) {
@@ -104,16 +94,24 @@ export function SiteHeader() {
         )}
       >
         <Wordmark className="justify-self-start" />
-        <NavigationMenu className={cn("transition-transform duration-300 motion-reduce:transition-none max-md:hidden", scrolled && "md:-translate-x-1")}>
-          <NavigationMenuList className="gap-1">
-            {Object.entries(menus).map(([label, items]) => (
-              <NavigationMenuItem key={label}>
+        <nav
+          className={cn(
+            "flex items-center gap-1 transition-transform duration-300 motion-reduce:transition-none max-md:hidden",
+            scrolled && "md:-translate-x-1",
+          )}
+        >
+          <Link href="/docs" className={navLinkClass}>
+            Docs
+          </Link>
+          <NavigationMenu>
+            <NavigationMenuList className="gap-1">
+              <NavigationMenuItem>
                 <NavigationMenuTrigger className="h-8 bg-transparent px-2 font-medium text-muted-foreground text-sm hover:bg-transparent hover:text-foreground data-[popup-open]:bg-transparent data-[popup-open]:text-foreground">
-                  {label}
+                  Resources
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[30rem] grid-cols-2 gap-1 p-1">
-                    {items.map((p) => (
+                    {resources.map((p) => (
                       <li key={p.title}>
                         <NavigationMenuLink href={p.href ?? "#"} className="flex flex-col items-start gap-1">
                           <span className="font-medium text-sm">{p.title}</span>
@@ -124,29 +122,15 @@ export function SiteHeader() {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-            ))}
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/themes" className="h-8 px-2 font-medium text-muted-foreground text-sm hover:bg-transparent hover:text-foreground">
-                Themes
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/registry" className="h-8 px-2 font-medium text-muted-foreground text-sm hover:bg-transparent hover:text-foreground">
-                Registry
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/docs/skills" className="h-8 px-2 font-medium text-muted-foreground text-sm hover:bg-transparent hover:text-foreground">
-                Skills
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="#" className="h-8 px-2 font-medium text-muted-foreground text-sm hover:bg-transparent hover:text-foreground">
-                Enterprise
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <Link href="/themes" className={navLinkClass}>
+            Themes
+          </Link>
+          <Link href="/docs/skills" className={navLinkClass}>
+            Skills
+          </Link>
+        </nav>
         <div className="flex h-8 items-center gap-5 justify-self-end max-md:gap-1.5">
           <a
             href="#"
@@ -170,20 +154,23 @@ export function SiteHeader() {
                 <SheetTitle>Menu</SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-4">
-                {["Products", "Docs", "Themes", "Registry", "Skills", "Resources", "Enterprise"].map((l) =>
-                  l === "Docs" || l === "Themes" || l === "Registry" || l === "Skills" ? (
-                    <a
-                      key={l}
-                      href={l === "Docs" ? "/docs" : l === "Themes" ? "/themes" : l === "Skills" ? "/docs/skills" : "/registry"}
-                      className={buttonVariants({ variant: "ghost", className: "justify-start" })}
-                    >
-                      {l}
-                    </a>
-                  ) : (
-                    <Button key={l} variant="ghost" className="justify-start">
-                      {l}
+                {(
+                  [
+                    ["Docs", "/docs"],
+                    ["Themes", "/themes"],
+                    ["Skills", "/docs/skills"],
+                    ["Resources", "#"],
+                  ] as const
+                ).map(([label, href]) =>
+                  href === "#" ? (
+                    <Button key={label} variant="ghost" className="justify-start">
+                      {label}
                     </Button>
-                  )
+                  ) : (
+                    <a key={label} href={href} className={buttonVariants({ variant: "ghost", className: "justify-start" })}>
+                      {label}
+                    </a>
+                  ),
                 )}
                 <Separator className="my-2" />
                 <div className="flex items-center justify-between">
