@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marker",
+  "title": "Marker",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Marker primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority",
+    "cn"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/marker.tsx",
+      "content": "import { mergeProps } from \"@base-ui/react/merge-props\";\nimport { useRender } from \"@base-ui/react/use-render\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"cn\";\nimport type * as React from \"react\";\n\nconst markerVariants = cva(\n\t\"group/marker relative flex min-h-4 w-full items-center gap-2 text-start text-muted-foreground text-sm [&_svg:not([class*='size-'])]:size-4 [a]:underline [a]:underline-offset-3 [a]:hover:text-foreground\",\n\t{\n\t\tvariants: {\n\t\t\tvariant: {\n\t\t\t\tdefault: \"\",\n\t\t\t\tseparator:\n\t\t\t\t\t\"before:me-1 before:h-px before:min-w-0 before:flex-1 before:bg-border after:ms-1 after:h-px after:min-w-0 after:flex-1 after:bg-border\",\n\t\t\t\tborder: \"border-border border-b pb-2\",\n\t\t\t},\n\t\t},\n\t},\n);\n\nfunction Marker({\n\tclassName,\n\tvariant = \"default\",\n\trender,\n\t...props\n}: useRender.ComponentProps<\"div\"> & VariantProps<typeof markerVariants>) {\n\treturn useRender({\n\t\tdefaultTagName: \"div\",\n\t\tprops: mergeProps<\"div\">(\n\t\t\t{\n\t\t\t\tclassName: cn(markerVariants({ variant, className })),\n\t\t\t},\n\t\t\tprops,\n\t\t),\n\t\trender,\n\t\tstate: {\n\t\t\tslot: \"marker\",\n\t\t\tvariant,\n\t\t},\n\t});\n}\n\nfunction MarkerIcon({ className, ...props }: React.ComponentProps<\"span\">) {\n\treturn (\n\t\t<span\n\t\t\tdata-slot=\"marker-icon\"\n\t\t\taria-hidden=\"true\"\n\t\t\tclassName={cn(\n\t\t\t\t\"size-4 shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction MarkerContent({ className, ...props }: React.ComponentProps<\"span\">) {\n\treturn (\n\t\t<span\n\t\t\tdata-slot=\"marker-content\"\n\t\t\tclassName={cn(\n\t\t\t\t\"wrap-break-word min-w-0 group-data-[variant=separator]/marker:flex-none group-data-[variant=separator]/marker:text-center *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { Marker, MarkerContent, MarkerIcon, markerVariants };\n",
+      "type": "registry:ui",
+      "target": "@ui/marker.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "utils",
+  "title": "cn utils",
+  "author": "Sagar Kemble",
+  "description": "Re-exports cn from the cn package for @/lib/utils imports.",
+  "dependencies": [
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "lib/utils.ts",
+      "content": "export { cn } from \"cn\"\n",
+      "type": "registry:lib",
+      "target": "@lib/utils.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

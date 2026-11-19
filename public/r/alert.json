@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "title": "Alert",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Alert primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "class-variance-authority",
+    "cn"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/alert.tsx",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"cn\";\nimport type * as React from \"react\";\n\nconst alertVariants = cva(\n\t\"group/alert relative grid w-full gap-1 rounded-3xl border-none bg-card px-4 py-3 text-start text-card-foreground text-sm shadow-md has-data-[slot=alert-action]:relative has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-4 has-data-[slot=alert-action]:pe-18 *:[svg:not([class*='size-'])]:size-4 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current\",\n\t{\n\t\tvariants: {\n\t\t\tvariant: {\n\t\t\t\tdefault: \"\",\n\t\t\t\tprimary:\n\t\t\t\t\t\"*:data-[slot=alert-title]:text-primary-soft-foreground *:[svg]:text-primary-soft-foreground\",\n\t\t\t\tsuccess:\n\t\t\t\t\t\"*:data-[slot=alert-title]:text-success-soft-foreground *:[svg]:text-success-soft-foreground\",\n\t\t\t\twarning:\n\t\t\t\t\t\"*:data-[slot=alert-title]:text-warning-soft-foreground *:[svg]:text-warning-soft-foreground\",\n\t\t\t\tdestructive:\n\t\t\t\t\t\"*:data-[slot=alert-title]:text-destructive-soft-foreground *:[svg]:text-destructive-soft-foreground\",\n\t\t\t},\n\t\t},\n\t\tdefaultVariants: {\n\t\t\tvariant: \"default\",\n\t\t},\n\t},\n);\n\nfunction Alert({\n\tclassName,\n\tvariant,\n\t...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof alertVariants>) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"alert\"\n\t\t\trole=\"alert\"\n\t\t\tclassName={cn(alertVariants({ variant }), className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction AlertTitle({ className, ...props }: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"alert-title\"\n\t\t\tclassName={cn(\n\t\t\t\t\"font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction AlertDescription({\n\tclassName,\n\t...props\n}: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"alert-description\"\n\t\t\tclassName={cn(\n\t\t\t\t\"text-balance text-muted-foreground text-sm md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction AlertAction({ className, ...props }: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"alert-action\"\n\t\t\tclassName={cn(\"absolute end-3 top-2.5\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { Alert, AlertAction, AlertDescription, AlertTitle };\n",
+      "type": "registry:ui",
+      "target": "@ui/alert.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

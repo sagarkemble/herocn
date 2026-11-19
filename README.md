@@ -1,10 +1,15 @@
-# Next.js template
+# herocn demo + registry
 
-This is a Next.js template with shadcn/ui.
+Next.js app that restyles shadcn/ui (Base UI, nova) to HeroUI v3 and **publishes those files as a shadcn registry** (`@herocn`).
 
-## Adding components
+Live site: [https://herocn.sagarkemble.dev](https://herocn.sagarkemble.dev). Docs: [REGISTRY.md](./REGISTRY.md). Catalog: [/registry](https://herocn.sagarkemble.dev/registry). JSON: [/r/registry.json](https://herocn.sagarkemble.dev/r/registry.json).
 
-To add components to your app, run the following command:
+```bash
+npx shadcn@latest registry add "@herocn=https://herocn.sagarkemble.dev/r/{name}.json"
+npx shadcn@latest add @herocn/button
+```
+
+## Adding components (this repo)
 
 ```bash
 npx shadcn@latest add button

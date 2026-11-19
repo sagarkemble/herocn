@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group",
+  "title": "Radio Group",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Radio Group primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "@base-ui/react",
+    "cn"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/radio-group.tsx",
+      "content": "\"use client\";\n\nimport { Radio as RadioPrimitive } from \"@base-ui/react/radio\";\nimport { RadioGroup as RadioGroupPrimitive } from \"@base-ui/react/radio-group\";\n\nimport { cn } from \"cn\";\n\nfunction RadioGroup({\n\tclassName,\n\tvariant = \"default\",\n\t...props\n}: RadioGroupPrimitive.Props & { variant?: \"default\" | \"secondary\" }) {\n\treturn (\n\t\t<RadioGroupPrimitive\n\t\t\tdata-slot=\"radio-group\"\n\t\t\tdata-variant={variant}\n\t\t\tclassName={cn(\"group/radio-group grid w-full gap-3\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction RadioGroupItem({ className, ...props }: RadioPrimitive.Root.Props) {\n\treturn (\n\t\t<RadioPrimitive.Root\n\t\t\tdata-slot=\"radio-group-item\"\n\t\t\tclassName={cn(\n\t\t\t\t\"group/radio-group-item peer not-aria-invalid:focus-visible:focus-ring aria-invalid:not-focus-visible:invalid-field-ring aria-invalid:focus-visible:invalid-field-ring-focus relative flex aspect-square size-4 shrink-0 rounded-3xl border-none bg-input shadow-sm outline-none brightness-100 transition-[color,background-color,box-shadow,opacity,scale,filter] duration-200 after:absolute after:-inset-x-3 after:-inset-y-2 active:scale-90 disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-primary data-checked:text-primary-foreground hover:data-unchecked:brightness-97 group-data-[variant=secondary]/radio-group:shadow-none group-data-[variant=secondary]/radio-group:data-unchecked:bg-default dark:hover:data-unchecked:brightness-125\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t>\n\t\t\t<RadioPrimitive.Indicator\n\t\t\t\tdata-slot=\"radio-group-indicator\"\n\t\t\t\tclassName=\"flex size-4 items-center justify-center\"\n\t\t\t>\n\t\t\t\t<span className=\"absolute start-1/2 top-1/2 size-1.75 -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-primary-foreground transition-transform duration-200 group-active/radio-group-item:scale-120 rtl:translate-x-1/2\" />\n\t\t\t</RadioPrimitive.Indicator>\n\t\t</RadioPrimitive.Root>\n\t);\n}\n\nexport { RadioGroup, RadioGroupItem };\n",
+      "type": "registry:ui",
+      "target": "@ui/radio-group.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

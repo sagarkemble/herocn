@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "title": "Collapsible",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Collapsible primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/collapsible.tsx",
+      "content": "\"use client\";\n\nimport { Collapsible as CollapsiblePrimitive } from \"@base-ui/react/collapsible\";\n\nfunction Collapsible({ ...props }: CollapsiblePrimitive.Root.Props) {\n\treturn <CollapsiblePrimitive.Root data-slot=\"collapsible\" {...props} />;\n}\n\nfunction CollapsibleTrigger({ ...props }: CollapsiblePrimitive.Trigger.Props) {\n\treturn (\n\t\t<CollapsiblePrimitive.Trigger data-slot=\"collapsible-trigger\" {...props} />\n\t);\n}\n\nfunction CollapsibleContent({\n\thiddenUntilFound = true,\n\t...props\n}: CollapsiblePrimitive.Panel.Props) {\n\treturn (\n\t\t<CollapsiblePrimitive.Panel\n\t\t\thiddenUntilFound={hiddenUntilFound}\n\t\t\tdata-slot=\"collapsible-content\"\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { Collapsible, CollapsibleContent, CollapsibleTrigger };\n",
+      "type": "registry:ui",
+      "target": "@ui/collapsible.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

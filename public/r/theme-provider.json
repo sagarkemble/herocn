@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-provider",
+  "title": "Theme provider",
+  "author": "Sagar Kemble",
+  "description": "next-themes provider with a D hotkey to toggle light/dark.",
+  "dependencies": [
+    "next-themes",
+    "cn"
+  ],
+  "files": [
+    {
+      "path": "components/theme-provider.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { ThemeProvider as NextThemesProvider, useTheme } from \"next-themes\"\n\nfunction ThemeProvider({\n  children,\n  ...props\n}: React.ComponentProps<typeof NextThemesProvider>) {\n  return (\n    <NextThemesProvider\n      attribute=\"class\"\n      defaultTheme=\"system\"\n      enableSystem\n      disableTransitionOnChange\n      // React 19 logs \"Encountered a script tag\" when next-themes' inline script is rendered on the client.\n      // The server HTML keeps an executable script (so the theme is applied before paint); on the client the\n      // same element is typed text/plain, which React does not warn about. See next-themes issue #367.\n      scriptProps={{ type: typeof window === \"undefined\" ? \"text/javascript\" : \"text/plain\", suppressHydrationWarning: true } as React.ComponentProps<typeof NextThemesProvider>[\"scriptProps\"]}\n      {...props}\n    >\n      <ThemeHotkey />\n      {children}\n    </NextThemesProvider>\n  )\n}\n\nfunction isTypingTarget(target: EventTarget | null) {\n  if (!(target instanceof HTMLElement)) {\n    return false\n  }\n\n  return (\n    target.isContentEditable ||\n    target.tagName === \"INPUT\" ||\n    target.tagName === \"TEXTAREA\" ||\n    target.tagName === \"SELECT\"\n  )\n}\n\nfunction ThemeHotkey() {\n  const { resolvedTheme, setTheme } = useTheme()\n\n  React.useEffect(() => {\n    function onKeyDown(event: KeyboardEvent) {\n      if (event.defaultPrevented || event.repeat) {\n        return\n      }\n\n      if (event.metaKey || event.ctrlKey || event.altKey) {\n        return\n      }\n\n      if (event.key.toLowerCase() !== \"d\") {\n        return\n      }\n\n      if (isTypingTarget(event.target)) {\n        return\n      }\n\n      setTheme(resolvedTheme === \"dark\" ? \"light\" : \"dark\")\n    }\n\n    window.addEventListener(\"keydown\", onKeyDown)\n\n    return () => {\n      window.removeEventListener(\"keydown\", onKeyDown)\n    }\n  }, [resolvedTheme, setTheme])\n\n  return null\n}\n\nexport { ThemeProvider }\n",
+      "type": "registry:component",
+      "target": "@components/theme-provider.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

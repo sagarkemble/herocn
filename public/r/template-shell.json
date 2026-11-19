@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "template-shell",
+  "title": "Shell template",
+  "author": "Sagar Kemble",
+  "description": "Theme-builder preview of a Shell app, built from @herocn UI components.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@herocn/style",
+    "@herocn/avatar",
+    "@herocn/badge",
+    "@herocn/button",
+    "@herocn/card"
+  ],
+  "files": [
+    {
+      "path": "components/themes/templates/shell.tsx",
+      "content": "\"use client\";\n\nimport type {LucideIcon} from \"lucide-react\";\nimport {CircleHelpIcon, LogOutIcon, PanelLeftIcon} from \"lucide-react\";\n\nimport {Avatar, AvatarFallback} from \"@/components/ui/avatar\";\nimport {Badge} from \"@/components/ui/badge\";\nimport {Button} from \"@/components/ui/button\";\nimport {Card, CardDescription} from \"@/components/ui/card\";\n\nexport type TemplateNavItem = {\n  title: string;\n  icon: LucideIcon;\n  active?: boolean;\n  badge?: string;\n};\n\nexport function TemplateShell({\n  user,\n  nav,\n  heading,\n  actions,\n  children,\n}: {\n  user: {name: string; caption: string; initials: string};\n  nav: TemplateNavItem[];\n  heading: React.ReactNode;\n  actions?: React.ReactNode;\n  children: React.ReactNode;\n}) {\n  return (\n    <div className=\"flex h-full min-h-0 w-full bg-background text-sm\">\n      <aside className=\"flex w-52 shrink-0 flex-col gap-1 p-3 max-md:hidden\">\n        <div className=\"mb-3 flex items-center gap-2 px-1\">\n          <Avatar>\n            <AvatarFallback className=\"bg-primary-soft text-primary-soft-foreground\">{user.initials}</AvatarFallback>\n          </Avatar>\n          <div className=\"min-w-0 leading-tight\">\n            <p className=\"truncate font-medium\">{user.name}</p>\n            <p className=\"truncate text-muted-foreground text-xs\">{user.caption}</p>\n          </div>\n        </div>\n        {nav.map((item) => (\n          <Button\n            key={item.title}\n            className=\"w-full justify-start\"\n            size=\"sm\"\n            variant={item.active ? \"secondary\" : \"ghost\"}\n          >\n            <item.icon data-icon=\"inline-start\" />\n            <span className=\"flex-1 text-start\">{item.title}</span>\n            {item.badge ? (\n              <Badge size=\"sm\" variant=\"success\">\n                {item.badge}\n              </Badge>\n            ) : null}\n          </Button>\n        ))}\n        <div className=\"mt-auto flex flex-col gap-1\">\n          <Button className=\"w-full justify-start\" size=\"sm\" variant=\"ghost\">\n            <CircleHelpIcon data-icon=\"inline-start\" />\n            Help & Information\n          </Button>\n          <Button className=\"w-full justify-start\" size=\"sm\" variant=\"ghost\">\n            <LogOutIcon data-icon=\"inline-start\" />\n            Log out\n          </Button>\n        </div>\n      </aside>\n      <div className=\"flex min-h-0 min-w-0 flex-1 flex-col\">\n        <div className=\"flex items-center justify-between gap-3 px-4 py-3\">\n          <div className=\"flex min-w-0 items-center gap-2\">\n            <PanelLeftIcon className=\"size-4 shrink-0 text-muted-foreground\" />\n            <h2 className=\"truncate font-semibold text-lg\">{heading}</h2>\n          </div>\n          {actions ? <div className=\"flex shrink-0 items-center gap-1\">{actions}</div> : null}\n        </div>\n        <div className=\"min-h-0 flex-1 overflow-auto px-4 pb-4\">{children}</div>\n      </div>\n    </div>\n  );\n}\n\nexport function KpiCard({\n  label,\n  value,\n  delta,\n  up = true,\n  suffix,\n}: {\n  label: string;\n  value: string;\n  delta?: string;\n  up?: boolean;\n  suffix?: string;\n}) {\n  return (\n    <Card size=\"sm\">\n      <CardDescription>{label}</CardDescription>\n      <div className=\"flex items-center justify-between gap-2\">\n        <span className=\"font-semibold text-xl tabular-nums\">{value}</span>\n        {suffix ? <span className=\"text-muted-foreground text-sm\">{suffix}</span> : null}\n        {delta ? (\n          <Badge size=\"sm\" variant={up ? \"success\" : \"destructive\"}>\n            {up ? \"↑\" : \"↓\"} {delta}\n          </Badge>\n        ) : null}\n      </div>\n    </Card>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/herocn/shell.tsx"
+    }
+  ],
+  "categories": [
+    "block",
+    "template",
+    "shell"
+  ],
+  "type": "registry:block"
+}

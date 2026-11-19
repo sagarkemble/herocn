@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table",
+  "title": "Table",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Table primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "cn"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/table.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"cn\";\nimport type * as React from \"react\";\n\nfunction Table({\n\tclassName,\n\tcontainerClassName,\n\tvariant = \"primary\",\n\t...props\n}: React.ComponentProps<\"table\"> & {\n\tvariant?: \"primary\" | \"secondary\";\n\tcontainerClassName?: string;\n}) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"table-container\"\n\t\t\tdata-variant={variant}\n\t\t\tclassName={cn(\n\t\t\t\t\"group/table no-scrollbar relative w-full overflow-x-auto\",\n\t\t\t\tvariant === \"primary\" && \"rounded-3xl bg-surface-secondary p-1\",\n\t\t\t\tcontainerClassName,\n\t\t\t)}\n\t\t>\n\t\t\t<table\n\t\t\t\tdata-slot=\"table\"\n\t\t\t\tclassName={cn(\"w-full caption-bottom text-sm\", className)}\n\t\t\t\t{...props}\n\t\t\t/>\n\t\t</div>\n\t);\n}\n\nfunction TableHeader({ className, ...props }: React.ComponentProps<\"thead\">) {\n\treturn (\n\t\t<thead\n\t\t\tdata-slot=\"table-header\"\n\t\t\tclassName={cn(\n\t\t\t\t\"group-data-[variant=primary]/table:bg-surface-secondary [&_tr]:border-b-0\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TableBody({ className, ...props }: React.ComponentProps<\"tbody\">) {\n\treturn (\n\t\t<tbody\n\t\t\tdata-slot=\"table-body\"\n\t\t\tclassName={cn(\n\t\t\t\t\"[&_tr:last-child]:border-b-0\",\n\t\t\t\t\"group-data-[variant=primary]/table:[&_tr:first-child_td:first-child]:rounded-ss-3xl group-data-[variant=primary]/table:[&_tr:first-child_td:last-child]:rounded-se-3xl group-data-[variant=primary]/table:[&_tr:last-child_td:first-child]:rounded-es-3xl group-data-[variant=primary]/table:[&_tr:last-child_td:last-child]:rounded-ee-3xl\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TableFooter({ className, ...props }: React.ComponentProps<\"tfoot\">) {\n\treturn (\n\t\t<tfoot\n\t\t\tdata-slot=\"table-footer\"\n\t\t\tclassName={cn(\n\t\t\t\t\"[&_tr]:[&_td]:!bg-transparent font-medium group-data-[variant=secondary]/table:border-border/50 group-data-[variant=secondary]/table:border-t [&>tr]:last:border-b-0\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TableRow({ className, ...props }: React.ComponentProps<\"tr\">) {\n\treturn (\n\t\t<tr\n\t\t\tdata-slot=\"table-row\"\n\t\t\tclassName={cn(\n\t\t\t\t\"border-border/50 border-b transition-colors data-[state=selected]:[&_td]:bg-surface/10\",\n\t\t\t\t\"group-data-[variant=primary]/table:hover:[&_td]:bg-surface/40\",\n\t\t\t\t\"group-data-[variant=secondary]/table:hover:[&_td]:bg-default/50\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TableHead({ className, ...props }: React.ComponentProps<\"th\">) {\n\treturn (\n\t\t<th\n\t\t\tdata-slot=\"table-head\"\n\t\t\tclassName={cn(\n\t\t\t\t\"relative px-4 py-2.5 text-start font-medium text-muted-foreground text-xs after:pointer-events-none after:absolute after:end-0 after:top-1/2 after:h-4 after:w-px after:-translate-y-1/2 after:rounded-sm after:bg-border/50 after:content-['']\",\n\t\t\t\t\"group-data-[variant=secondary]/table:bg-surface-secondary group-data-[variant=secondary]/table:last:rounded-e-xl group-data-[variant=secondary]/table:first:rounded-s-xl\",\n\t\t\t\t\"[&:has([role=checkbox])]:pe-0\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TableCell({ className, ...props }: React.ComponentProps<\"td\">) {\n\treturn (\n\t\t<td\n\t\t\tdata-slot=\"table-cell\"\n\t\t\tclassName={cn(\n\t\t\t\t\"px-4 py-3 align-middle text-foreground text-sm\",\n\t\t\t\t\"group-data-[variant=primary]/table:bg-surface\",\n\t\t\t\t\"[&:has([role=checkbox])]:pe-0\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TableCaption({\n\tclassName,\n\t...props\n}: React.ComponentProps<\"caption\">) {\n\treturn (\n\t\t<caption\n\t\t\tdata-slot=\"table-caption\"\n\t\t\tclassName={cn(\"my-1.5 text-muted-foreground text-sm\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport {\n\tTable,\n\tTableBody,\n\tTableCaption,\n\tTableCell,\n\tTableFooter,\n\tTableHead,\n\tTableHeader,\n\tTableRow,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/table.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

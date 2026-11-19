@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select",
+  "title": "Native Select",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Native Select primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "cn",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/native-select.tsx",
+      "content": "import { cn } from \"cn\";\nimport { ChevronDownIcon } from \"lucide-react\";\nimport type * as React from \"react\";\n\ntype NativeSelectProps = React.ComponentProps<\"select\"> & {\n\tvariant?: \"default\" | \"secondary\";\n};\n\nfunction NativeSelect({\n\tclassName,\n\tvariant = \"default\",\n\t...props\n}: NativeSelectProps) {\n\treturn (\n\t\t<div\n\t\t\tclassName={cn(\n\t\t\t\t\"relative w-fit has-[select:disabled]:opacity-50\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\tdata-slot=\"native-select-wrapper\"\n\t\t\tdata-variant={variant}\n\t\t>\n\t\t\t<select\n\t\t\t\tdata-slot=\"native-select\"\n\t\t\t\tdata-variant={variant}\n\t\t\t\tclassName={cn(\n\t\t\t\t\t\"w-full min-w-36 appearance-none rounded-xl bg-input px-2.5 py-1.5 pe-8 text-sm shadow-xs outline-none transition-[background-color,box-shadow,opacity,filter] placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[variant=secondary]:bg-default data-[variant=secondary]:shadow-none md:px-3 md:py-2 dark:brightness-100\",\n\t\t\t\t\t\"aria-invalid:not-focus-visible:invalid-field-ring\",\n\t\t\t\t\t\"aria-invalid:focus-visible:invalid-field-ring-focus\",\n\t\t\t\t\t\"not-aria-invalid:focus-visible:focus-field-ring not-aria-invalid:focus-visible:ring-ring\",\n\t\t\t\t\t\"hover:not-focus-visible:brightness-97 not-dark:data-[variant=secondary]:brightness-100 hover:not-focus-visible:data-[variant=secondary]:bg-default not-dark:hover:not-focus-visible:data-[variant=secondary]:brightness-96 dark:hover:not-focus-visible:brightness-110 dark:hover:not-focus-visible:data-[variant=secondary]:bg-default\",\n\t\t\t\t)}\n\t\t\t\t{...props}\n\t\t\t/>\n\t\t\t<ChevronDownIcon\n\t\t\t\tclassName=\"pointer-events-none absolute end-3 top-1/2 size-4 -translate-y-1/2 select-none text-muted-foreground\"\n\t\t\t\taria-hidden=\"true\"\n\t\t\t\tdata-slot=\"native-select-icon\"\n\t\t\t/>\n\t\t</div>\n\t);\n}\n\nfunction NativeSelectOption({\n\tclassName,\n\t...props\n}: React.ComponentProps<\"option\">) {\n\treturn (\n\t\t<option\n\t\t\tdata-slot=\"native-select-option\"\n\t\t\tclassName={cn(\"bg-[Canvas] text-[CanvasText]\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction NativeSelectOptGroup({\n\tclassName,\n\t...props\n}: React.ComponentProps<\"optgroup\">) {\n\treturn (\n\t\t<optgroup\n\t\t\tdata-slot=\"native-select-optgroup\"\n\t\t\tclassName={cn(\"bg-[Canvas] text-[CanvasText]\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { NativeSelect, NativeSelectOptGroup, NativeSelectOption };\n",
+      "type": "registry:ui",
+      "target": "@ui/native-select.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

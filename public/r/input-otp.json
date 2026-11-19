@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp",
+  "title": "Input OTP",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Input OTP primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "cn",
+    "input-otp"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/input-otp.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"cn\";\nimport { OTPInput, OTPInputContext } from \"input-otp\";\nimport * as React from \"react\";\n\nfunction InputOTP({\n\tclassName,\n\tcontainerClassName,\n\tvariant = \"default\",\n\t...props\n}: React.ComponentProps<typeof OTPInput> & {\n\tcontainerClassName?: string;\n\tvariant?: \"default\" | \"secondary\";\n}) {\n\treturn (\n\t\t<div data-variant={variant} className=\"group\">\n\t\t\t<OTPInput\n\t\t\t\tdata-slot=\"input-otp\"\n\t\t\t\tcontainerClassName={cn(\n\t\t\t\t\t\"relative flex items-center gap-2 has-disabled:cursor-not-allowed has-disabled:opacity-50\",\n\t\t\t\t\tcontainerClassName,\n\t\t\t\t)}\n\t\t\t\tspellCheck={false}\n\t\t\t\tclassName={cn(\"disabled:cursor-not-allowed\", className)}\n\t\t\t\t{...props}\n\t\t\t/>\n\t\t</div>\n\t);\n}\n\nfunction InputOTPGroup({ className, ...props }: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"input-otp-group\"\n\t\t\tclassName={cn(\"flex items-center gap-2\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction InputOTPSlot({\n\tindex,\n\tclassName,\n\t...props\n}: React.ComponentProps<\"div\"> & {\n\tindex: number;\n}) {\n\tconst inputOTPContext = React.useContext(OTPInputContext);\n\tconst { char, hasFakeCaret, isActive } = inputOTPContext?.slots[index] ?? {};\n\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"input-otp-slot\"\n\t\t\tdata-active={isActive}\n\t\t\tdata-filled={char !== null}\n\t\t\tclassName={cn(\n\t\t\t\t\"relative flex h-10 w-9.5 flex-none items-center justify-center\",\n\t\t\t\t\"rounded-xl bg-input text-foreground shadow-xs\",\n\t\t\t\t\"font-semibold text-sm outline-none\",\n\t\t\t\t\"transition motion-reduce:transition-none\",\n\t\t\t\t\"data-[active=true]:focus-field-ring data-[active=true]:z-10\",\n\t\t\t\t\"aria-invalid:invalid-field-ring\",\n\t\t\t\t\"group-data-[variant=secondary]:bg-default group-data-[variant=secondary]:shadow-none\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t>\n\t\t\t{char && (\n\t\t\t\t<span className=\"fade-in-0 zoom-in-80 slide-in-from-bottom-1 animate-in text-lg leading-6 tracking-[-0.27px] duration-200 motion-reduce:animate-none\">\n\t\t\t\t\t{char}\n\t\t\t\t</span>\n\t\t\t)}\n\t\t\t{!char && hasFakeCaret && (\n\t\t\t\t<div className=\"pointer-events-none absolute inset-0 flex items-center justify-center\">\n\t\t\t\t\t<div className=\"h-4 w-[2px] animate-caret-blink rounded-sm bg-foreground\" />\n\t\t\t\t</div>\n\t\t\t)}\n\t\t</div>\n\t);\n}\n\nfunction InputOTPSeparator({ ...props }: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"input-otp-separator\"\n\t\t\tclassName=\"h-[2px] w-[6px] shrink-0 rounded-sm bg-border\"\n\t\t\trole=\"separator\"\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot };\n",
+      "type": "registry:ui",
+      "target": "@ui/input-otp.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

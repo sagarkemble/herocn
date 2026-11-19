@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "direction",
+  "title": "Direction",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Direction primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/direction.tsx",
+      "content": "\"use client\";\n\nexport {\n\tDirectionProvider,\n\tuseDirection,\n} from \"@base-ui/react/direction-provider\";\n",
+      "type": "registry:ui",
+      "target": "@ui/direction.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

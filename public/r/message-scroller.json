@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "message-scroller",
+  "title": "Message Scroller",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Message Scroller primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "@shadcn/react",
+    "cn",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@herocn/style",
+    "@herocn/button"
+  ],
+  "files": [
+    {
+      "path": "components/ui/message-scroller.tsx",
+      "content": "\"use client\";\n\nimport {\n\tMessageScroller as MessageScrollerPrimitive,\n\tuseMessageScroller,\n\tuseMessageScrollerScrollable,\n\tuseMessageScrollerVisibility,\n} from \"@shadcn/react/message-scroller\";\nimport { cn } from \"cn\";\nimport { ArrowDownIcon } from \"lucide-react\";\nimport type * as React from \"react\";\nimport { Button } from \"@/components/ui/button\";\n\nfunction MessageScrollerProvider(\n\tprops: React.ComponentProps<typeof MessageScrollerPrimitive.Provider>,\n) {\n\treturn <MessageScrollerPrimitive.Provider {...props} />;\n}\n\nfunction MessageScroller({\n\tclassName,\n\t...props\n}: React.ComponentProps<typeof MessageScrollerPrimitive.Root>) {\n\treturn (\n\t\t<MessageScrollerPrimitive.Root\n\t\t\tdata-slot=\"message-scroller\"\n\t\t\tclassName={cn(\n\t\t\t\t\"group/message-scroller relative flex size-full min-h-0 flex-col overflow-hidden\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction MessageScrollerViewport({\n\tclassName,\n\t...props\n}: React.ComponentProps<typeof MessageScrollerPrimitive.Viewport>) {\n\treturn (\n\t\t<MessageScrollerPrimitive.Viewport\n\t\t\tdata-slot=\"message-scroller-viewport\"\n\t\t\tclassName={cn(\n\t\t\t\t\"scroll-fade-b scrollbar-thin scrollbar-gutter-stable data-autoscrolling:scrollbar-thumb-transparent data-autoscrolling:scrollbar-track-transparent size-full min-h-0 min-w-0 overflow-y-auto overscroll-contain contain-content\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction MessageScrollerContent({\n\tclassName,\n\t...props\n}: React.ComponentProps<typeof MessageScrollerPrimitive.Content>) {\n\treturn (\n\t\t<MessageScrollerPrimitive.Content\n\t\t\tdata-slot=\"message-scroller-content\"\n\t\t\tclassName={cn(\n\t\t\t\t\"flex h-max min-h-full flex-col gap-8 px-1.5 py-4\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction MessageScrollerItem({\n\tclassName,\n\tscrollAnchor = false,\n\t...props\n}: React.ComponentProps<typeof MessageScrollerPrimitive.Item>) {\n\treturn (\n\t\t<MessageScrollerPrimitive.Item\n\t\t\tdata-slot=\"message-scroller-item\"\n\t\t\tscrollAnchor={scrollAnchor}\n\t\t\tclassName={cn(\n\t\t\t\t\"min-w-0 shrink-0 [contain-intrinsic-size:auto_10rem] [content-visibility:auto]\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction MessageScrollerButton({\n\tdirection = \"end\",\n\tclassName,\n\tchildren,\n\trender,\n\tvariant = \"secondary\",\n\tsize = \"icon-sm\",\n\t...props\n}: React.ComponentProps<typeof MessageScrollerPrimitive.Button> &\n\tPick<React.ComponentProps<typeof Button>, \"variant\" | \"size\">) {\n\treturn (\n\t\t<MessageScrollerPrimitive.Button\n\t\t\tdata-slot=\"message-scroller-button\"\n\t\t\tdata-direction={direction}\n\t\t\tdata-variant={variant}\n\t\t\tdata-size={size}\n\t\t\tdirection={direction}\n\t\t\tclassName={cn(\n\t\t\t\t\"absolute inset-s-1/2 -translate-x-1/2 border-border bg-background text-foreground transition-[translate,scale,opacity] duration-200 hover:bg-muted hover:text-foreground data-[direction=end]:data-[active=false]:translate-y-full data-[direction=start]:data-[active=false]:-translate-y-full data-[active=false]:pointer-events-none data-[direction=start]:top-4 data-[direction=end]:bottom-4 data-[active=true]:translate-y-0 data-[active=false]:scale-95 data-[active=true]:scale-100 data-[active=false]:opacity-0 data-[active=true]:opacity-100 data-[active=false]:duration-400 data-[active=false]:ease-[cubic-bezier(0.7,0,0.84,0)] data-[active=true]:ease-[cubic-bezier(0.23,1,0.32,1)] rtl:translate-x-1/2 rtl:translate-x-1/2 data-[direction=start]:[&_svg]:rotate-180\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\trender={render ?? <Button variant={variant} size={size} />}\n\t\t\t{...props}\n\t\t>\n\t\t\t{children ?? (\n\t\t\t\t<>\n\t\t\t\t\t<ArrowDownIcon />\n\t\t\t\t\t<span className=\"sr-only\">\n\t\t\t\t\t\t{direction === \"end\" ? \"Scroll to end\" : \"Scroll to start\"}\n\t\t\t\t\t</span>\n\t\t\t\t</>\n\t\t\t)}\n\t\t</MessageScrollerPrimitive.Button>\n\t);\n}\n\nexport {\n\tMessageScroller,\n\tMessageScrollerButton,\n\tMessageScrollerContent,\n\tMessageScrollerItem,\n\tMessageScrollerProvider,\n\tMessageScrollerViewport,\n\tuseMessageScroller,\n\tuseMessageScrollerScrollable,\n\tuseMessageScrollerVisibility,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/message-scroller.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

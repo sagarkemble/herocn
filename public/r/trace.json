@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "trace",
+  "title": "Trace",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Trace primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "cn",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@herocn/style",
+    "@herocn/collapsible"
+  ],
+  "files": [
+    {
+      "path": "components/ui/trace.tsx",
+      "content": "import { cn } from \"cn\";\nimport { ChevronRightIcon } from \"lucide-react\";\nimport type * as React from \"react\";\nimport {\n\tCollapsible,\n\tCollapsibleContent,\n\tCollapsibleTrigger,\n} from \"@/components/ui/collapsible\";\n\nfunction Trace({ className, ...props }: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"trace\"\n\t\t\tclassName={cn(\n\t\t\t\t\"*:has-[>[data-slot=trace-line]]:focus-visible:focus-ring flex w-full min-w-0 flex-col gap-2 *:has-[>[data-slot=trace-line]]:-mx-1 *:has-[>[data-slot=trace-line]]:flex *:has-[>[data-slot=trace-line]]:w-fit *:has-[>[data-slot=trace-line]]:min-w-0 *:has-[>[data-slot=trace-line]]:max-w-full *:has-[>[data-slot=trace-line]]:rounded-lg *:has-[>[data-slot=trace-line]]:px-1 *:has-[>[data-slot=trace-line]]:py-0.5 *:has-[>[data-slot=trace-line]]:text-start *:has-[>[data-slot=trace-line]]:outline-none\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TraceLine({\n\tclassName,\n\tstatus,\n\t...props\n}: React.ComponentProps<\"span\"> & {\n\tstatus?: \"running\" | \"error\" | \"pending\";\n}) {\n\treturn (\n\t\t<span\n\t\t\tdata-slot=\"trace-line\"\n\t\t\tdata-status={status}\n\t\t\tclassName={cn(\n\t\t\t\t\"data-[status=running]:*:data-[slot=trace-title]:shimmer in-[a,button]:m-0 -mx-1 flex w-fit min-w-0 max-w-full in-[a,button]:cursor-pointer items-center gap-2 rounded-md in-[a,button]:p-0 px-1 py-0.5 in-[a:hover,button:hover]:text-foreground text-muted-foreground text-sm transition-colors data-[status=error]:in-[a:hover,button:hover]:text-destructive data-[status=error]:text-destructive data-[status=pending]:opacity-60\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TraceIcon({ className, ...props }: React.ComponentProps<\"span\">) {\n\treturn (\n\t\t<span\n\t\t\tdata-slot=\"trace-icon\"\n\t\t\taria-hidden=\"true\"\n\t\t\tclassName={cn(\n\t\t\t\t\"flex size-4 shrink-0 items-center justify-center [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [[data-slot=trace-title]~&]:-ms-1\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TraceTitle({ className, ...props }: React.ComponentProps<\"span\">) {\n\treturn (\n\t\t<span\n\t\t\tdata-slot=\"trace-title\"\n\t\t\tclassName={cn(\"motion-reduce:shimmer-none min-w-0 truncate\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TraceDescription({\n\tclassName,\n\t...props\n}: React.ComponentProps<\"span\">) {\n\treturn (\n\t\t<span\n\t\t\tdata-slot=\"trace-description\"\n\t\t\tclassName={cn(\n\t\t\t\t\"shrink-0 text-muted-foreground/70 tabular-nums\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TraceCollapsible({\n\tclassName,\n\t...props\n}: Omit<React.ComponentProps<typeof Collapsible>, \"open\"> &\n\t(\n\t\t| { open?: undefined }\n\t\t| {\n\t\t\t\topen: boolean;\n\t\t\t\tonOpenChange: NonNullable<\n\t\t\t\t\tReact.ComponentProps<typeof Collapsible>[\"onOpenChange\"]\n\t\t\t\t>;\n\t\t  }\n\t)) {\n\treturn (\n\t\t<Collapsible\n\t\t\tdata-slot=\"trace-collapsible\"\n\t\t\tclassName={cn(\"flex w-full min-w-0 flex-col\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction TraceCollapsibleTrigger({\n\tclassName,\n\tchildren,\n\t...props\n}: React.ComponentProps<typeof CollapsibleTrigger>) {\n\treturn (\n\t\t<CollapsibleTrigger\n\t\t\tdata-slot=\"trace-collapsible-trigger\"\n\t\t\tclassName={cn(\n\t\t\t\t\"group/trace-collapsible-trigger focus-visible:focus-ring -mx-1 flex w-fit min-w-0 max-w-full cursor-pointer items-center gap-1 rounded-lg px-1 py-0.5 text-start text-muted-foreground outline-none transition-colors hover:text-foreground has-data-[status=error]:text-destructive\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t>\n\t\t\t{children}\n\t\t\t<TraceIcon className=\"transition-transform group-aria-expanded/trace-collapsible-trigger:rotate-90\">\n\t\t\t\t<ChevronRightIcon />\n\t\t\t</TraceIcon>\n\t\t</CollapsibleTrigger>\n\t);\n}\n\nfunction TraceCollapsibleContent({\n\tclassName,\n\tchildren,\n\t...props\n}: React.ComponentProps<typeof CollapsibleContent>) {\n\treturn (\n\t\t<CollapsibleContent\n\t\t\tdata-slot=\"trace-collapsible-content\"\n\t\t\tclassName=\"h-(--collapsible-panel-height) min-w-0 overflow-hidden transition-[height] duration-200 data-ending-style:h-0 data-starting-style:h-0\"\n\t\t\t{...props}\n\t\t>\n\t\t\t<div\n\t\t\t\tdata-slot=\"trace-collapsible-content-inner\"\n\t\t\t\tclassName={cn(\n\t\t\t\t\t\"wrap-break-word ms-[calc(--spacing(2)-1px)] mt-2 mb-2 min-w-0 border-s ps-4 pe-2 text-muted-foreground leading-relaxed\",\n\t\t\t\t\tclassName,\n\t\t\t\t)}\n\t\t\t>\n\t\t\t\t{children}\n\t\t\t</div>\n\t\t</CollapsibleContent>\n\t);\n}\n\nexport {\n\tTrace,\n\tTraceCollapsible,\n\tTraceCollapsibleContent,\n\tTraceCollapsibleTrigger,\n\tTraceDescription,\n\tTraceIcon,\n\tTraceLine,\n\tTraceTitle,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/trace.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

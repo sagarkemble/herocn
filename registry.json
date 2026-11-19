@@ -1,0 +1,2120 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "herocn",
+  "homepage": "https://herocn.sagarkemble.dev",
+  "items": [
+    {
+      "name": "style",
+      "type": "registry:style",
+      "title": "HeroCN style",
+      "description": "HeroUI v3 tokens, radius scale, focus/invalid rings, and pressible motion for shadcn/ui (herocn). Install this first, or add any @herocn/ui item which depends on it.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "style"
+      ],
+      "dependencies": [
+        "cn",
+        "class-variance-authority",
+        "lucide-react",
+        "@base-ui/react"
+      ],
+      "devDependencies": [
+        "tw-animate-css"
+      ],
+      "docs": "herocn is MIT-licensed, © 2026 Maqed (github.com/Maqed/herocn). Keep that notice when redistributing. After install, ensure app/globals.css has @import \"tailwindcss\"; @import \"tw-animate-css\"; @import \"shadcn/tailwind.css\";",
+      "cssVars": {
+        "theme": {
+          "font-heading": "var(--font-sans)",
+          "color-default": "var(--default)",
+          "color-default-foreground": "var(--default-foreground)",
+          "color-success": "var(--success)",
+          "color-success-foreground": "var(--success-foreground)",
+          "color-warning": "var(--warning)",
+          "color-warning-foreground": "var(--warning-foreground)",
+          "color-surface": "var(--surface)",
+          "color-surface-secondary": "var(--surface-secondary)",
+          "color-surface-tertiary": "var(--surface-tertiary)",
+          "color-segment": "var(--segment)",
+          "color-segment-foreground": "var(--segment-foreground)",
+          "color-default-soft": "var(--default-soft)",
+          "color-default-soft-foreground": "var(--default-soft-foreground)",
+          "color-primary-soft": "var(--primary-soft)",
+          "color-primary-soft-foreground": "var(--primary-soft-foreground)",
+          "color-destructive-soft": "var(--destructive-soft)",
+          "color-destructive-soft-foreground": "var(--destructive-soft-foreground)",
+          "color-warning-soft": "var(--warning-soft)",
+          "color-warning-soft-foreground": "var(--warning-soft-foreground)",
+          "color-success-soft": "var(--success-soft)",
+          "color-success-soft-foreground": "var(--success-soft-foreground)",
+          "radius-xs": "calc(var(--radius) * 0.25)",
+          "radius-sm": "calc(var(--radius) * 0.5)",
+          "radius-md": "calc(var(--radius) * 0.75)",
+          "radius-lg": "calc(var(--radius) * 1)",
+          "radius-xl": "calc(var(--radius) * 1.5)",
+          "radius-2xl": "calc(var(--radius) * 2)",
+          "radius-3xl": "calc(var(--radius) * 3)",
+          "radius-4xl": "calc(var(--radius) * 4)",
+          "animate-skeleton": "skeleton 2s linear infinite"
+        },
+        "light": {
+          "snow": "oklch(0.9911 0 0)",
+          "eclipse": "oklch(0.2103 0.0059 285.89)",
+          "ease-smooth": "cubic-bezier(0.22, 1, 0.36, 1)",
+          "ease-out": "cubic-bezier(0, 0, 0.2, 1)",
+          "radius": "0.5rem",
+          "background": "oklch(0.9702 0 0)",
+          "foreground": "oklch(0.141 0.005 285.823)",
+          "card": "var(--surface)",
+          "card-foreground": "oklch(0.141 0.005 285.823)",
+          "popover": "var(--surface)",
+          "popover-foreground": "oklch(0.141 0.005 285.823)",
+          "primary": "oklch(0.6204 0.195 253.83)",
+          "primary-foreground": "oklch(0.97 0.014 254.604)",
+          "secondary": "oklch(0.967 0.001 286.375)",
+          "secondary-foreground": "oklch(0.21 0.006 285.885)",
+          "muted": "oklch(0.94 0.001 286.375)",
+          "muted-foreground": "oklch(0.552 0.016 285.938)",
+          "accent": "oklch(0.94 0.001 286.375)",
+          "accent-foreground": "oklch(0.21 0.006 285.885)",
+          "destructive": "oklch(0.6532 0.2328 25.74)",
+          "destructive-foreground": "var(--snow)",
+          "border": "oklch(90% 0.004 286.32)",
+          "input": "white",
+          "ring": "var(--primary)",
+          "chart-1": "oklch(0.809 0.105 251.813)",
+          "chart-2": "oklch(0.623 0.214 259.815)",
+          "chart-3": "oklch(0.546 0.245 262.881)",
+          "chart-4": "oklch(0.488 0.243 264.376)",
+          "chart-5": "oklch(0.424 0.199 265.638)",
+          "sidebar": "oklch(0.9702 0 0)",
+          "sidebar-foreground": "oklch(0.141 0.005 285.823)",
+          "sidebar-primary": "oklch(0.6204 0.195 253.83)",
+          "sidebar-primary-foreground": "oklch(0.97 0.014 254.604)",
+          "sidebar-accent": "oklch(0.93 0.001 286.375)",
+          "sidebar-accent-foreground": "oklch(0.21 0.006 285.885)",
+          "sidebar-border": "oklch(90% 0.004 286.32)",
+          "sidebar-ring": "var(--foreground)",
+          "default": "oklch(94% 0.001 286.375)",
+          "default-foreground": "var(--eclipse)",
+          "success": "oklch(0.7329 0.1935 150.81)",
+          "success-foreground": "var(--eclipse)",
+          "warning": "oklch(0.7819 0.1585 72.33)",
+          "warning-foreground": "var(--eclipse)",
+          "surface": "white",
+          "surface-secondary": "oklch(0.9524 0.0013 286.37)",
+          "surface-tertiary": "oklch(0.9373 0.0013 286.37)",
+          "segment": "var(--snow)",
+          "segment-foreground": "var(--eclipse)",
+          "default-soft": "color-mix(in oklab, var(--default) 50%, transparent)",
+          "default-soft-foreground": "var(--default-foreground)",
+          "primary-soft": "color-mix(in oklab, var(--primary) 15%, transparent)",
+          "primary-soft-foreground": "color-mix(in oklab, var(--primary) 70%, var(--foreground) 30%)",
+          "destructive-soft": "color-mix(in oklab, var(--destructive) 15%, transparent)",
+          "destructive-soft-foreground": "color-mix(in oklab, var(--destructive) 70%, var(--foreground) 40%)",
+          "warning-soft": "color-mix(in oklab, var(--warning) 15%, transparent)",
+          "warning-soft-foreground": "color-mix(in oklab, var(--warning) 80%, var(--foreground) 70%)",
+          "success-soft": "color-mix(in oklab, var(--success) 15%, transparent)",
+          "success-soft-foreground": "color-mix(in oklab, var(--success) 80%, var(--foreground) 60%)"
+        },
+        "dark": {
+          "background": "oklch(0.1228 0.0029 285.97)",
+          "foreground": "oklch(0.985 0 0)",
+          "card": "var(--surface)",
+          "card-foreground": "oklch(0.985 0 0)",
+          "popover": "var(--surface)",
+          "popover-foreground": "oklch(0.985 0 0)",
+          "primary": "oklch(0.6204 0.195 253.83)",
+          "primary-foreground": "oklch(0.97 0.014 254.604)",
+          "secondary": "oklch(0.274 0.006 286.033)",
+          "secondary-foreground": "oklch(0.985 0 0)",
+          "muted": "oklch(0.274 0.006 286.033)",
+          "muted-foreground": "oklch(0.705 0.015 286.067)",
+          "accent": "oklch(0.274 0.006 286.033)",
+          "accent-foreground": "oklch(0.985 0 0)",
+          "destructive": "oklch(0.594 0.1967 24.63)",
+          "destructive-foreground": "var(--snow)",
+          "border": "oklch(28% 0.006 286.033)",
+          "input": "oklch(0.2103 0.0059 285.89)",
+          "ring": "var(--primary)",
+          "sidebar": "oklch(0.1228 0.0029 285.97)",
+          "sidebar-foreground": "oklch(0.985 0 0)",
+          "sidebar-primary": "oklch(0.6204 0.195 253.83)",
+          "sidebar-primary-foreground": "oklch(0.97 0.014 254.604)",
+          "sidebar-accent": "oklch(0.274 0.006 286.033)",
+          "sidebar-accent-foreground": "oklch(0.985 0 0)",
+          "sidebar-border": "oklch(28% 0.006 286.033)",
+          "sidebar-ring": "var(--foreground)",
+          "default": "oklch(27.4% 0.006 286.033)",
+          "default-foreground": "var(--snow)",
+          "warning": "oklch(0.8203 0.1388 76.34)",
+          "warning-foreground": "var(--eclipse)",
+          "surface": "oklch(0.2103 0.0059 285.89)",
+          "surface-secondary": "oklch(0.257 0.0037 286.14)",
+          "surface-tertiary": "oklch(0.2721 0.0024 247.91)",
+          "segment": "oklch(0.3964 0.01 285.93)",
+          "segment-foreground": "var(--foreground)",
+          "default-soft": "color-mix(in oklab, var(--default) 50%, transparent)",
+          "default-soft-foreground": "var(--default-foreground)",
+          "primary-soft": "color-mix(in oklab, var(--primary) 12%, transparent)",
+          "primary-soft-foreground": "color-mix(in oklab, var(--primary) 80%, var(--foreground) 30%)",
+          "destructive-soft": "color-mix(in oklab, var(--destructive) 15%, transparent)",
+          "destructive-soft-foreground": "color-mix(in oklab, var(--destructive) 80%, var(--foreground) 30%)",
+          "warning-soft": "color-mix(in oklab, var(--warning) 12%, transparent)",
+          "warning-soft-foreground": "color-mix(in oklab, var(--warning) 80%, var(--foreground) 30%)",
+          "success-soft": "color-mix(in oklab, var(--success) 12%, transparent)",
+          "success-soft-foreground": "color-mix(in oklab, var(--success) 80%, var(--foreground) 30%)"
+        }
+      },
+      "css": {
+        "@custom-variant dark": "&:is(.dark *)",
+        "@utility focus-ring": {
+          "@apply": "ring-2 ring-ring ring-offset-2 ring-offset-background outline-none"
+        },
+        "@utility focus-field-ring": {
+          "@apply": "ring-2 ring-ring ring-offset-0 outline-none"
+        },
+        "@utility invalid-field-ring": {
+          "@apply": "outline-1 outline-destructive outline-solid"
+        },
+        "@utility invalid-field-ring-focus": {
+          "@apply": "ring-2 outline-none ring-destructive ring-offset-0"
+        },
+        "@utility pressible": {
+          "transition": "transform 250ms var(--ease-smooth), background-color 100ms var(--ease-out), box-shadow 100ms var(--ease-out)",
+          "@apply": "transform-gpu motion-reduce:transition-none active:scale-[0.97] aria-expanded:scale-[0.97]"
+        },
+        "@keyframes skeleton": {
+          "100%": {
+            "transform": "translateX(200%)"
+          }
+        },
+        ".skeleton--shimmer": {
+          "@apply": "relative overflow-hidden rtl:[--skeleton-animation-dir:reverse]"
+        }
+      }
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "cn utils",
+      "description": "Re-exports cn from the cn package for @/lib/utils imports.",
+      "author": "Sagar Kemble",
+      "dependencies": [
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "useIsMobile",
+      "description": "Breakpoint hook used by Sidebar.",
+      "author": "Sagar Kemble",
+      "files": [
+        {
+          "path": "hooks/use-mobile.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-mobile.ts"
+        }
+      ]
+    },
+    {
+      "name": "theme-provider",
+      "type": "registry:component",
+      "title": "Theme provider",
+      "description": "next-themes provider with a D hotkey to toggle light/dark.",
+      "author": "Sagar Kemble",
+      "dependencies": [
+        "next-themes",
+        "cn"
+      ],
+      "files": [
+        {
+          "path": "components/theme-provider.tsx",
+          "type": "registry:component",
+          "target": "@components/theme-provider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "HeroUI-styled shadcn Accordion primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "HeroUI-styled shadcn Alert Dialog primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "HeroUI-styled shadcn Alert primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "HeroUI-styled shadcn Aspect Ratio primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/aspect-ratio.tsx",
+          "type": "registry:ui",
+          "target": "@ui/aspect-ratio.tsx"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "title": "Attachment",
+      "description": "HeroUI-styled shadcn Attachment primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/attachment.tsx",
+          "type": "registry:ui",
+          "target": "@ui/attachment.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "HeroUI-styled shadcn Avatar primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "HeroUI-styled shadcn Badge primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "HeroUI-styled shadcn Breadcrumb primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "@ui/breadcrumb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "HeroUI-styled shadcn Bubble primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/bubble.tsx",
+          "type": "registry:ui",
+          "target": "@ui/bubble.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "HeroUI-styled shadcn Button Group primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "HeroUI-styled shadcn Button primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "HeroUI-styled shadcn Calendar primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn",
+        "lucide-react",
+        "react-day-picker"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/calendar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/calendar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "HeroUI-styled shadcn Card primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "HeroUI-styled shadcn Carousel primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn",
+        "embla-carousel-react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/carousel.tsx",
+          "type": "registry:ui",
+          "target": "@ui/carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "HeroUI-styled shadcn Chart primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/chart.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "HeroUI-styled shadcn Checkbox primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "HeroUI-styled shadcn Code Block primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/code-block.tsx",
+          "type": "registry:ui",
+          "target": "@ui/code-block.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "HeroUI-styled shadcn Collapsible primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@ui/collapsible.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "HeroUI-styled shadcn Combobox primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button",
+        "@herocn/input-group"
+      ],
+      "files": [
+        {
+          "path": "components/ui/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "HeroUI-styled shadcn Command primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cmdk",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/dialog",
+        "@herocn/input-group"
+      ],
+      "files": [
+        {
+          "path": "components/ui/command.tsx",
+          "type": "registry:ui",
+          "target": "@ui/command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "HeroUI-styled shadcn Context Menu primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/context-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "HeroUI-styled shadcn Dialog primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "HeroUI-styled shadcn Direction primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/direction.tsx",
+          "type": "registry:ui",
+          "target": "@ui/direction.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "HeroUI-styled shadcn Drawer primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/drawer.tsx",
+          "type": "registry:ui",
+          "target": "@ui/drawer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "HeroUI-styled shadcn Dropdown Menu primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "HeroUI-styled shadcn Empty primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/empty.tsx",
+          "type": "registry:ui",
+          "target": "@ui/empty.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "HeroUI-styled shadcn Field primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/label",
+        "@herocn/separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "HeroUI-styled shadcn Hover Card primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/hover-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/hover-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "HeroUI-styled shadcn Input Group primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button",
+        "@herocn/input",
+        "@herocn/textarea"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "HeroUI-styled shadcn Input OTP primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn",
+        "input-otp"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input-otp.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-otp.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "HeroUI-styled shadcn Input primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "HeroUI-styled shadcn Item primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/item.tsx",
+          "type": "registry:ui",
+          "target": "@ui/item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "HeroUI-styled shadcn Kbd primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kbd.tsx",
+          "type": "registry:ui",
+          "target": "@ui/kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "HeroUI-styled shadcn Label primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "title": "Marker",
+      "description": "HeroUI-styled shadcn Marker primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/marker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/marker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "HeroUI-styled shadcn Menubar primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "components/ui/menubar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/menubar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "title": "Message Scroller",
+      "description": "HeroUI-styled shadcn Message Scroller primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@shadcn/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/message-scroller.tsx",
+          "type": "registry:ui",
+          "target": "@ui/message-scroller.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "title": "Message",
+      "description": "HeroUI-styled shadcn Message primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/message.tsx",
+          "type": "registry:ui",
+          "target": "@ui/message.tsx"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "HeroUI-styled shadcn Native Select primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/native-select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/native-select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "HeroUI-styled shadcn Navigation Menu primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "HeroUI-styled shadcn Pagination primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/pagination.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "HeroUI-styled shadcn Popover primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "HeroUI-styled shadcn Progress primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "title": "Questionnaire",
+      "description": "HeroUI-styled shadcn Questionnaire primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@shadcn/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/questionnaire.tsx",
+          "type": "registry:ui",
+          "target": "@ui/questionnaire.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "HeroUI-styled shadcn Radio Group primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "HeroUI-styled shadcn Resizable primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn",
+        "react-resizable-panels"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/resizable.tsx",
+          "type": "registry:ui",
+          "target": "@ui/resizable.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "HeroUI-styled shadcn Scroll Area primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "HeroUI-styled shadcn Select primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "HeroUI-styled shadcn Separator primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "HeroUI-styled shadcn Sheet primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sheet.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "HeroUI-styled shadcn Sidebar primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button",
+        "@herocn/input",
+        "@herocn/separator",
+        "@herocn/sheet",
+        "@herocn/skeleton",
+        "@herocn/tooltip",
+        "@herocn/use-mobile"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "HeroUI-styled shadcn Skeleton primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "HeroUI-styled shadcn Slider primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/slider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "HeroUI-styled shadcn Spinner primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "surface",
+      "type": "registry:ui",
+      "title": "Surface",
+      "description": "HeroUI-styled shadcn Surface primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/surface.tsx",
+          "type": "registry:ui",
+          "target": "@ui/surface.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "HeroUI-styled shadcn Switch primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "HeroUI-styled shadcn Table primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "HeroUI-styled shadcn Tabs primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "HeroUI-styled shadcn Textarea primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "HeroUI-styled shadcn Toast primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toast.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "HeroUI-styled shadcn Toggle Group primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/toggle"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "HeroUI-styled shadcn Toggle primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "HeroUI-styled shadcn Tooltip primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "cn"
+      ],
+      "registryDependencies": [
+        "@herocn/style"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "trace",
+      "type": "registry:ui",
+      "title": "Trace",
+      "description": "HeroUI-styled shadcn Trace primitive. Tokens come from @herocn/style.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "ui"
+      ],
+      "dependencies": [
+        "cn",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/collapsible"
+      ],
+      "files": [
+        {
+          "path": "components/ui/trace.tsx",
+          "type": "registry:ui",
+          "target": "@ui/trace.tsx"
+        }
+      ]
+    },
+    {
+      "name": "template-shell",
+      "type": "registry:block",
+      "title": "Shell template",
+      "description": "Theme-builder preview of a Shell app, built from @herocn UI components.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "block",
+        "template",
+        "shell"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/avatar",
+        "@herocn/badge",
+        "@herocn/button",
+        "@herocn/card"
+      ],
+      "files": [
+        {
+          "path": "components/themes/templates/shell.tsx",
+          "type": "registry:component",
+          "target": "@components/herocn/shell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "template-dashboard",
+      "type": "registry:block",
+      "title": "Dashboard template",
+      "description": "Theme-builder preview of a Dashboard app, built from @herocn UI components.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "block",
+        "template",
+        "dashboard"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/template-shell",
+        "@herocn/avatar",
+        "@herocn/badge",
+        "@herocn/button",
+        "@herocn/card",
+        "@herocn/chart",
+        "@herocn/dropdown-menu",
+        "@herocn/input-group",
+        "@herocn/select",
+        "@herocn/table",
+        "@herocn/tabs"
+      ],
+      "files": [
+        {
+          "path": "components/themes/templates/dashboard.tsx",
+          "type": "registry:component",
+          "target": "@components/herocn/dashboard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "template-mail",
+      "type": "registry:block",
+      "title": "Mail template",
+      "description": "Theme-builder preview of a Mail app, built from @herocn UI components.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "block",
+        "template",
+        "mail"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/template-shell",
+        "@herocn/avatar",
+        "@herocn/button",
+        "@herocn/card",
+        "@herocn/input-group",
+        "@herocn/scroll-area",
+        "@herocn/separator"
+      ],
+      "files": [
+        {
+          "path": "components/themes/templates/mail.tsx",
+          "type": "registry:component",
+          "target": "@components/herocn/mail.tsx"
+        }
+      ]
+    },
+    {
+      "name": "template-chat",
+      "type": "registry:block",
+      "title": "Chat template",
+      "description": "Theme-builder preview of a Chat app, built from @herocn UI components.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "block",
+        "template",
+        "chat"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/template-shell",
+        "@herocn/avatar",
+        "@herocn/bubble",
+        "@herocn/button",
+        "@herocn/code-block",
+        "@herocn/input-group",
+        "@herocn/message",
+        "@herocn/scroll-area",
+        "@herocn/select",
+        "@herocn/separator"
+      ],
+      "files": [
+        {
+          "path": "components/themes/templates/chat.tsx",
+          "type": "registry:component",
+          "target": "@components/herocn/chat.tsx"
+        }
+      ]
+    },
+    {
+      "name": "template-finances",
+      "type": "registry:block",
+      "title": "Finances template",
+      "description": "Theme-builder preview of a Finances app, built from @herocn UI components.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "block",
+        "template",
+        "finances"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "recharts"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/template-shell",
+        "@herocn/avatar",
+        "@herocn/badge",
+        "@herocn/button",
+        "@herocn/card",
+        "@herocn/chart",
+        "@herocn/item",
+        "@herocn/table",
+        "@herocn/tabs"
+      ],
+      "files": [
+        {
+          "path": "components/themes/templates/finances.tsx",
+          "type": "registry:component",
+          "target": "@components/herocn/finances.tsx"
+        }
+      ]
+    },
+    {
+      "name": "template-crm",
+      "type": "registry:block",
+      "title": "Crm template",
+      "description": "Theme-builder preview of a Crm app, built from @herocn UI components.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "block",
+        "template",
+        "crm"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/template-shell",
+        "@herocn/avatar",
+        "@herocn/badge",
+        "@herocn/button",
+        "@herocn/card",
+        "@herocn/input-group",
+        "@herocn/progress",
+        "@herocn/table"
+      ],
+      "files": [
+        {
+          "path": "components/themes/templates/crm.tsx",
+          "type": "registry:component",
+          "target": "@components/herocn/crm.tsx"
+        }
+      ]
+    },
+    {
+      "name": "index",
+      "type": "registry:base",
+      "title": "HeroCN kit",
+      "description": "Installs the HeroCN style, utils, hook, and every UI primitive.",
+      "author": "Sagar Kemble",
+      "categories": [
+        "kit"
+      ],
+      "docs": "Add the registry first:\n\nnpx shadcn@latest registry add \"@herocn=https://herocn.sagarkemble.dev/r/{name}.json\"\n\nThen: npx shadcn@latest add @herocn/index",
+      "registryDependencies": [
+        "@herocn/style",
+        "@herocn/utils",
+        "@herocn/use-mobile",
+        "@herocn/theme-provider",
+        "@herocn/accordion",
+        "@herocn/alert-dialog",
+        "@herocn/alert",
+        "@herocn/aspect-ratio",
+        "@herocn/attachment",
+        "@herocn/avatar",
+        "@herocn/badge",
+        "@herocn/breadcrumb",
+        "@herocn/bubble",
+        "@herocn/button-group",
+        "@herocn/button",
+        "@herocn/calendar",
+        "@herocn/card",
+        "@herocn/carousel",
+        "@herocn/chart",
+        "@herocn/checkbox",
+        "@herocn/code-block",
+        "@herocn/collapsible",
+        "@herocn/combobox",
+        "@herocn/command",
+        "@herocn/context-menu",
+        "@herocn/dialog",
+        "@herocn/direction",
+        "@herocn/drawer",
+        "@herocn/dropdown-menu",
+        "@herocn/empty",
+        "@herocn/field",
+        "@herocn/hover-card",
+        "@herocn/input-group",
+        "@herocn/input-otp",
+        "@herocn/input",
+        "@herocn/item",
+        "@herocn/kbd",
+        "@herocn/label",
+        "@herocn/marker",
+        "@herocn/menubar",
+        "@herocn/message-scroller",
+        "@herocn/message",
+        "@herocn/native-select",
+        "@herocn/navigation-menu",
+        "@herocn/pagination",
+        "@herocn/popover",
+        "@herocn/progress",
+        "@herocn/questionnaire",
+        "@herocn/radio-group",
+        "@herocn/resizable",
+        "@herocn/scroll-area",
+        "@herocn/select",
+        "@herocn/separator",
+        "@herocn/sheet",
+        "@herocn/sidebar",
+        "@herocn/skeleton",
+        "@herocn/slider",
+        "@herocn/spinner",
+        "@herocn/surface",
+        "@herocn/switch",
+        "@herocn/table",
+        "@herocn/tabs",
+        "@herocn/textarea",
+        "@herocn/toast",
+        "@herocn/toggle-group",
+        "@herocn/toggle",
+        "@herocn/tooltip",
+        "@herocn/trace"
+      ]
+    }
+  ]
+}

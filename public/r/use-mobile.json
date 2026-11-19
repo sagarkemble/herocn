@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-mobile",
+  "title": "useIsMobile",
+  "author": "Sagar Kemble",
+  "description": "Breakpoint hook used by Sidebar.",
+  "files": [
+    {
+      "path": "hooks/use-mobile.ts",
+      "content": "import * as React from \"react\";\n\nconst MOBILE_BREAKPOINT = 768;\n\nexport function useIsMobile() {\n\tconst [isMobile, setIsMobile] = React.useState<boolean | undefined>(\n\t\tundefined,\n\t);\n\n\tReact.useEffect(() => {\n\t\tconst mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);\n\t\tconst onChange = () => {\n\t\t\tsetIsMobile(window.innerWidth < MOBILE_BREAKPOINT);\n\t\t};\n\t\tmql.addEventListener(\"change\", onChange);\n\t\tsetIsMobile(window.innerWidth < MOBILE_BREAKPOINT);\n\t\treturn () => mql.removeEventListener(\"change\", onChange);\n\t}, []);\n\n\treturn !!isMobile;\n}\n",
+      "type": "registry:hook",
+      "target": "@hooks/use-mobile.ts"
+    }
+  ],
+  "type": "registry:hook"
+}

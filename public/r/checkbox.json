@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "title": "Checkbox",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Checkbox primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "@base-ui/react",
+    "cn"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/checkbox.tsx",
+      "content": "\"use client\";\n\nimport { Checkbox as CheckboxPrimitive } from \"@base-ui/react/checkbox\";\nimport { cn } from \"cn\";\n\nfunction Checkbox({\n\tclassName,\n\tvariant = \"default\",\n\t...props\n}: CheckboxPrimitive.Root.Props & { variant?: \"default\" | \"secondary\" }) {\n\treturn (\n\t\t<CheckboxPrimitive.Root\n\t\t\tdata-slot=\"checkbox\"\n\t\t\tclassName={cn(\n\t\t\t\t\"group peer focus-visible:focus-ring aria-invalid:not-data-checked:invalid-field-ring relative flex size-4 shrink-0 items-center justify-center rounded-md border border-none bg-input text-primary-foreground shadow-xs outline-none transition-[color,background-color,box-shadow,opacity] duration-200 after:absolute after:-inset-x-3 after:-inset-y-2 disabled:cursor-not-allowed disabled:opacity-50 group-has-disabled/field:opacity-50 aria-invalid:text-destructive-foreground data-checked:bg-primary aria-invalid:data-checked:bg-destructive dark:data-checked:bg-primary\",\n\t\t\t\tvariant === \"secondary\" && \"bg-default shadow-none\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t>\n\t\t\t<CheckboxPrimitive.Indicator\n\t\t\t\tdata-slot=\"checkbox-indicator\"\n\t\t\t\tclassName=\"grid place-content-center text-current\"\n\t\t\t\tkeepMounted={true}\n\t\t\t>\n\t\t\t\t<svg\n\t\t\t\t\taria-hidden=\"true\"\n\t\t\t\t\tfill=\"none\"\n\t\t\t\t\trole=\"presentation\"\n\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\tstrokeDasharray={22}\n\t\t\t\t\tstrokeLinecap=\"round\"\n\t\t\t\t\tstrokeLinejoin=\"round\"\n\t\t\t\t\tstrokeWidth={2}\n\t\t\t\t\tviewBox=\"0 0 17 18\"\n\t\t\t\t\tstyle={{\n\t\t\t\t\t\ttransition: \"stroke-dashoffset 150ms linear 15ms\",\n\t\t\t\t\t}}\n\t\t\t\t\tclassName=\"size-3 [stroke-dashoffset:66] group-data-checked:[stroke-dashoffset:44]\"\n\t\t\t\t>\n\t\t\t\t\t<polyline points=\"1 9 7 14 15 4\" />\n\t\t\t\t</svg>\n\t\t\t</CheckboxPrimitive.Indicator>\n\t\t</CheckboxPrimitive.Root>\n\t);\n}\n\nexport { Checkbox };\n",
+      "type": "registry:ui",
+      "target": "@ui/checkbox.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

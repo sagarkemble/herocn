@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Progress primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "@base-ui/react",
+    "cn"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/progress.tsx",
+      "content": "\"use client\";\n\nimport { Progress as ProgressPrimitive } from \"@base-ui/react/progress\";\n\nimport { cn } from \"cn\";\n\nfunction Progress({\n\tclassName,\n\tchildren,\n\tvariant = \"primary\",\n\tsize = \"default\",\n\tvalue,\n\t...props\n}: ProgressPrimitive.Root.Props & {\n\tvariant?: \"default\" | \"primary\" | \"success\" | \"warning\" | \"destructive\";\n\tsize?: \"sm\" | \"default\" | \"lg\";\n}) {\n\treturn (\n\t\t<ProgressPrimitive.Root\n\t\t\tvalue={value}\n\t\t\tdata-slot=\"progress\"\n\t\t\tdata-variant={variant}\n\t\t\tdata-size={size}\n\t\t\tclassName={cn(\"group/progress flex flex-wrap gap-3\", className)}\n\t\t\t{...props}\n\t\t>\n\t\t\t{children}\n\t\t\t<ProgressTrack>\n\t\t\t\t<ProgressIndicator />\n\t\t\t</ProgressTrack>\n\t\t</ProgressPrimitive.Root>\n\t);\n}\n\nfunction ProgressTrack({ className, ...props }: ProgressPrimitive.Track.Props) {\n\treturn (\n\t\t<ProgressPrimitive.Track\n\t\t\tclassName={cn(\n\t\t\t\t\"relative flex w-full items-center overflow-x-hidden rounded-sm bg-default\",\n\t\t\t\t\"group-data-[size=default]/progress:h-2 group-data-[size=lg]/progress:h-3 group-data-[size=sm]/progress:h-1 group-data-[size=lg]/progress:rounded-md group-data-[size=sm]/progress:rounded-xs\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\tdata-slot=\"progress-track\"\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction ProgressIndicator({\n\tclassName,\n\t...props\n}: ProgressPrimitive.Indicator.Props) {\n\treturn (\n\t\t<ProgressPrimitive.Indicator\n\t\t\tdata-slot=\"progress-indicator\"\n\t\t\tclassName={cn(\n\t\t\t\t\"h-full rounded-sm transition-[width] duration-300 ease-out motion-reduce:transition-none\",\n\t\t\t\t\"group-data-[variant=default]/progress:bg-default-foreground\",\n\t\t\t\t\"group-data-[variant=primary]/progress:bg-primary\",\n\t\t\t\t\"group-data-[variant=success]/progress:bg-success\",\n\t\t\t\t\"group-data-[variant=warning]/progress:bg-warning\",\n\t\t\t\t\"group-data-[variant=destructive]/progress:bg-destructive\",\n\t\t\t\t\"group-data-[size=lg]/progress:rounded-md group-data-[size=sm]/progress:rounded-xs\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction ProgressLabel({ className, ...props }: ProgressPrimitive.Label.Props) {\n\treturn (\n\t\t<ProgressPrimitive.Label\n\t\t\tclassName={cn(\"font-medium text-sm\", className)}\n\t\t\tdata-slot=\"progress-label\"\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction ProgressValue({ className, ...props }: ProgressPrimitive.Value.Props) {\n\treturn (\n\t\t<ProgressPrimitive.Value\n\t\t\tclassName={cn(\"ms-auto text-sm tabular-nums\", className)}\n\t\t\tdata-slot=\"progress-value\"\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport {\n\tProgress,\n\tProgressIndicator,\n\tProgressLabel,\n\tProgressTrack,\n\tProgressValue,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/progress.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

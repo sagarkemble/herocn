@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "title": "Skeleton",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Skeleton primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "class-variance-authority",
+    "cn"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/skeleton.tsx",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"cn\";\n\nconst skeletonAnimationTypes = cva(\n\t\"skeleton pointer-events-none relative overflow-hidden rounded-sm bg-surface-tertiary/70\",\n\t{\n\t\tvariants: {\n\t\t\tanimationType: {\n\t\t\t\tshimmer: \"skeleton--shimmer\",\n\t\t\t\tpulse: \"animate-pulse\",\n\t\t\t\tnone: \"\",\n\t\t\t},\n\t\t},\n\t\tdefaultVariants: {\n\t\t\tanimationType: \"shimmer\",\n\t\t},\n\t},\n);\n\nfunction Skeleton({\n\tclassName,\n\tanimationType,\n\t...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof skeletonAnimationTypes>) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"skeleton\"\n\t\t\tclassName={cn(skeletonAnimationTypes({ animationType, className }))}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { Skeleton, skeletonAnimationTypes };\n",
+      "type": "registry:ui",
+      "target": "@ui/skeleton.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

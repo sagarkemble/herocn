@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet",
+  "title": "Sheet",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Sheet primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "@base-ui/react",
+    "cn",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@herocn/style",
+    "@herocn/button"
+  ],
+  "files": [
+    {
+      "path": "components/ui/sheet.tsx",
+      "content": "\"use client\";\n\nimport { Dialog as SheetPrimitive } from \"@base-ui/react/dialog\";\nimport { cn } from \"cn\";\nimport { XIcon } from \"lucide-react\";\nimport type * as React from \"react\";\nimport { Button } from \"@/components/ui/button\";\n\nfunction Sheet({ ...props }: SheetPrimitive.Root.Props) {\n\treturn <SheetPrimitive.Root data-slot=\"sheet\" {...props} />;\n}\n\nfunction SheetTrigger({ ...props }: SheetPrimitive.Trigger.Props) {\n\treturn <SheetPrimitive.Trigger data-slot=\"sheet-trigger\" {...props} />;\n}\n\nfunction SheetClose({ ...props }: SheetPrimitive.Close.Props) {\n\treturn <SheetPrimitive.Close data-slot=\"sheet-close\" {...props} />;\n}\n\nfunction SheetPortal({ ...props }: SheetPrimitive.Portal.Props) {\n\treturn <SheetPrimitive.Portal data-slot=\"sheet-portal\" {...props} />;\n}\n\nfunction SheetOverlay({\n\tclassName,\n\tvariant = \"opaque\",\n\t...props\n}: SheetPrimitive.Backdrop.Props & {\n\tvariant?: \"opaque\" | \"blur\" | \"transparent\";\n}) {\n\treturn (\n\t\t<SheetPrimitive.Backdrop\n\t\t\tdata-slot=\"sheet-overlay\"\n\t\t\tdata-variant={variant}\n\t\t\tclassName={cn(\n\t\t\t\t\"fixed inset-0 z-50 transition-opacity duration-150 data-[variant=blur]:bg-black/50 data-[variant=opaque]:bg-black/50 data-ending-style:opacity-0 data-starting-style:opacity-0 data-[variant=blur]:backdrop-blur-md dark:data-[variant=blur]:bg-black/60 dark:data-[variant=opaque]:bg-black/60\",\n\t\t\t\tclassName,\n\t\t\t)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction SheetContent({\n\tclassName,\n\tchildren,\n\tside = \"right\",\n\toverlayVariant = \"opaque\",\n\tshowCloseButton = true,\n\t...props\n}: SheetPrimitive.Popup.Props & {\n\tside?: \"top\" | \"right\" | \"bottom\" | \"left\";\n\toverlayVariant?: \"opaque\" | \"blur\" | \"transparent\";\n\tshowCloseButton?: boolean;\n}) {\n\treturn (\n\t\t<SheetPortal>\n\t\t\t<SheetOverlay variant={overlayVariant} />\n\t\t\t<SheetPrimitive.Popup\n\t\t\t\tdata-slot=\"sheet-content\"\n\t\t\t\tdata-side={side}\n\t\t\t\tclassName={cn(\n\t\t\t\t\t\"fixed z-50 flex flex-col bg-popover bg-clip-padding text-popover-foreground text-sm shadow-lg transition duration-200 ease-in-out data-[side=left]:data-ending-style:translate-x-[-2.5rem] data-[side=left]:data-starting-style:translate-x-[-2.5rem] data-[side=right]:data-ending-style:translate-x-[2.5rem] data-[side=right]:data-starting-style:translate-x-[2.5rem] data-[side=bottom]:data-ending-style:translate-y-[2.5rem] data-[side=bottom]:data-starting-style:translate-y-[2.5rem] data-[side=top]:data-ending-style:translate-y-[-2.5rem] data-[side=top]:data-starting-style:translate-y-[-2.5rem] data-[side=bottom]:inset-x-0 data-[side=top]:inset-x-0 data-[side=left]:inset-y-0 data-[side=right]:inset-y-0 data-[side=top]:top-0 data-[side=right]:right-0 data-[side=bottom]:bottom-0 data-[side=left]:left-0 data-[side=bottom]:h-auto data-[side=left]:h-full data-[side=right]:h-full data-[side=top]:h-auto data-[side=left]:w-3/4 data-[side=right]:w-3/4 data-[side=right]:border-s data-[side=left]:border-e data-[side=bottom]:border-t data-[side=top]:border-b data-ending-style:opacity-0 data-starting-style:opacity-0 data-[side=left]:sm:max-w-sm data-[side=right]:sm:max-w-sm\",\n\t\t\t\t\tclassName,\n\t\t\t\t)}\n\t\t\t\t{...props}\n\t\t\t>\n\t\t\t\t{children}\n\t\t\t\t{showCloseButton && (\n\t\t\t\t\t<SheetPrimitive.Close\n\t\t\t\t\t\tdata-slot=\"sheet-close\"\n\t\t\t\t\t\trender={\n\t\t\t\t\t\t\t<Button\n\t\t\t\t\t\t\t\tvariant=\"tertiary\"\n\t\t\t\t\t\t\t\tclassName=\"absolute end-4 top-4\"\n\t\t\t\t\t\t\t\tsize=\"icon-sm\"\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t}\n\t\t\t\t\t>\n\t\t\t\t\t\t<XIcon />\n\t\t\t\t\t\t<span className=\"sr-only\">Close</span>\n\t\t\t\t\t</SheetPrimitive.Close>\n\t\t\t\t)}\n\t\t\t</SheetPrimitive.Popup>\n\t\t</SheetPortal>\n\t);\n}\n\nfunction SheetHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"sheet-header\"\n\t\t\tclassName={cn(\"flex flex-col gap-1.5 p-6\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction SheetFooter({ className, ...props }: React.ComponentProps<\"div\">) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"sheet-footer\"\n\t\t\tclassName={cn(\"mt-auto flex flex-col gap-2 p-6\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction SheetTitle({ className, ...props }: SheetPrimitive.Title.Props) {\n\treturn (\n\t\t<SheetPrimitive.Title\n\t\t\tdata-slot=\"sheet-title\"\n\t\t\tclassName={cn(\"font-medium text-base text-foreground\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nfunction SheetDescription({\n\tclassName,\n\t...props\n}: SheetPrimitive.Description.Props) {\n\treturn (\n\t\t<SheetPrimitive.Description\n\t\t\tdata-slot=\"sheet-description\"\n\t\t\tclassName={cn(\"text-muted-foreground text-sm\", className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport {\n\tSheet,\n\tSheetClose,\n\tSheetContent,\n\tSheetDescription,\n\tSheetFooter,\n\tSheetHeader,\n\tSheetTitle,\n\tSheetTrigger,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/sheet.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

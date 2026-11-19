@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Badge primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority",
+    "cn"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/badge.tsx",
+      "content": "import { mergeProps } from \"@base-ui/react/merge-props\";\nimport { useRender } from \"@base-ui/react/use-render\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"cn\";\n\nconst badgeVariants = cva(\n\t\"group/badge inline-flex shrink-0 items-center justify-center gap-0.5 rounded-2xl px-2 py-0.5 font-medium leading-5 has-data-[icon=inline-start]:ps-1.5 has-data-[icon=inline-end]:pe-1.5 [&>svg]:pointer-events-none [&>svg]:size-3!\",\n\t{\n\t\tvariants: {\n\t\t\tvariant: {\n\t\t\t\tdefault: \"bg-default text-default-foreground\",\n\t\t\t\tprimary: \"bg-default text-primary\",\n\t\t\t\tsuccess: \"bg-default text-success\",\n\t\t\t\twarning: \"bg-default text-warning\",\n\t\t\t\tdestructive: \"bg-default text-destructive\",\n\t\t\t\t// stock-only keys (not in herocn): stock classes kept unchanged\n\t\t\t\tsecondary:\n\t\t\t\t\t\"bg-secondary text-secondary-foreground [a]:hover:bg-secondary/80\",\n\t\t\t\toutline:\n\t\t\t\t\t\"border border-border text-foreground [a]:hover:bg-muted [a]:hover:text-muted-foreground\",\n\t\t\t\tghost: \"hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50\",\n\t\t\t\tlink: \"text-primary underline-offset-4 hover:underline\",\n\t\t\t},\n\t\t\tsize: {\n\t\t\t\tdefault: \"text-xs\",\n\t\t\t\tsm: \"px-1 py-0.25 text-xs\",\n\t\t\t\tlg: \"px-3 py-1 font-medium text-sm\",\n\t\t\t},\n\t\t},\n\t\tdefaultVariants: {\n\t\t\tvariant: \"default\",\n\t\t\tsize: \"default\",\n\t\t},\n\t},\n);\n\nfunction Badge({\n\tclassName,\n\tvariant = \"default\",\n\tsize = \"default\",\n\trender,\n\t...props\n}: useRender.ComponentProps<\"span\"> & VariantProps<typeof badgeVariants>) {\n\treturn useRender({\n\t\tdefaultTagName: \"span\",\n\t\tprops: mergeProps<\"span\">(\n\t\t\t{\n\t\t\t\tclassName: cn(badgeVariants({ variant, size }), className),\n\t\t\t},\n\t\t\tprops,\n\t\t),\n\t\trender,\n\t\tstate: {\n\t\t\tslot: \"badge\",\n\t\t\tvariant,\n\t\t\tsize,\n\t\t},\n\t});\n}\n\nexport { Badge, badgeVariants };\n",
+      "type": "registry:ui",
+      "target": "@ui/badge.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}

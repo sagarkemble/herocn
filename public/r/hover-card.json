@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-card",
+  "title": "Hover Card",
+  "author": "Sagar Kemble",
+  "description": "HeroUI-styled shadcn Hover Card primitive. Tokens come from @herocn/style.",
+  "dependencies": [
+    "@base-ui/react",
+    "cn",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@herocn/style"
+  ],
+  "files": [
+    {
+      "path": "components/ui/hover-card.tsx",
+      "content": "\"use client\";\n\nimport { PreviewCard as PreviewCardPrimitive } from \"@base-ui/react/preview-card\";\nimport { cn } from \"cn\";\nimport { ChevronUp } from \"lucide-react\";\n\nfunction HoverCard({ ...props }: PreviewCardPrimitive.Root.Props) {\n\treturn <PreviewCardPrimitive.Root data-slot=\"hover-card\" {...props} />;\n}\n\nfunction HoverCardTrigger({ ...props }: PreviewCardPrimitive.Trigger.Props) {\n\treturn (\n\t\t<PreviewCardPrimitive.Trigger data-slot=\"hover-card-trigger\" {...props} />\n\t);\n}\n\nfunction HoverCardContent({\n\tclassName,\n\tside = \"bottom\",\n\tsideOffset = 8,\n\talign = \"center\",\n\talignOffset = 8,\n\twithArrow = false,\n\tchildren,\n\t...props\n}: PreviewCardPrimitive.Popup.Props &\n\tPick<\n\t\tPreviewCardPrimitive.Positioner.Props,\n\t\t\"align\" | \"alignOffset\" | \"side\" | \"sideOffset\"\n\t> & { withArrow?: boolean }) {\n\treturn (\n\t\t<PreviewCardPrimitive.Portal data-slot=\"hover-card-portal\">\n\t\t\t<PreviewCardPrimitive.Positioner\n\t\t\t\talign={align}\n\t\t\t\talignOffset={alignOffset}\n\t\t\t\tside={side}\n\t\t\t\tsideOffset={sideOffset}\n\t\t\t\tclassName=\"isolate z-50\"\n\t\t\t>\n\t\t\t\t<PreviewCardPrimitive.Popup\n\t\t\t\t\tdata-slot=\"hover-card-content\"\n\t\t\t\t\tclassName={cn(\n\t\t\t\t\t\t\"data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[side=inline-start]:slide-in-from-end-2 data-[side=inline-end]:slide-in-from-start-2 z-50 flex min-w-40 origin-(--transform-origin) flex-col gap-2.5 rounded-3xl bg-popover p-4 text-popover-foreground text-sm outline-none outline-hidden drop-shadow-2xl duration-100 data-closed:animate-out data-open:animate-in\",\n\t\t\t\t\t\tclassName,\n\t\t\t\t\t)}\n\t\t\t\t\t{...props}\n\t\t\t\t>\n\t\t\t\t\t{withArrow && (\n\t\t\t\t\t\t<PreviewCardPrimitive.Arrow className=\"text-popover data-[side=inline-end]:-inset-s-4.5 data-[side=inline-start]:-inset-e-4.5 data-[side=bottom]:-top-4.5 data-[side=left]:-right-4.5 data-[side=top]:-bottom-4.5 data-[side=right]:-left-4.5 data-[side=inline-end]:rotate-90 data-[side=inline-start]:rotate-270 data-[side=left]:rotate-90 data-[side=right]:-rotate-90 data-[side=top]:rotate-180\">\n\t\t\t\t\t\t\t<ChevronUp className=\"size-8 fill-popover\" aria-hidden />\n\t\t\t\t\t\t</PreviewCardPrimitive.Arrow>\n\t\t\t\t\t)}\n\t\t\t\t\t{children}\n\t\t\t\t</PreviewCardPrimitive.Popup>\n\t\t\t</PreviewCardPrimitive.Positioner>\n\t\t</PreviewCardPrimitive.Portal>\n\t);\n}\n\nexport { HoverCard, HoverCardContent, HoverCardTrigger };\n",
+      "type": "registry:ui",
+      "target": "@ui/hover-card.tsx"
+    }
+  ],
+  "categories": [
+    "ui"
+  ],
+  "type": "registry:ui"
+}
