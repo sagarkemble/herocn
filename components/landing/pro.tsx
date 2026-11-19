@@ -472,19 +472,22 @@ export function Pro() {
         <ul className="relative mt-5 flex gap-3 max-sm:-mx-5 max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-auto max-sm:px-5 max-sm:pt-3 max-sm:pb-4 max-sm:[scrollbar-width:none] sm:mt-12 sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {previews.map((p) => (
             <li key={p.name} className="max-sm:w-[280px] max-sm:shrink-0 max-sm:snap-start">
-              <a href="#" className="group flex flex-col overflow-hidden rounded-3xl bg-surface shadow-sm">
-                <div className="relative m-1 flex items-center justify-center overflow-hidden rounded-[20px] bg-background max-sm:aspect-[360/256] sm:h-64">
+              {/* card is a div; the decorative preview is inert and a stretched link inside the h3 makes the whole card clickable */}
+              <div className="group relative flex flex-col overflow-hidden rounded-3xl bg-surface shadow-sm">
+                <div inert aria-hidden className="relative m-1 flex items-center justify-center overflow-hidden rounded-[20px] bg-background max-sm:aspect-[360/256] sm:h-64">
                   <div className="pointer-events-none scale-[0.85] max-sm:scale-[0.64] transition-transform duration-[400ms] ease-out group-hover:scale-[0.87]">{p.node}</div>
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-surface to-transparent" />
                 </div>
                 <div className="flex items-center justify-between px-4 py-3">
-                  <h3 className="font-medium text-sm">{p.name}</h3>
+                  <h3 className="font-medium text-sm">
+                    <a href="#" className="rounded-3xl outline-offset-4 after:absolute after:inset-0 after:rounded-3xl focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-ring">{p.name}</a>
+                  </h3>
                   <span className="flex gap-1.5 text-muted-foreground">
                     <GlobeIcon className="size-3.5" aria-label="Web" />
                     <SmartphoneIcon className="size-3.5" aria-label="Mobile" />
                   </span>
                 </div>
-              </a>
+              </div>
             </li>
           ))}
         </ul>

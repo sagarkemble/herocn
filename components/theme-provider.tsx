@@ -13,6 +13,10 @@ function ThemeProvider({
       defaultTheme="system"
       enableSystem
       disableTransitionOnChange
+      // React 19 logs "Encountered a script tag" when next-themes' inline script is rendered on the client.
+      // The server HTML keeps an executable script (so the theme is applied before paint); on the client the
+      // same element is typed text/plain, which React does not warn about. See next-themes issue #367.
+      scriptProps={{ type: typeof window === "undefined" ? "text/javascript" : "text/plain", suppressHydrationWarning: true } as React.ComponentProps<typeof NextThemesProvider>["scriptProps"]}
       {...props}
     >
       <ThemeHotkey />

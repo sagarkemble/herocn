@@ -309,15 +309,17 @@ export function Blog() {
       <ul className="mt-7 flex gap-3 max-sm:-mx-5 max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-auto max-sm:px-5 max-sm:[scrollbar-width:none] sm:mt-12 sm:grid sm:grid-cols-1 sm:gap-4 md:grid-cols-3">
         {posts.map((p) => (
           <li key={p.t} className="max-sm:w-[280px] max-sm:shrink-0 max-sm:snap-start">
-            <a href="#" className="group block h-full rounded-3xl bg-surface p-1">
-              <span className="relative block aspect-[360/203] overflow-hidden rounded-[20px] bg-background">
-                <span className="pointer-events-none block size-full transition-transform duration-500 ease-out group-hover:scale-[1.02]">{p.cover}</span>
-              </span>
-              <span className="block px-3.5 pt-4 pb-[18px] sm:px-4">
-                <span className="block text-pretty font-medium text-base leading-[22px] sm:text-sm sm:leading-5">{p.t}</span>
-                <span className="mt-2 block text-muted-foreground text-xs">{p.d}</span>
-              </span>
-            </a>
+            <div className="group relative block h-full rounded-3xl bg-surface p-1">
+              <div inert aria-hidden className="relative block aspect-[360/203] overflow-hidden rounded-[20px] bg-background">
+                <div className="pointer-events-none block size-full transition-transform duration-500 ease-out group-hover:scale-[1.02]">{p.cover}</div>
+              </div>
+              <div className="block px-3.5 pt-4 pb-[18px] sm:px-4">
+                <h3 className="block text-pretty font-medium text-base leading-[22px] sm:text-sm sm:leading-5">
+                  <a href="#" className="after:absolute after:inset-0 after:rounded-3xl focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-ring">{p.t}</a>
+                </h3>
+                <p className="mt-2 block text-muted-foreground text-xs">{p.d}</p>
+              </div>
+            </div>
           </li>
         ))}
       </ul>
@@ -353,7 +355,7 @@ export function FinalCta() {
                   <>
                     {Array.from({ length: 12 }).map((_, k) => {
                       const a = (k / 12) * Math.PI * 2
-                      return <circle key={k} cx={30 + Math.sin(a) * 17} cy={30 - Math.cos(a) * 17} r="1.3" fill="currentColor" />
+                      return <circle key={k} cx={(30 + Math.sin(a) * 17).toFixed(2)} cy={(30 - Math.cos(a) * 17).toFixed(2)} r="1.3" fill="currentColor" />
                     })}
                     <text x="30" y="32.5" textAnchor="middle" fontSize="7.5" fontWeight="700" fill="currentColor">GDPR</text>
                   </>

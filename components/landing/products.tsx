@@ -100,31 +100,37 @@ export function Products() {
                 isActive ? "lg:shrink-0 lg:grow-0 lg:basis-[55.5%]" : "lg:grow lg:basis-0"
               )}
             >
-              <h3>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setActive(i)
-                    setProgress(0)
-                  }}
-                  aria-expanded={isActive}
-                  className="block w-full cursor-pointer rounded-[20px] text-left outline-offset-4 focus-visible:outline-2 focus-visible:outline-ring"
-                >
-                  <span className="relative block h-[380px] overflow-hidden rounded-[20px] bg-surface-secondary sm:h-[460px]">
-                    <span aria-hidden className={cn("absolute inset-0", p.wall)} />
-                    <span
-                      className={cn(
-                        "absolute transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-sm:top-1/2 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:-translate-y-1/2 max-sm:scale-[0.86]",
-                        isActive
-                          ? "sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2"
-                          : "sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 lg:top-[50px] lg:left-6 lg:translate-x-0 lg:translate-y-0 lg:scale-[0.82] lg:origin-top-left"
-                      )}
-                    >
-                      {p.mock}
-                    </span>
-                  </span>
-                </button>
-              </h3>
+              {/* Card visual is a plain div with the decorative mock made inert (mocks contain buttons, so they
+                  must not sit inside the trigger). The real trigger is a full-card button overlay inside the h3. */}
+              <div className="group/card relative">
+                <div className="relative block h-[380px] overflow-hidden rounded-[20px] bg-surface-secondary sm:h-[460px]">
+                  <span aria-hidden className={cn("absolute inset-0", p.wall)} />
+                  <div
+                    inert
+                    aria-hidden
+                    className={cn(
+                      "absolute transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] max-sm:top-1/2 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:-translate-y-1/2 max-sm:scale-[0.86]",
+                      isActive
+                        ? "sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2"
+                        : "sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 lg:top-[50px] lg:left-6 lg:translate-x-0 lg:translate-y-0 lg:scale-[0.82] lg:origin-top-left"
+                    )}
+                  >
+                    {p.mock}
+                  </div>
+                </div>
+                <h3 className="absolute inset-0">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setActive(i)
+                      setProgress(0)
+                    }}
+                    aria-expanded={isActive}
+                    aria-label={p.title}
+                    className="block size-full cursor-pointer rounded-[20px] text-left outline-offset-4 focus-visible:outline-2 focus-visible:outline-ring"
+                  />
+                </h3>
+              </div>
               <Progress
                 value={isActive ? progress : 0}
                 variant="default"
