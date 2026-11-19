@@ -36,6 +36,23 @@ export const skills = [
     install: `npx skills add ${SKILLS_REPO} --skill heroui-customize`,
     zipHref: "/skills/heroui-customize.zip",
   },
+  {
+    name: "visualize-design-system",
+    title: "Landing + design system previews",
+    description:
+      "Ask whether to add a demo landing at /demo-landing and/or the theme builder at /design-system (dashboard, mail, chat, finances, CRM). Works with any shadcn registry. Does not restyle components/ui.",
+    bullets: [
+      "Asks first; never overwrites the homepage.",
+      "Copies the herocn landing and /themes builder, then rewrites cn imports and nav links.",
+      "Adds missing shadcn primitives from the project's own registry.",
+    ],
+    prompts: [
+      "Add the design system theme builder at /design-system.",
+      "Add both /demo-landing and /design-system with visualize-design-system.",
+    ],
+    install: `npx skills add ${SKILLS_REPO} --skill visualize-design-system`,
+    zipHref: "/skills/visualize-design-system.zip",
+  },
 ] as const;
 
 export type PublishedSkill = (typeof skills)[number];

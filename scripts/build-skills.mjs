@@ -6,7 +6,9 @@
  *    (the /themes "View code" engine). The TS sources are transpiled and concatenated verbatim, so the
  *    maths is the site's maths, not a re-derivation.
  * 2. skills/heroui-customize/reference/presets.md — the preset table, generated from theme-values.ts.
- * 3. public/skills/<name>.zip — one deterministic zip per skill folder (fixed timestamps).
+ * 3. skills/visualize-design-system/reference/{demo-landing,design-system} — snapshot of the
+ *    marketing landing and /themes builder for the visualize-design-system skill.
+ * 4. public/skills/<name>.zip — one deterministic zip per skill folder (fixed timestamps).
  *
  * Usage: node scripts/build-skills.mjs          (write everything)
  *        node scripts/build-skills.mjs --check  (exit 1 if any generated file is stale)
@@ -36,6 +38,32 @@ function emit(path, content) {
   mkdirSync(dirname(abs), {recursive: true});
   writeFileSync(abs, buf);
   console.log(`wrote ${path}`);
+}
+
+function listFiles(dir) {
+  return readdirSync(dir)
+    .sort()
+    .flatMap((n) => {
+      const p = join(dir, n);
+
+      return statSync(p).isDirectory() ? listFiles(p) : [p];
+    });
+}
+
+function copyTree(fromRel, toRel, rewrite) {
+  const from = join(root, fromRel);
+  for (const p of listFiles(from)) {
+    const rel = relative(from, p).replaceAll("\\", "/");
+    let data = readFileSync(p);
+    if (rewrite) data = rewrite(rel, data);
+    emit(`${toRel}/${rel}`, data);
+  }
+}
+
+function rewriteUtf8(rel, data, fn) {
+  if (!/\.(tsx|ts|css)$/.test(rel)) return data;
+  const next = fn(data.toString("utf8"));
+  return next === null ? data : Buffer.from(next);
 }
 
 /* ------------------------------------------------------------------ 1. theme-to-css.mjs */
@@ -283,20 +311,44 @@ async function buildTokenNamesMd() {
 
 emit("skills/heroui-customize/reference/token-names.md", await buildTokenNamesMd());
 
-/* ------------------------------------------------------------------ 3. zips */
+/* ------------------------------------------------------------------ 3. visualize-design-system snapshot */
+
+const vis = "skills/visualize-design-system";
+const visRef = `${vis}/reference`;
+copyTree("components/landing", `${visRef}/demo-landing/components/landing`);
+emit(`${visRef}/demo-landing/page.tsx`, readFileSync(join(root, "app/page.tsx")));
+{
+  const globals = readFileSync(join(root, "app/globals.css"), "utf8");
+  const mark = "/* =====================================================================\n   Landing page-level styles";
+  const i = globals.indexOf(mark);
+  if (i < 0) throw new Error("landing CSS marker missing from app/globals.css");
+  emit(`${visRef}/demo-landing/landing.css`, globals.slice(i));
+}
+copyTree("lib/theme-editor", `${visRef}/design-system/lib/theme-editor`);
+copyTree("components/themes", `${visRef}/design-system/components/themes`, (rel, data) =>
+  rewriteUtf8(rel, data, (s) => s.replaceAll("@/app/themes/assets", "@/app/design-system/assets")),
+);
+copyTree("app/themes", `${visRef}/design-system/app/themes`, (rel, data) =>
+  rewriteUtf8(rel, data, (s) => {
+    if (rel !== "page.tsx") return s;
+    return s
+      .replace(
+        'title: "HeroUI Theme Builder – Customize React UI (shadcn + shadcn-to-heroui)"',
+        'title: "Design system"',
+      )
+      .replace(
+        "Customize colors, radius, and typography using a token system that keeps every component consistent and production-ready.",
+        "Preview components and app templates while editing color, radius, and font tokens.",
+      );
+  }),
+);
+emit(`${vis}/LICENSE-herocn`, readFileSync(join(root, "skills/shadcn-to-heroui/LICENSE-herocn")));
+emit(`${vis}/LICENSE-heroui`, readFileSync(join(root, "skills/heroui-customize/LICENSE-heroui")));
+
+/* ------------------------------------------------------------------ 4. zips */
 
 const DOS_TIME = 0; // 00:00:00
 const DOS_DATE = ((2026 - 1980) << 9) | (1 << 5) | 1; // 2026-01-01, fixed so zips are reproducible
-
-function listFiles(dir) {
-  return readdirSync(dir)
-    .sort()
-    .flatMap((n) => {
-      const p = join(dir, n);
-
-      return statSync(p).isDirectory() ? listFiles(p) : [p];
-    });
-}
 
 function zip(entries) {
   const locals = [];

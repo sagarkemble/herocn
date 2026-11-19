@@ -16,9 +16,10 @@ Docs: [/docs/skills](https://herocn.sagarkemble.dev/docs/skills). After this rep
 ```bash
 npx skills add sagarkemble/herocn --skill shadcn-to-heroui
 npx skills add sagarkemble/herocn --skill heroui-customize
+npx skills add sagarkemble/herocn --skill visualize-design-system
 ```
 
-Zips: [`/skills/shadcn-to-heroui.zip`](https://herocn.sagarkemble.dev/skills/shadcn-to-heroui.zip), [`/skills/heroui-customize.zip`](https://herocn.sagarkemble.dev/skills/heroui-customize.zip).
+Zips: [`/skills/shadcn-to-heroui.zip`](https://herocn.sagarkemble.dev/skills/shadcn-to-heroui.zip), [`/skills/heroui-customize.zip`](https://herocn.sagarkemble.dev/skills/heroui-customize.zip), [`/skills/visualize-design-system.zip`](https://herocn.sagarkemble.dev/skills/visualize-design-system.zip).
 
 ## Adding components (this repo)
 

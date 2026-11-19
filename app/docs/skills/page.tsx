@@ -13,7 +13,7 @@ import {skills} from "@/lib/skills";
 
 export const metadata = {
   title: "Agent skills - shadcn + shadcn-to-heroui docs",
-  description: "Install shadcn-to-heroui and heroui-customize, the agent skills that restyle and re-theme this library.",
+  description: "Install shadcn-to-heroui, heroui-customize, and visualize-design-system.",
 };
 
 function H2({id, children}: {id: string; children: React.ReactNode}) {
