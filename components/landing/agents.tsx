@@ -51,7 +51,6 @@ import { Slider } from "@/components/ui/slider"
 import { Switch } from "@/components/ui/switch"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { AgentChatPanel } from "./mocks"
 import { DesktopMail } from "./open-source"
 import { FeatureRow, SectionHeader, Sparkline, ctaSecondary } from "./ui-bits"
@@ -141,10 +140,12 @@ function BankingApp() {
             <CardHeader className="px-0">
               <CardTitle className="flex items-center gap-1.5 text-xs">Current balance <BadgeCheckIcon className="size-3.5 text-primary" /></CardTitle>
               <CardAction>
-                <ToggleGroup defaultValue={["chart"]} spacing={1} className="rounded-lg bg-default p-0.5">
-                  <ToggleGroupItem value="chart" size="xs" variant="ghost" aria-label="Chart" className="h-6 rounded-md px-1.5 aria-pressed:bg-surface aria-pressed:text-primary"><BarChart3Icon /></ToggleGroupItem>
-                  <ToggleGroupItem value="list" size="xs" variant="ghost" aria-label="List" className="h-6 rounded-md px-1.5 aria-pressed:bg-surface aria-pressed:text-primary"><ListIcon /></ToggleGroupItem>
-                </ToggleGroup>
+                <Tabs defaultValue="chart">
+                  <TabsList aria-label="View" className="w-auto!">
+                    <TabsTrigger value="chart" aria-label="Chart"><BarChart3Icon /></TabsTrigger>
+                    <TabsTrigger value="list" aria-label="List"><ListIcon /></TabsTrigger>
+                  </TabsList>
+                </Tabs>
               </CardAction>
             </CardHeader>
             <p className="font-semibold text-3xl tabular-nums">$459,200.60</p>

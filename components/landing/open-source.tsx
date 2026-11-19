@@ -189,7 +189,7 @@ function PhoneMail({ selected, onSelect }: { selected: number; onSelect: (i: num
         </span>
       </div>
       <div className="px-3 pt-3">
-        <InputGroup className="h-9 rounded-full">
+        <InputGroup className="h-9">
           <InputGroupAddon><SearchIcon className="size-3.5" /></InputGroupAddon>
           <InputGroupInput placeholder="Search..." aria-label="Search mail on phone" />
         </InputGroup>

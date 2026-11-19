@@ -185,8 +185,8 @@ function Quote({ text }: { text: string }) {
 function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   const initials = t.n.replace(/[^A-Za-z ]/g, "").split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase() || t.n[0]
   return (
-    <a href="#" className="block rounded-[20px] transition-transform duration-300 ease-out hover:-translate-y-0.5">
-      <Card className="gap-6 rounded-[20px] border border-border p-[22px] shadow-[0_1px_2px_rgb(0_0_0/4%),0_12px_24px_rgb(0_0_0/4%)] sm:gap-7 sm:p-6">
+    <a href="#" className="block rounded-3xl transition-transform duration-300 ease-out hover:-translate-y-0.5">
+      <Card className="gap-6 sm:gap-7">
         <Quote text={t.q} />
         <figcaption className="flex items-center gap-3">
           <Avatar className="size-10">
@@ -309,7 +309,7 @@ export function Blog() {
       <ul className="mt-7 flex gap-3 max-sm:-mx-5 max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-auto max-sm:px-5 max-sm:[scrollbar-width:none] sm:mt-12 sm:grid sm:grid-cols-1 sm:gap-4 md:grid-cols-3">
         {posts.map((p) => (
           <li key={p.t} className="max-sm:w-[280px] max-sm:shrink-0 max-sm:snap-start">
-            <div className="group relative block h-full rounded-3xl bg-surface p-1">
+            <div className="group relative block h-full rounded-3xl bg-surface p-1 shadow-sm">
               <div inert aria-hidden className="relative block aspect-[360/203] overflow-hidden rounded-[20px] bg-background">
                 <div className="pointer-events-none block size-full transition-transform duration-500 ease-out group-hover:scale-[1.02]">{p.cover}</div>
               </div>

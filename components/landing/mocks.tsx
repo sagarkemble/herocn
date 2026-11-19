@@ -45,7 +45,7 @@ const swatches = ["#f31260", "#c026d3", "#7828c8", "#3b82f6", "#06b6d4", "#14b8a
 export function CalendarMock({ className }: { className?: string }) {
   const [date, setDate] = React.useState<Date | undefined>(new Date(2025, 11, 16))
   return (
-    <Card className={cn("w-fit p-2 shadow-lg", className)}>
+    <Card className={cn("w-fit p-2", className)}>
       <Calendar mode="single" month={new Date(2025, 11, 1)} selected={date} onSelect={setDate} className="bg-transparent" />
     </Card>
   )
@@ -55,7 +55,7 @@ export function ColorPickerMock({ className }: { className?: string }) {
   const [hue, setHue] = React.useState<number[]>([210])
   const [color, setColor] = React.useState("#0485F7")
   return (
-    <Card className={cn("w-[240px] gap-3 p-2 shadow-lg", className)}>
+    <Card className={cn("w-[240px] gap-3 p-2", className)}>
       <div className="flex justify-between px-1 pt-1">
         {swatches.map((s) => (
           <button
@@ -109,13 +109,13 @@ export function ProChatMock({ className }: { className?: string }) {
         <p className="p-1 text-sm leading-[1.34]">
           You stop rebuilding the same UI decisions over and over. HeroUI gives you a solid baseline so you can spend time on product, not polishing pixels.
         </p>
-        <InputGroup className="h-[46px] rounded-full border border-border bg-surface">
+        <InputGroup variant="secondary" className="h-[46px]">
           <InputGroupAddon>
             <PlusIcon className="size-4 opacity-50" />
           </InputGroupAddon>
           <InputGroupInput placeholder="Ask anything" aria-label="Ask anything" />
           <InputGroupAddon align="inline-end">
-            <InputGroupButton variant="tertiary" size="sm" className="rounded-2xl">
+            <InputGroupButton variant="tertiary" size="sm">
               <MicIcon /> Voice
             </InputGroupButton>
           </InputGroupAddon>
@@ -238,7 +238,7 @@ export function AgentChatPanel({
   const [value, setValue] = React.useState("")
   const prompts = (suggestions ?? agentPrompts[product] ?? agentSuggestions).slice(0, count)
   return (
-    <Card className={cn("w-[340px] gap-0 p-0 shadow-xl", className)}>
+    <Card className={cn("w-[340px] gap-0 p-0", className)}>
       <div className="flex items-center justify-between px-4 pt-3">
         <span className="flex items-center gap-1 font-medium text-xs">
           New chat <ChevronDownIcon className="size-3.5" />
@@ -263,14 +263,14 @@ export function AgentChatPanel({
               size="sm"
               variant="outline"
               onClick={() => setValue(s)}
-              className="h-8 justify-between rounded-xl px-2.5 font-normal text-xs"
+              className="h-8 justify-between font-normal text-xs"
             >
               <span className="truncate">{s}</span>
               <ArrowUpRightIcon className="text-muted-foreground" />
             </Button>
           ))}
         </div>
-        <InputGroup className="h-10 rounded-full border border-border bg-surface">
+        <InputGroup variant="secondary" className="h-10">
           <InputGroupAddon>
             <PlusIcon className="size-4" />
           </InputGroupAddon>
@@ -281,7 +281,7 @@ export function AgentChatPanel({
             onChange={(e) => setValue(e.target.value)}
           />
           <InputGroupAddon align="inline-end">
-            <InputGroupButton size="icon-xs" variant="default" className="rounded-full" aria-label="Send">
+            <InputGroupButton size="icon-xs" variant="default" aria-label="Send">
               <ArrowUpIcon />
             </InputGroupButton>
           </InputGroupAddon>
@@ -340,7 +340,7 @@ export function SpaceSidebar({ className, counts = false }: { className?: string
 
 export function SpaceWindowMock({ className }: { className?: string }) {
   return (
-    <Card className={cn("w-[280px] gap-3 p-3 shadow-xl", className)}>
+    <Card className={cn("w-[280px] gap-3 p-3", className)}>
       <WindowDots color />
       <SpaceSidebar />
     </Card>

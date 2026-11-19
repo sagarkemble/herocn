@@ -165,14 +165,9 @@ export function ProPromo() {
     <Card className="fixed start-6 bottom-6 z-50 w-[288px] gap-0 overflow-hidden p-0">
       <div className="relative flex h-[170px] flex-col items-center justify-center gap-2 bg-linear-to-br from-[#d9f3ff] via-[#cfe4ff] to-[#c9d0ff]">
         <div aria-hidden className="absolute -top-10 right-0 size-40 rounded-full bg-[#7dd3fc]/50 blur-3xl" />
-        <button
-          type="button"
-          aria-label="Dismiss"
-          onClick={() => setOpen(false)}
-          className="absolute top-2.5 right-2.5 grid size-6 place-items-center rounded-full text-white/90 hover:bg-white/20"
-        >
-          <XIcon className="size-4" />
-        </button>
+        <Button variant="ghost" size="icon-xs" aria-label="Dismiss" onClick={() => setOpen(false)} className="absolute top-2.5 right-2.5">
+          <XIcon />
+        </Button>
         <span className="relative flex items-center gap-2.5 font-display font-semibold text-[44px] text-primary leading-none tracking-[-0.04em]">
           <span aria-hidden className="flex h-[0.85em] w-[0.7em] items-end gap-[0.12em] opacity-80">
             <span className="h-full w-[0.24em] rounded-[0.08em] bg-current" />

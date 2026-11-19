@@ -45,7 +45,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Slider } from "@/components/ui/slider"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { AgentChatPanel, ProChatMock } from "./mocks"
 import { DesktopMail } from "./open-source"
 import { FeatureRow, SectionHeader, Sparkline, ctaSecondary } from "./ui-bits"
@@ -55,7 +54,7 @@ const ctaDark = "bg-foreground text-background hover:bg-foreground/85"
 /* ---------------- six component previews ---------------- */
 function CommandPreview() {
   return (
-    <Command className="w-[300px] rounded-2xl shadow-lg">
+    <Command className="w-[300px]">
       <CommandInput placeholder="Type a command…" />
       <CommandList>
         <CommandGroup heading="Actions">
@@ -122,7 +121,7 @@ function KanbanPreview() {
 
 function StatsPreview() {
   return (
-    <Card className="w-[230px] flex-row items-end justify-between gap-2 shadow-lg">
+    <Card className="w-[230px] flex-row items-end justify-between gap-2">
       <div className="flex flex-col gap-1">
         <span className="flex items-center gap-1.5 text-muted-foreground text-xs"><ChartColumnIcon className="size-3.5" /> Total Clicks</span>
         <span className="font-semibold text-2xl tabular-nums">2,441</span>
@@ -137,21 +136,23 @@ function FiltersPreview() {
   const [range, setRange] = React.useState<number[]>([20, 75])
   const hist = [3, 5, 4, 7, 9, 6, 11, 8, 12, 10, 7, 9, 13, 8, 6, 9, 5, 4]
   return (
-    <Card className="w-[260px] gap-3 shadow-lg">
+    <Card className="w-[260px] gap-3">
       <p className="font-semibold text-sm">What are you looking for?</p>
       <div className="flex flex-col gap-1.5">
         <span className="font-medium text-xs">Type of place</span>
-        <ToggleGroup defaultValue={["any"]} spacing={1} className="w-full rounded-xl bg-default p-0.5">
-          {[
-            ["any", "Any type"],
-            ["room", "Room"],
-            ["home", "Entire home"],
-          ].map(([v, l]) => (
-            <ToggleGroupItem key={v} value={v} size="xs" variant="ghost" className="flex-1 rounded-lg text-[11px] aria-pressed:bg-surface aria-pressed:text-foreground aria-pressed:shadow-sm">
-              {l}
-            </ToggleGroupItem>
-          ))}
-        </ToggleGroup>
+        <Tabs defaultValue="any">
+          <TabsList aria-label="Type of place">
+            {[
+              ["any", "Any type"],
+              ["room", "Room"],
+              ["home", "Entire home"],
+            ].map(([v, l]) => (
+              <TabsTrigger key={v} value={v} className="text-[11px]">
+                {l}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
       </div>
       <div className="flex flex-col gap-1.5">
         <span className="font-medium text-xs">Price Range</span>
@@ -184,7 +185,7 @@ function AgendaPreview() {
           { t: "Design sync 1:1", h: "2:00 – 3:00 PM", c: "bg-success", join: true },
           { t: "Product call", h: "4:00 – 5:00 PM", c: "bg-destructive" },
         ].map((e) => (
-          <Card key={e.t} size="sm" className={cn("flex-row items-center gap-2.5 px-3", !e.join && "bg-default shadow-none")}>
+          <Card key={e.t} size="sm" className="flex-row items-center gap-2.5 px-3">
             <span className={cn("h-8 w-1 rounded-full", e.c)} />
             <div className="flex-1">
               <p className="font-medium text-xs">{e.t}</p>
@@ -208,7 +209,7 @@ const gridRows = [
 
 function DataGridPreview({ wide = false }: { wide?: boolean }) {
   return (
-    <Card className={cn("gap-2 p-2 shadow-lg", wide ? "w-full" : "w-[420px]")}>
+    <Card className={cn("gap-2 p-2", wide ? "w-full" : "w-[420px]")}>
       <div className="flex items-center gap-1.5">
         <Button size="xs" variant="tertiary"><FilterIcon data-icon="inline-start" />Filter</Button>
         <Button size="xs" variant="tertiary"><ArrowUpDownIcon data-icon="inline-start" />Sort</Button>
