@@ -75,7 +75,7 @@ export function DocsMobileHeader() {
 							<SheetTitle>Components</SheetTitle>
 						</SheetHeader>
 						<ScrollArea className="min-h-0 flex-1 px-3">
-							<DocsNav onNavigate={() => setOpen(false)} />
+							{open ? <DocsNav onNavigate={() => setOpen(false)} /> : null}
 						</ScrollArea>
 					</SheetContent>
 				</Sheet>

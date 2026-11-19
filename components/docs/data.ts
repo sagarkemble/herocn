@@ -23,6 +23,14 @@ export const pageBySlug = Object.fromEntries(pages.map((p) => [p.slug, p])) as R
 export const ordered: DocPage[] = groups.flatMap(([, slugs]) => slugs.map((s) => pageBySlug[s]));
 export const docsHref = (slug: string) => `/docs/react/components/${slug}`;
 
+export type DocsNavItem = { href: string; title: string };
+export const docsNavGroups: [string, DocsNavItem[]][] = [
+	["Guides", [{ href: "/docs/skills", title: "Agent skills" }]],
+	...groups.map(
+		([group, slugs]) => [group, slugs.map((slug) => ({ href: docsHref(slug), title: pageBySlug[slug].title }))] as [string, DocsNavItem[]],
+	),
+];
+
 export type TocItem = { id: string; title: string; depth: 2 | 3 };
 
 export function tocFor(page: DocPage): TocItem[] {

@@ -14,7 +14,7 @@ import {
 	CommandList,
 	Command,
 } from "@/components/ui/command";
-import { docsHref, groups, pageBySlug } from "./data";
+import { docsNavGroups } from "./data";
 
 export function DocsSearch() {
 	const [open, setOpen] = React.useState(false);
@@ -41,29 +41,18 @@ export function DocsSearch() {
 					<CommandInput placeholder="Search components..." />
 					<CommandList>
 						<CommandEmpty>No components found.</CommandEmpty>
-						<CommandGroup heading="Guides">
-							<CommandItem
-								value="agent skills docs skills shadcn-to-heroui heroui-customize"
-								onSelect={() => {
-									setOpen(false);
-									router.push("/docs/skills");
-								}}
-							>
-								Agent skills
-							</CommandItem>
-						</CommandGroup>
-						{groups.map(([group, slugs]) => (
+						{docsNavGroups.map(([group, items]) => (
 							<CommandGroup key={group} heading={group}>
-								{slugs.map((slug) => (
+								{items.map((item) => (
 									<CommandItem
-										key={slug}
-										value={`${pageBySlug[slug].title} ${slug} ${group}`}
+										key={item.href}
+										value={`${item.title} ${item.href} ${group}`}
 										onSelect={() => {
 											setOpen(false);
-											router.push(docsHref(slug));
+											router.push(item.href);
 										}}
 									>
-										{pageBySlug[slug].title}
+										{item.title}
 									</CommandItem>
 								))}
 							</CommandGroup>
