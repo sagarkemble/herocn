@@ -182,19 +182,61 @@ export const agentSuggestions = [
   "Pick our highest-paid software vendor and chart its last 6 months",
 ]
 
+export const agentPrompts: Record<string, string[]> = {
+  Banking: agentSuggestions,
+  Maps: [
+    "Fly to Buenos Aires and pin the Obelisco",
+    "Show walking time from Teatro Colón",
+    "Draw a waterfront walking route",
+    "List landmarks within 2 km",
+    "What’s 50 m from my pin?",
+  ],
+  Shopping: [
+    "Filter to sneakers under $140",
+    "Shortlist trail shoes in olive",
+    "Compare Drift Runner vs Harbor Court",
+    "Show only in-stock trainers",
+    "Add Field Day Trainer to my bag",
+  ],
+  Finance: [
+    "Chart my portfolio over 30 days",
+    "What’s my top performer today?",
+    "Show recent ETH activity",
+    "Break down holdings by asset",
+    "How much did I receive this week?",
+  ],
+  Travel: [
+    "Plan 4 days in Rome",
+    "Compare daily budget for Rome vs Lisbon",
+    "Add Vatican day to the itinerary",
+    "Find flights under $700",
+    "When is the best month for Rome?",
+  ],
+  Email: [
+    "Summarize unread mail from Maya",
+    "Draft a reply to the dashboard review",
+    "Star anything due this week",
+    "What’s waiting on me?",
+    "Find the Stripe invoice thread",
+  ],
+}
+
 export function AgentChatPanel({
   className,
   count = 5,
   product = "Banking",
   showHeaderActions = true,
+  suggestions,
 }: {
   className?: string
   count?: number
   product?: string
   showHeaderActions?: boolean
+  suggestions?: string[]
 }) {
   const [approve, setApprove] = React.useState(true)
   const [value, setValue] = React.useState("")
+  const prompts = (suggestions ?? agentPrompts[product] ?? agentSuggestions).slice(0, count)
   return (
     <Card className={cn("w-[340px] gap-0 p-0 shadow-xl", className)}>
       <div className="flex items-center justify-between px-4 pt-3">
@@ -215,7 +257,7 @@ export function AgentChatPanel({
           <p className="text-muted-foreground text-xs">Live answers with charts, metrics, and tables.</p>
         </div>
         <div className="flex flex-col gap-1.5">
-          {agentSuggestions.slice(0, count).map((s) => (
+          {prompts.map((s) => (
             <Button
               key={s}
               size="sm"

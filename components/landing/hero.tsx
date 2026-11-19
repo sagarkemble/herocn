@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { ArrowRightIcon, XIcon } from "lucide-react"
-import { siApple, siBytedance, siHitachi, siIeee, siToptal } from "simple-icons"
+import { siAirbnb, siApple, siBytedance, siFlutter, siHitachi, siIeee, siNubank, siStripe, siToptal, siUber } from "simple-icons"
 import { cn } from "cn"
 
 import { Button } from "@/components/ui/button"
@@ -162,9 +162,9 @@ export function ProPromo() {
   const [open, setOpen] = React.useState(true)
   if (!open) return null
   return (
-    <Card className="fixed bottom-6 left-6 z-40 w-72 gap-0 overflow-hidden p-0 shadow-xl">
-      <div className="relative flex h-[170px] flex-col items-center justify-center gap-2 bg-linear-to-br from-[#e0f2fe] via-[#dbeafe] to-[#c4b5fd]">
-        <div aria-hidden className="absolute -top-10 right-0 size-40 rounded-full bg-[#6366f1]/50 blur-3xl" />
+    <Card className="fixed start-6 bottom-6 z-50 w-[288px] gap-0 overflow-hidden rounded-[20px] border border-border p-0 shadow-xl">
+      <div className="relative flex h-[170px] flex-col items-center justify-center gap-2 bg-linear-to-br from-[#d9f3ff] via-[#cfe4ff] to-[#c9d0ff]">
+        <div aria-hidden className="absolute -top-10 right-0 size-40 rounded-full bg-[#7dd3fc]/50 blur-3xl" />
         <button
           type="button"
           aria-label="Dismiss"
@@ -232,58 +232,54 @@ export function Hero() {
 
 /* Trusted-by: 6 slots that cycle through the customer list (heroui.com swaps logos in a 6-col grid).
    Brands available in simple-icons render as SVG marks; the rest render as styled text wordmarks. */
-type Logo = { name: string; path?: string; style?: string }
+type Logo = { name: string; path?: string; label?: string; wide?: boolean; style?: string }
 const logos: Logo[] = [
   { name: "Apple", path: siApple.path },
-  { name: "Unisys", style: "font-bold tracking-tight lowercase text-[22px]" },
-  { name: "Hitachi", path: siHitachi.path },
-  { name: "BC Ferries", style: "font-black italic tracking-tighter text-[19px]" },
-  { name: "Mater Private", style: "font-medium text-[11px] leading-[11px] w-16 text-left" },
-  { name: "NMI", style: "font-black tracking-tight lowercase text-[22px]" },
-  { name: "Aisera", style: "font-semibold tracking-tight text-[20px]" },
-  { name: "Winningtemp", style: "font-semibold tracking-tight text-[18px]" },
-  { name: "MrBeast", style: "font-black uppercase italic tracking-tight text-[19px]" },
-  { name: "Mysten Labs", style: "font-semibold text-[17px]" },
-  { name: "Yazen", style: "font-bold lowercase text-[22px]" },
-  { name: "Expatrio", style: "font-semibold tracking-tight text-[19px]" },
-  { name: "Higgsfield AI", style: "font-bold uppercase tracking-wider text-[14px]" },
-  { name: "Bland AI", style: "font-semibold lowercase text-[20px]" },
-  { name: "Nixtla", style: "font-bold tracking-tight text-[20px]" },
-  { name: "National Australia Bank", style: "font-black uppercase tracking-tight text-[20px]", },
-  { name: "Recare", style: "font-semibold lowercase text-[21px]" },
+  { name: "Unisys", label: "unisys", style: "font-bold tracking-[0.18em] lowercase text-[15px]" },
+  { name: "Hitachi", path: siHitachi.path, wide: true },
+  { name: "BC Ferries", style: "font-black italic tracking-tight text-[17px]" },
+  { name: "Mater Private", style: "font-medium tracking-tight text-[13px]" },
+  { name: "NMI", label: "nmi", style: "font-black tracking-tight lowercase text-[22px]" },
+  { name: "Airbnb", path: siAirbnb.path },
+  { name: "Stripe", path: siStripe.path },
+  { name: "Winningtemp", style: "font-semibold tracking-tight text-[16px]" },
+  { name: "MrBeast", label: "MRBEAST", style: "font-black italic tracking-tight text-[16px]" },
+  { name: "Uber", path: siUber.path },
+  { name: "Yazen", style: "font-bold lowercase text-[20px]" },
+  { name: "Nubank", path: siNubank.path },
+  { name: "Higgsfield AI", style: "font-bold uppercase tracking-[0.14em] text-[12px]" },
+  { name: "Nixtla", style: "font-bold tracking-[0.2em] uppercase text-[14px]" },
+  { name: "National Australia Bank", label: "NAB", style: "font-black tracking-[0.22em] text-[18px]" },
   { name: "Toptal", path: siToptal.path },
   { name: "ByteDance", path: siBytedance.path },
-  { name: "FlutterFlow", style: "font-semibold tracking-tight text-[18px]" },
-  { name: "Euronet", style: "font-bold italic tracking-tight text-[19px]" },
-  { name: "GetResponse", style: "font-semibold tracking-tight text-[17px]" },
-  { name: "Tidio", style: "font-bold lowercase text-[22px]" },
-  { name: "Happy Scribe", style: "font-semibold text-[17px]" },
-  { name: "InBody", style: "font-black italic text-[20px]" },
-  { name: "Breezy HR", style: "font-bold lowercase text-[19px]" },
-  { name: "UC Berkeley", style: "font-serif font-semibold text-[18px]" },
-  { name: "University of Waterloo", style: "font-serif font-semibold text-[13px] leading-[14px] w-24" },
-  { name: "Chalmers University of Technology", style: "font-serif font-semibold text-[12px] leading-[13px] w-28" },
-  { name: "IEEE", path: siIeee.path },
+  { name: "FlutterFlow", path: siFlutter.path },
+  { name: "Euronet", style: "font-bold italic tracking-tight text-[17px]" },
+  { name: "GetResponse", style: "font-semibold tracking-tight text-[15px]" },
+  { name: "Tidio", style: "font-bold lowercase text-[20px]" },
+  { name: "InBody", style: "font-black italic text-[18px]" },
+  { name: "Breezy HR", style: "font-bold lowercase text-[17px]" },
+  { name: "UC Berkeley", style: "font-serif font-semibold text-[16px]" },
+  { name: "IEEE", path: siIeee.path, wide: true },
 ]
 
 function LogoMark({ logo }: { logo: Logo }) {
-  if (logo.path && (logo.name === "Hitachi" || logo.name === "IEEE")) {
-    // simple-icons marks for these two are wordmarks: render wide, no extra text
-    return <BrandIcon path={logo.path} title={logo.name} className="h-16 w-24" />
+  if (logo.path && logo.wide) {
+    return <BrandIcon path={logo.path} title={logo.name} className="h-8 w-24" />
+  }
+  if (logo.path && (logo.name === "Apple" || logo.name === "Airbnb" || logo.name === "Uber" || logo.name === "Nubank")) {
+    return <BrandIcon path={logo.path} title={logo.name} className="size-7" />
   }
   if (logo.path) {
-    return logo.name === "Apple" ? (
-      <BrandIcon path={logo.path} title={logo.name} className="size-7" />
-    ) : (
-      <span className="flex items-center gap-2">
-        <BrandIcon path={logo.path} title={logo.name} className="size-7" />
-        <span className="font-semibold text-[17px] tracking-tight">{logo.name}</span>
+    return (
+      <span className="flex items-center gap-2 whitespace-nowrap">
+        <BrandIcon path={logo.path} title={logo.name} className="size-6" />
+        <span className="font-semibold text-[16px] tracking-tight">{logo.name}</span>
       </span>
     )
   }
   return (
-    <span aria-label={logo.name} className={cn("whitespace-normal text-center", logo.name === "NMI" && "", logo.style)}>
-      {logo.name === "NMI" ? "nmi" : logo.name}
+    <span aria-label={logo.name} className={cn("whitespace-nowrap text-center", logo.style)}>
+      {logo.label ?? logo.name}
     </span>
   )
 }

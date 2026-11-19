@@ -5,7 +5,7 @@ import { OpenSource } from "@/components/landing/open-source"
 import { Pro } from "@/components/landing/pro"
 import { Agents } from "@/components/landing/agents"
 import { HeroSpace } from "@/components/landing/herospace"
-import { AiTooling, Blog, Community, FinalCta, SiteFooter, Testimonials } from "@/components/landing/rest"
+import { AiTooling, Blog, Community, FinalCta, FooterMark, SiteFooter, Testimonials } from "@/components/landing/rest"
 
 export default function Page() {
   return (
@@ -27,6 +27,7 @@ export default function Page() {
         <FinalCta />
       </main>
       <SiteFooter />
+      <FooterMark />
     </div>
   )
 }

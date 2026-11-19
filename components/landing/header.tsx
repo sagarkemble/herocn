@@ -96,9 +96,15 @@ export function SiteHeader() {
           scrolled ? "opacity-100" : "opacity-0"
         )}
       />
-      <div className="flex w-full max-w-5xl items-center justify-between max-md:h-12 md:grid md:grid-cols-[1fr_auto_1fr]">
+      <div
+        className={cn(
+          "flex w-full max-w-5xl items-center justify-between transition-all duration-300 motion-reduce:transition-none max-md:h-12 md:grid md:grid-cols-[1fr_auto_1fr]",
+          scrolled &&
+            "md:max-w-3xl md:rounded-full md:bg-surface-secondary/80 md:px-6 md:py-3 md:pr-4 md:shadow-[inset_0_0_0_1px_var(--border)] md:backdrop-blur-lg"
+        )}
+      >
         <Wordmark className="justify-self-start" />
-        <NavigationMenu className="max-md:hidden">
+        <NavigationMenu className={cn("transition-transform duration-300 motion-reduce:transition-none max-md:hidden", scrolled && "md:-translate-x-1")}>
           <NavigationMenuList className="gap-1">
             {Object.entries(menus).map(([label, items]) => (
               <NavigationMenuItem key={label}>
@@ -127,11 +133,19 @@ export function SiteHeader() {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex h-8 items-center gap-5 justify-self-end max-md:gap-1.5">
-          <a href="#" className="flex items-center gap-1.5 font-medium text-muted-foreground text-sm transition-colors hover:text-foreground max-lg:hidden">
+          <a
+            href="#"
+            className={cn(
+              "flex items-center gap-1.5 font-medium text-muted-foreground text-sm transition-colors hover:text-foreground max-lg:hidden",
+              scrolled && "hidden"
+            )}
+          >
             <BrandIcon path={siGithub.path} title="GitHub" className="size-4" />
             <span className="tabular-nums">31.2k</span>
           </a>
-          <Button className={cn(ctaPrimary, "max-md:h-9 max-md:px-3 max-sm:w-auto")}>Get started</Button>
+          <div className="flex transition-[opacity,visibility] duration-200 motion-reduce:transition-none">
+            <Button className={cn(ctaPrimary, "max-md:h-9 max-md:px-3 max-sm:w-auto")}>Get started</Button>
+          </div>
           <Sheet>
             <SheetTrigger render={<Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu" />}>
               <EqualIcon />

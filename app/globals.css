@@ -388,21 +388,32 @@
 /* Explicit-color wallpaper gradients (stand-ins for heroui.com's image wallpapers). */
 .wall-blue {
 	background:
-		radial-gradient(60% 80% at 15% 20%, #7fb2ff 0%, transparent 60%),
-		radial-gradient(50% 70% at 85% 80%, #c6b6ff 0%, transparent 60%),
-		linear-gradient(135deg, #2f55d4 0%, #4f8cff 45%, #a9cbff 75%, #d9ccff 100%);
+		radial-gradient(18% 22% at 18% 28%, #dbeafe 0%, transparent 70%),
+		radial-gradient(22% 28% at 78% 22%, #93c5fd 0%, transparent 65%),
+		radial-gradient(28% 34% at 62% 78%, #6366f1 0%, transparent 70%),
+		radial-gradient(40% 50% at 12% 88%, #1d4ed8 0%, transparent 60%),
+		linear-gradient(160deg, #163b8a 0%, #2563eb 38%, #1e3a8a 72%, #0f172a 100%);
 }
 .wall-pro {
-	background: linear-gradient(180deg, #a8a1c6 0%, #cdb6c4 45%, #f2b27c 80%, #f59e55 100%);
+	background:
+		radial-gradient(24% 30% at 20% 18%, #fbcfe8 0%, transparent 70%),
+		radial-gradient(30% 38% at 82% 24%, #c084fc 0%, transparent 65%),
+		radial-gradient(36% 42% at 70% 86%, #fb923c 0%, transparent 62%),
+		linear-gradient(180deg, #6b4c9a 0%, #c084a2 42%, #fb923c 78%, #ea580c 100%);
 }
 .wall-agents {
-	background: linear-gradient(165deg, #c4b2f6 0%, #e4d6ff 45%, #f6d3e8 100%);
+	background:
+		radial-gradient(26% 32% at 22% 20%, #e9d5ff 0%, transparent 68%),
+		radial-gradient(34% 40% at 84% 30%, #a78bfa 0%, transparent 64%),
+		radial-gradient(40% 48% at 48% 92%, #f0abfc 0%, transparent 60%),
+		linear-gradient(165deg, #4c1d95 0%, #7c3aed 45%, #581c87 100%);
 }
 .wall-space {
 	background:
-		radial-gradient(70% 60% at 85% 15%, #e9f1ff 0%, transparent 55%),
-		radial-gradient(50% 60% at 10% 85%, #1f4fc4 0%, transparent 60%),
-		linear-gradient(170deg, #a8c8ef 0%, #5b8fe1 40%, #2d5fcb 70%, #93bdf0 100%);
+		radial-gradient(22% 28% at 86% 16%, #e0f2fe 0%, transparent 62%),
+		radial-gradient(28% 36% at 18% 24%, #93c5fd 0%, transparent 65%),
+		radial-gradient(36% 44% at 12% 86%, #1d4ed8 0%, transparent 58%),
+		linear-gradient(170deg, #7dd3fc 0%, #3b82f6 40%, #1d4ed8 72%, #1e3a8a 100%);
 }
 .wall-pastel {
 	background:
@@ -420,25 +431,31 @@
 /* Dark wallpapers: explicit deep, saturated colours (heroui.com swaps to dark wallpaper images). */
 .dark .wall-blue {
 	background:
-		radial-gradient(55% 70% at 12% 30%, #1d4ed8 0%, transparent 60%),
-		radial-gradient(50% 70% at 90% 85%, #3730a3 0%, transparent 60%),
-		linear-gradient(135deg, #050b2e 0%, #0b1f6b 45%, #1e3a8a 75%, #0a0f2c 100%);
+		radial-gradient(20% 24% at 16% 26%, #60a5fa 0%, transparent 70%),
+		radial-gradient(26% 32% at 80% 20%, #818cf8 0%, transparent 65%),
+		radial-gradient(34% 42% at 58% 82%, #1d4ed8 0%, transparent 62%),
+		linear-gradient(160deg, #020617 0%, #0b1f6b 42%, #1e3a8a 78%, #020617 100%);
 }
 .dark .wall-pro {
 	background:
-		radial-gradient(60% 50% at 30% 30%, #be185d 0%, transparent 65%),
-		linear-gradient(180deg, #3b0764 0%, #4c0f4f 50%, #1a0b2e 100%);
+		radial-gradient(24% 30% at 22% 18%, #f472b6 0%, transparent 70%),
+		radial-gradient(32% 38% at 84% 28%, #a855f7 0%, transparent 64%),
+		radial-gradient(36% 44% at 68% 88%, #fb923c 0%, transparent 60%),
+		linear-gradient(180deg, #3b0764 0%, #701a75 48%, #7c2d12 100%);
 }
 .dark .wall-agents {
 	background:
-		radial-gradient(60% 60% at 40% 20%, #6d28d9 0%, transparent 65%),
-		linear-gradient(165deg, #2e1065 0%, #1e0b3d 60%, #0d0718 100%);
+		radial-gradient(24% 30% at 20% 16%, #c084fc 0%, transparent 68%),
+		radial-gradient(32% 40% at 82% 28%, #7c3aed 0%, transparent 64%),
+		radial-gradient(40% 48% at 50% 90%, #db2777 0%, transparent 60%),
+		linear-gradient(165deg, #1e0b3d 0%, #4c1d95 48%, #0d0718 100%);
 }
 .dark .wall-space {
 	background:
-		radial-gradient(45% 55% at 90% 15%, #6366f1 0%, transparent 60%),
-		radial-gradient(50% 60% at 10% 85%, #1d4ed8 0%, transparent 60%),
-		linear-gradient(170deg, #0b1033 0%, #1e1b6b 45%, #312e81 70%, #0b1033 100%);
+		radial-gradient(22% 28% at 88% 14%, #93c5fd 0%, transparent 62%),
+		radial-gradient(28% 36% at 14% 22%, #3b82f6 0%, transparent 64%),
+		radial-gradient(36% 44% at 10% 86%, #1d4ed8 0%, transparent 58%),
+		linear-gradient(170deg, #0b1033 0%, #1e3a8a 48%, #020617 100%);
 }
 .dark .wall-pastel {
 	background:

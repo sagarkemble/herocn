@@ -25,7 +25,7 @@ const products = [
   },
   {
     title: "HeroUI Pro",
-    description: "Premium components, templates, themes, and more.",
+    description: "Premium components, templates, and themes, with the AI tools and community to ship faster.",
     short: "Premium components, templates, themes, and more.",
     link: "Explore HeroUI Pro",
     wall: "wall-pro",
@@ -38,7 +38,7 @@ const products = [
   },
   {
     title: "HeroUI Agents",
-    description: "An embeddable agent that takes action inside your product.",
+    description: "An embeddable agent that understands your product, takes action, and replies with generative UI.",
     short: "An embeddable agent that takes action inside your product.",
     link: "Request access",
     wall: "wall-agents",
@@ -46,7 +46,7 @@ const products = [
   },
   {
     title: "HeroSpace",
-    description: "Mail, calendar, and tasks in one Mac app.",
+    description: "Mail, calendar, support, tasks, and notes in one Mac app, with your agents working for you.",
     short: "Mail, calendar, and tasks in one Mac app.",
     link: "Explore HeroSpace",
     wall: "wall-space",

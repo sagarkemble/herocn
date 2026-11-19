@@ -434,15 +434,19 @@ export function SiteFooter() {
       </nav>
       <p className="text-center font-normal text-[13px] text-muted-foreground leading-[18px] sm:text-xs sm:leading-[1.34]">© 2026 NextUI Inc. All rights reserved.</p>
       <ThemeSegment />
-      {/* oversized text wordmark, clipped (heroui.com shows its logo here; we use text only) */}
-      <div aria-hidden className="mx-auto -mt-2 h-[200px] w-full max-w-5xl overflow-hidden max-md:h-[120px] max-sm:hidden">
-        {/* dashed-outline text wordmark (heroui.com draws its logo this way; we use our own bars + text) */}
-        <svg viewBox="0 0 1000 400" className="w-full select-none text-foreground/15" fill="none" stroke="currentColor" strokeWidth="1.6" strokeDasharray="6 5">
-          <rect x="4" y="4" width="92" height="396" rx="28" />
-          <rect x="112" y="84" width="92" height="316" rx="28" />
-          <text x="232" y="350" fontSize="420" fontWeight="600" letterSpacing="-22" style={{ fontFamily: "var(--font-display)" }}>hero</text>
-        </svg>
-      </div>
     </footer>
+  )
+}
+
+/** Oversized dashed wordmark sits after the footer on heroui.com (sibling, not inside <footer>). */
+export function FooterMark() {
+  return (
+    <div aria-hidden className="mx-auto mt-4 h-[200px] w-full max-w-5xl overflow-hidden max-md:h-[120px] max-sm:hidden">
+      <svg viewBox="0 0 1000 400" className="w-full select-none text-foreground/15" fill="none" stroke="currentColor" strokeWidth="1.6" strokeDasharray="6 5">
+        <rect x="4" y="4" width="92" height="396" rx="28" />
+        <rect x="112" y="84" width="92" height="316" rx="28" />
+        <text x="232" y="350" fontSize="420" fontWeight="600" letterSpacing="-22" style={{ fontFamily: "var(--font-display)" }}>hero</text>
+      </svg>
+    </div>
   )
 }
