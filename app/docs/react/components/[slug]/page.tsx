@@ -3,10 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 
+import fs from "node:fs";
+import path from "node:path";
+
 import { buttonVariants } from "@/components/ui/button";
 import { ComponentPreview } from "@/components/docs/component-preview";
 import { docsHref, ordered, pageBySlug, pages, slugify, tocFor } from "@/components/docs/data";
 import { highlight, readExample } from "@/components/docs/highlight";
+import { ComponentInstall } from "@/components/docs/install";
 import { loaders } from "@/components/docs/loaders";
 import { DocsShell } from "@/components/docs/shell";
 import { DocsToc } from "@/components/docs/toc";
@@ -59,7 +63,29 @@ export default async function ComponentDocPage({ params }: { params: Promise<{ s
 	const prev = ordered[idx - 1];
 	const next = ordered[idx + 1];
 
+	const uiPath = path.join(process.cwd(), "components/ui", `${slug}.tsx`);
+	const source = fs.existsSync(uiPath) ? fs.readFileSync(uiPath, "utf8").replace(/\t/g, "  ").trimEnd() : "";
+	const sourceHtml = source ? await highlight(source) : "";
+	const registryJson = JSON.parse(fs.readFileSync(path.join(process.cwd(), "registry.json"), "utf8")) as {
+		items: {name: string; dependencies?: string[]}[];
+	};
+	const dependencies = registryJson.items.find((item) => item.name === slug)?.dependencies ?? [];
+
 	const body: React.ReactNode[] = [];
+	body.push(
+		<H2 key="h-install" id="installation">
+			Installation
+		</H2>,
+	);
+	body.push(
+		<ComponentInstall
+			key="install"
+			dependencies={dependencies}
+			slug={slug}
+			source={source}
+			sourceHtml={sourceHtml}
+		/>,
+	);
 	if (page.usage) {
 		body.push(<H2 key="h-usage" id="usage">Usage</H2>);
 		body.push(await preview(page.usage.name, page.usage.pc, true));

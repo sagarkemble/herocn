@@ -26,7 +26,7 @@ export const docsHref = (slug: string) => `/docs/react/components/${slug}`;
 export type TocItem = { id: string; title: string; depth: 2 | 3 };
 
 export function tocFor(page: DocPage): TocItem[] {
-	const toc: TocItem[] = [];
+	const toc: TocItem[] = [{ id: "installation", title: "Installation", depth: 2 }];
 	if (page.usage) toc.push({ id: "usage", title: "Usage", depth: 2 });
 	let lastH2 = "";
 	for (const s of page.sections) {
