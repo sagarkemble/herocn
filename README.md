@@ -2,6 +2,8 @@
 
 Next.js app that restyles shadcn/ui (Base UI, nova) to HeroUI v3 and **publishes those files as a shadcn registry** (`@herocn`).
 
+**Full spec for agents / new chats:** [PROJECT.md](./PROJECT.md).
+
 Live site: [https://herocn.sagarkemble.dev](https://herocn.sagarkemble.dev). Docs: [REGISTRY.md](./REGISTRY.md). Catalog: [/registry](https://herocn.sagarkemble.dev/registry). JSON: [/r/registry.json](https://herocn.sagarkemble.dev/r/registry.json).
 
 ```bash
