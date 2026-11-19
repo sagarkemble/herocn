@@ -9,7 +9,7 @@
 import type {ThemeVariables} from "./constants";
 import type {Mode, SkillTheme} from "./compute";
 
-import {THEME_BUILDER_CONTENT_ID, THEME_BUILDER_PAGE_ID} from "./constants";
+import {THEME_BUILDER_BOTTOM_SHEET_ID, THEME_BUILDER_CONTENT_ID, THEME_BUILDER_PAGE_ID} from "./constants";
 import {computeSkillTheme} from "./compute";
 
 /* Constant lines of the skill globals.css block (unchanged by the editor). */
@@ -177,6 +177,7 @@ export function generatePreviewCss(variables: ThemeVariables): string {
   const theme = computeSkillTheme(variables);
   const page = `#${THEME_BUILDER_PAGE_ID}`;
   const content = `#${THEME_BUILDER_CONTENT_ID}`;
+  const bottomSheet = `#${THEME_BUILDER_BOTTOM_SHEET_ID}`;
   // Base UI portals render popups into <body>; while a preview Select is open, theme its popup too.
   const previewPopup =
     'body:has(#theme-builder-content [data-slot="select-trigger"][data-popup-open]) [data-slot="select-content"]';
@@ -188,13 +189,14 @@ export function generatePreviewCss(variables: ThemeVariables): string {
     "--field-radius": fieldRadiusIsDefault(theme) ? `calc(${theme.radius} * 1.5)` : theme.fieldRadius,
   };
   const parts: string[] = [];
+  const contentSels = [content, previewPopup, bottomSheet];
 
   for (const mode of ["light", "dark"] as Mode[]) {
-    parts.push(block(colorScopes(mode, [page, content, previewPopup]), {...theme[mode], ...SCOPE_CONSTANTS}));
+    parts.push(block(colorScopes(mode, [page, ...contentSels]), {...theme[mode], ...SCOPE_CONSTANTS}));
   }
-  parts.push(block(`${content},\n${previewPopup}`, {...common, "font-family": "var(--font-sans)"}));
+  parts.push(block(contentSels.join(",\n"), {...common, "font-family": "var(--font-sans)"}));
   parts.push(
-    `${FIELD_SELECTORS.map((s) => `${content} ${s}`).join(",\n")} {\n  border-radius: var(--field-radius);\n}`,
+    `${FIELD_SELECTORS.flatMap((s) => [`${content} ${s}`, `${bottomSheet} ${s}`]).join(",\n")} {\n  border-radius: var(--field-radius);\n}`,
   );
 
   return parts.join("\n\n");

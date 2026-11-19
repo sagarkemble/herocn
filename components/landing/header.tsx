@@ -126,6 +126,11 @@ export function SiteHeader() {
               </NavigationMenuItem>
             ))}
             <NavigationMenuItem>
+              <NavigationMenuLink href="/themes" className="h-8 px-2 font-medium text-muted-foreground text-sm hover:bg-transparent hover:text-foreground">
+                Themes
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <NavigationMenuLink href="#" className="h-8 px-2 font-medium text-muted-foreground text-sm hover:bg-transparent hover:text-foreground">
                 Enterprise
               </NavigationMenuLink>
@@ -155,9 +160,9 @@ export function SiteHeader() {
                 <SheetTitle>Menu</SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-4">
-                {["Products", "Docs", "Resources", "Enterprise"].map((l) =>
-                  l === "Docs" ? (
-                    <a key={l} href="/docs" className={buttonVariants({ variant: "ghost", className: "justify-start" })}>
+                {["Products", "Docs", "Themes", "Resources", "Enterprise"].map((l) =>
+                  l === "Docs" || l === "Themes" ? (
+                    <a key={l} href={l === "Docs" ? "/docs" : "/themes"} className={buttonVariants({ variant: "ghost", className: "justify-start" })}>
                       {l}
                     </a>
                   ) : (

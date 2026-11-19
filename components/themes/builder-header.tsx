@@ -61,6 +61,7 @@ export function BuilderHeader({codeOpen, onToggleCode}: {codeOpen: boolean; onTo
 
   return (
     <div className="sticky top-0 z-50 mb-3 flex h-14 w-full items-center justify-center bg-background px-2 min-[1200px]:mb-4 min-[1200px]:px-0">
+      <h1 className="sr-only">{t.themes.heading}</h1>
       <div className="flex h-14 w-full max-w-[1400px] items-center justify-between">
         <div className="flex items-center gap-4">
           <a aria-label="hero home" className="flex items-center gap-2 font-display font-semibold text-[22px] leading-none tracking-[-0.04em]" href="/">
