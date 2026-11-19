@@ -100,11 +100,11 @@ export function ColorPickerMock({ className }: { className?: string }) {
 /* ------------ Pro: AI chat + music player (heroui.com "pro-overview") ------------ */
 export function ProChatMock({ className }: { className?: string }) {
   return (
-    <div className={cn("flex w-[300px] flex-col items-center gap-2 rounded-[20px] bg-default p-1 shadow-lg", className)}>
+    <div className={cn("flex w-[300px] flex-col items-center gap-2 rounded-[28px] bg-default p-1", className)}>
       <span className="flex items-center gap-2 pt-2 font-medium text-muted-foreground text-xs">
         <SparklesIcon className="size-3.5" /> Pro AI chat
       </span>
-      <Card className="w-full gap-3 rounded-[16px] p-3 shadow-none">
+      <Card className="w-full gap-3 p-3">
         <div className="ms-auto max-w-[85%] rounded-[14px] bg-default/60 p-3 text-sm">What’s the real benefit?</div>
         <p className="p-1 text-sm leading-[1.34]">
           You stop rebuilding the same UI decisions over and over. HeroUI gives you a solid baseline so you can spend time on product, not polishing pixels.
@@ -130,11 +130,11 @@ const tracks = ["Eyes closed", "Hymn for the weekend", "Something Just Like This
 export function MusicPlayerMock({ className }: { className?: string }) {
   const [playing, setPlaying] = React.useState(true)
   return (
-    <div className={cn("flex w-[300px] flex-col items-center gap-2 rounded-[20px] bg-default p-1 shadow-lg", className)}>
+    <div className={cn("flex w-[300px] flex-col items-center gap-2 rounded-[28px] bg-default p-1", className)}>
       <span className="flex items-center gap-2 pt-2 font-medium text-muted-foreground text-xs">
         <MusicIcon className="size-3.5" /> Music player
       </span>
-      <Card className="w-full gap-4 rounded-[16px] p-4 shadow-none">
+      <Card className="w-full gap-4 p-4">
         <div className="flex items-start gap-4">
           {/* album art stand-in: token gradient, no image asset */}
           <div className="size-24 shrink-0 rounded-[14px] bg-linear-to-br from-foreground/70 to-foreground/20 shadow-md" />
@@ -327,7 +327,7 @@ export function SpaceSidebar({ className, counts = false }: { className?: string
           key={n.label}
           variant="ghost"
           size="xs"
-          className={cn("h-7 justify-start gap-2 rounded-lg px-2 font-normal", i === 0 && "bg-default font-medium")}
+          className={cn("h-7 justify-start gap-2 px-2 font-normal", i === 0 && "bg-default font-medium")}
         >
           <n.icon className="size-3.5" />
           <span className="flex-1 text-start">{n.label}</span>

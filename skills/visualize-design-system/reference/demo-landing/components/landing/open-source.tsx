@@ -92,7 +92,7 @@ export function DesktopMail({ selected, onSelect }: { selected: number; onSelect
             </div>
           </div>
           {folders.map((f, i) => (
-            <Button key={f.label} variant="ghost" size="xs" className={cn("h-7 justify-start gap-2 rounded-lg px-2 font-normal text-xs", i === 0 && "bg-default font-medium")}>
+            <Button key={f.label} variant="ghost" size="xs" className={cn("h-7 justify-start gap-2 px-2 font-normal text-xs", i === 0 && "bg-default font-medium")}>
               <f.icon className="size-3.5" />
               <span className="flex-1 text-start">{f.label}</span>
               {f.count ? <span className="text-muted-foreground">{f.count}</span> : null}

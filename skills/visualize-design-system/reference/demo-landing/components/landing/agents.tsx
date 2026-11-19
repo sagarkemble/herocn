@@ -88,7 +88,7 @@ function BankingApp() {
           <ChevronDownIcon className="size-3.5 text-muted-foreground" />
         </div>
         {nav.map((n, i) => (
-          <Button key={n.l} variant="ghost" size="xs" className={cn("h-8 justify-start gap-2 rounded-xl px-2 font-normal text-xs", i === 0 && "bg-default font-medium")}>
+          <Button key={n.l} variant="ghost" size="xs" className={cn("h-8 justify-start gap-2 px-2 font-normal text-xs", i === 0 && "bg-default font-medium")}>
             <n.i className="size-3.5" />
             <span className="flex-1 text-start">{n.l}</span>
             {n.n ? <span>{n.n}</span> : null}
@@ -234,8 +234,8 @@ function MapsApp() {
           </span>
         ))}
         <div className="absolute top-3 right-3 flex flex-col gap-1">
-          <Button size="icon-xs" variant="secondary" aria-label="Zoom in"><PlusIcon /></Button>
-          <Button size="icon-xs" variant="secondary" aria-label="Zoom out"><MinusIcon /></Button>
+          <Button size="icon-xs" variant="tertiary" aria-label="Zoom in"><PlusIcon /></Button>
+          <Button size="icon-xs" variant="tertiary" aria-label="Zoom out"><MinusIcon /></Button>
         </div>
         <div className="absolute inset-x-3 bottom-3 flex gap-2 overflow-hidden">
           {places.map((p) => (
@@ -311,7 +311,7 @@ function ShoppingApp() {
               <Card key={it.n} size="sm" className="gap-2 p-2">
                 <div className="relative">
                   <div className={cn("aspect-square rounded-xl bg-linear-to-br", it.c)} />
-                  <Button size="icon-xs" variant="secondary" aria-label="Save" className="absolute top-1.5 right-1.5"><HeartIcon /></Button>
+                  <Button size="icon-xs" variant="tertiary" aria-label="Save" className="absolute top-1.5 right-1.5"><HeartIcon /></Button>
                 </div>
                 <p className="text-[10px] text-muted-foreground">Shoes · {it.s}</p>
                 <div className="flex items-center justify-between">
@@ -357,7 +357,7 @@ function FinanceApp() {
         ].map(([I, l], i) => {
           const Icon = I as typeof HomeIcon
           return (
-            <Button key={l as string} variant="ghost" size="xs" className={cn("h-8 justify-start gap-2 rounded-xl px-2 font-normal", i === 0 && "bg-default font-medium")}>
+            <Button key={l as string} variant="ghost" size="xs" className={cn("h-8 justify-start gap-2 px-2 font-normal", i === 0 && "bg-default font-medium")}>
               <Icon className="size-3.5" />
               {l as string}
             </Button>

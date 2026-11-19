@@ -2,7 +2,18 @@
 
 import * as React from "react"
 import { ArrowRightIcon, XIcon } from "lucide-react"
-import { siAirbnb, siApple, siBytedance, siFlutter, siHitachi, siIeee, siNubank, siStripe, siToptal, siUber } from "simple-icons"
+import {
+  siAirbnb,
+  siApple,
+  siBytedance,
+  siFlutter,
+  siHitachi,
+  siIeee,
+  siNubank,
+  siStripe,
+  siToptal,
+  siUber,
+} from "simple-icons"
 import { cn } from "cn"
 
 import { Button } from "@/components/ui/button"
@@ -11,15 +22,25 @@ import { BrandIcon, ctaPrimary, ctaSecondary } from "./ui-bits"
 
 /* Inline glyph slot inside the headline. Technique matches heroui.com's .hero-slot (0.72em tile, white-outlined
    gradient "sticker" glyphs, blur/scale cross-fade between layers, -8/+8deg rotation); the glyph drawings are our own. */
-type Glyph = { label: string; fill: string; draw: (paint: string) => React.ReactNode }
+type Glyph = {
+  label: string
+  fill: string
+  draw: (paint: string) => React.ReactNode
+}
 const strokeOnly = (paint: string, d: React.ReactNode) => (
   <>
-    <g stroke="#fff" strokeWidth={4.6} fill="none">{d}</g>
-    <g stroke={paint} strokeWidth={1.8} fill="none">{d}</g>
+    <g stroke="#fff" strokeWidth={4.6} fill="none">
+      {d}
+    </g>
+    <g stroke={paint} strokeWidth={1.8} fill="none">
+      {d}
+    </g>
   </>
 )
 const filled = (paint: string, d: React.ReactNode) => (
-  <g fill={paint} stroke="#fff" strokeWidth={1.6} paintOrder="stroke">{d}</g>
+  <g fill={paint} stroke="#fff" strokeWidth={1.6} paintOrder="stroke">
+    {d}
+  </g>
 )
 const glyphsA: Glyph[] = [
   {
@@ -27,8 +48,27 @@ const glyphsA: Glyph[] = [
     fill: "#0485f7",
     draw: (p) => (
       <>
-        {strokeOnly(p, [0, 60, 120].map((r) => <ellipse key={r} cx="12" cy="12" rx="9" ry="3.6" transform={`rotate(${r} 12 12)`} />))}
-        <circle cx="12" cy="12" r="2.4" fill={p} stroke="#fff" strokeWidth={1.2} />
+        {strokeOnly(
+          p,
+          [0, 60, 120].map((r) => (
+            <ellipse
+              key={r}
+              cx="12"
+              cy="12"
+              rx="9"
+              ry="3.6"
+              transform={`rotate(${r} 12 12)`}
+            />
+          ))
+        )}
+        <circle
+          cx="12"
+          cy="12"
+          r="2.4"
+          fill={p}
+          stroke="#fff"
+          strokeWidth={1.2}
+        />
       </>
     ),
   },
@@ -49,7 +89,15 @@ const glyphsA: Glyph[] = [
   {
     label: "Code",
     fill: "#0485f7",
-    draw: (p) => strokeOnly(p, <path d="M8.5 6.5 3 12l5.5 5.5M15.5 6.5 21 12l-5.5 5.5" strokeLinecap="round" strokeLinejoin="round" />),
+    draw: (p) =>
+      strokeOnly(
+        p,
+        <path
+          d="M8.5 6.5 3 12l5.5 5.5M15.5 6.5 21 12l-5.5 5.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      ),
   },
   {
     label: "Terminal",
@@ -59,7 +107,14 @@ const glyphsA: Glyph[] = [
         p,
         <>
           <rect x="2.5" y="4" width="19" height="16" rx="4.5" />
-          <path d="m7 9.5 3 2.5-3 2.5M12.5 15h4.5" fill="none" stroke="#fff" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" />
+          <path
+            d="m7 9.5 3 2.5-3 2.5M12.5 15h4.5"
+            fill="none"
+            stroke="#fff"
+            strokeWidth={1.6}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </>
       ),
   },
@@ -72,15 +127,28 @@ const glyphsB: Glyph[] = [
       filled(
         p,
         <>
-          <path d="M10 3.5Q11.4 10.6 18.5 12 11.4 13.4 10 20.5 8.6 13.4 1.5 12 8.6 10.6 10 3.5Z" strokeLinejoin="round" />
-          <path d="M18.5 2.5Q19 5 21.5 5.5 19 6 18.5 8.5 18 6 15.5 5.5 18 5 18.5 2.5Z" strokeLinejoin="round" />
+          <path
+            d="M10 3.5Q11.4 10.6 18.5 12 11.4 13.4 10 20.5 8.6 13.4 1.5 12 8.6 10.6 10 3.5Z"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M18.5 2.5Q19 5 21.5 5.5 19 6 18.5 8.5 18 6 15.5 5.5 18 5 18.5 2.5Z"
+            strokeLinejoin="round"
+          />
         </>
       ),
   },
   {
     label: "Chat",
     fill: "#7828c8",
-    draw: (p) => filled(p, <path d="M5.5 4h13A3.5 3.5 0 0 1 22 7.5v7a3.5 3.5 0 0 1-3.5 3.5H11l-4.5 3.2V18h-1A3.5 3.5 0 0 1 2 14.5v-7A3.5 3.5 0 0 1 5.5 4Z" strokeLinejoin="round" />),
+    draw: (p) =>
+      filled(
+        p,
+        <path
+          d="M5.5 4h13A3.5 3.5 0 0 1 22 7.5v7a3.5 3.5 0 0 1-3.5 3.5H11l-4.5 3.2V18h-1A3.5 3.5 0 0 1 2 14.5v-7A3.5 3.5 0 0 1 5.5 4Z"
+          strokeLinejoin="round"
+        />
+      ),
   },
   {
     label: "Layers",
@@ -89,7 +157,11 @@ const glyphsB: Glyph[] = [
       filled(
         p,
         <>
-          <path d="m12 12.5 9 4.5-9 4.5-9-4.5Z" strokeLinejoin="round" opacity={0.7} />
+          <path
+            d="m12 12.5 9 4.5-9 4.5-9-4.5Z"
+            strokeLinejoin="round"
+            opacity={0.7}
+          />
           <path d="m12 2.5 9 4.5-9 4.5L3 7Z" strokeLinejoin="round" />
         </>
       ),
@@ -101,7 +173,14 @@ const glyphsB: Glyph[] = [
       filled(
         p,
         <>
-          <rect x="9.6" y="1.8" width="4.8" height="20.4" rx="2.4" transform="rotate(45 12 12)" />
+          <rect
+            x="9.6"
+            y="1.8"
+            width="4.8"
+            height="20.4"
+            rx="2.4"
+            transform="rotate(45 12 12)"
+          />
           <circle cx="5" cy="5" r="1.6" />
           <circle cx="19.5" cy="17" r="1.3" />
         </>
@@ -115,7 +194,10 @@ function GlyphSvg({ g, id }: { g: Glyph; id: string }) {
     <svg viewBox="0 0 24 24" className="hero-slot__icon size-full" aria-hidden>
       <defs>
         <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor={`color-mix(in oklab, ${g.fill} 80%, white)`} />
+          <stop
+            offset="0"
+            stopColor={`color-mix(in oklab, ${g.fill} 80%, white)`}
+          />
           <stop offset="1" stopColor={g.fill} />
         </linearGradient>
       </defs>
@@ -124,7 +206,17 @@ function GlyphSvg({ g, id }: { g: Glyph; id: string }) {
   )
 }
 
-function Slot({ glyphs, rotate, delay, slotId }: { glyphs: Glyph[]; rotate: number; delay: number; slotId: string }) {
+function Slot({
+  glyphs,
+  rotate,
+  delay,
+  slotId,
+}: {
+  glyphs: Glyph[]
+  rotate: number
+  delay: number
+  slotId: string
+}) {
   const [i, setI] = React.useState(0)
   React.useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
@@ -144,11 +236,18 @@ function Slot({ glyphs, rotate, delay, slotId }: { glyphs: Glyph[]; rotate: numb
         type="button"
         aria-label={`Change glyph (${glyphs[active].label})`}
         onClick={() => setI((n) => n + 1)}
-        style={{ ["--glyph-rotation" as string]: `${rotate}deg`, animationDelay: `${delay}ms` }}
+        style={{
+          ["--glyph-rotation" as string]: `${rotate}deg`,
+          animationDelay: `${delay}ms`,
+        }}
         className="hero-slot__tile cursor-pointer"
       >
         {glyphs.map((g, k) => (
-          <span key={g.label} className="hero-slot__layer" data-active={k === active}>
+          <span
+            key={g.label}
+            className="hero-slot__layer"
+            data-active={k === active}
+          >
             <GlyphSvg g={g} id={`${slotId}-${k}`} />
           </span>
         ))}
@@ -164,26 +263,45 @@ export function ProPromo() {
   return (
     <Card className="fixed start-6 bottom-6 z-50 w-[288px] gap-0 overflow-hidden p-0">
       <div className="relative flex h-[170px] flex-col items-center justify-center gap-2 bg-linear-to-br from-[#d9f3ff] via-[#cfe4ff] to-[#c9d0ff]">
-        <div aria-hidden className="absolute -top-10 right-0 size-40 rounded-full bg-[#7dd3fc]/50 blur-3xl" />
-        <Button variant="ghost" size="icon-xs" aria-label="Dismiss" onClick={() => setOpen(false)} className="absolute top-2.5 right-2.5">
+        <div
+          aria-hidden
+          className="absolute -top-10 right-0 size-40 rounded-full bg-[#7dd3fc]/50 blur-3xl"
+        />
+        <Button
+          variant="ghost"
+          size="icon-xs"
+          aria-label="Dismiss"
+          onClick={() => setOpen(false)}
+          className="absolute top-2.5 right-2.5"
+        >
           <XIcon />
         </Button>
-        <span className="relative flex items-center gap-2.5 font-display font-semibold text-[44px] text-primary leading-none tracking-[-0.04em]">
-          <span aria-hidden className="flex h-[0.85em] w-[0.7em] items-end gap-[0.12em] opacity-80">
+        <span className="relative flex items-center gap-2.5 font-display text-[44px] leading-none font-semibold tracking-[-0.04em] text-primary">
+          <span
+            aria-hidden
+            className="flex h-[0.85em] w-[0.7em] items-end gap-[0.12em] opacity-80"
+          >
             <span className="h-full w-[0.24em] rounded-[0.08em] bg-current" />
             <span className="h-3/4 w-[0.24em] rounded-[0.08em] bg-current" />
           </span>
           Pro
         </span>
-        <span className="relative font-medium text-[#3b5b8c] text-sm">Now available</span>
+        <span className="relative text-sm font-medium text-[#3b5b8c]">
+          Now available
+        </span>
       </div>
       <CardContent className="flex flex-col gap-2 px-4 pt-4 pb-4">
-        <p className="font-medium text-base">Build faster with HeroUI Pro</p>
-        <p className="text-muted-foreground text-sm leading-6">
-          Components, templates, and AI tooling for React and React Native. Made for teams that care about the details.
+        <p className="text-base font-medium">Build faster with HeroUI Pro</p>
+        <p className="text-sm leading-6 text-muted-foreground">
+          Components, templates, and AI tooling for React and React Native. Made
+          for teams that care about the details.
         </p>
         <div className="mt-2 flex gap-2">
-          <Button variant="outline" className="flex-none" onClick={() => setOpen(false)}>
+          <Button
+            variant="outline"
+            className="flex-none"
+            onClick={() => setOpen(false)}
+          >
             Close
           </Button>
           <Button className={cn(ctaPrimary, "flex-1")}>Explore Pro</Button>
@@ -200,18 +318,21 @@ export function Hero() {
         <h1 className="display-hero">
           <span className="sr-only">Never start from scratch again.</span>
           <span aria-hidden className="block whitespace-nowrap">
-            Never start{" "}
-            <Slot glyphs={glyphsA} rotate={-8} delay={1200} slotId="ga" />
-            {" "}from
+            HeroUI’s design{" "}
+            <Slot glyphs={glyphsA} rotate={-8} delay={1200} slotId="ga" /> in
           </span>
-          <span aria-hidden className="block whitespace-nowrap text-muted-foreground/70">
-            scratch{" "}
-            <Slot glyphs={glyphsB} rotate={8} delay={1250} slotId="gb" />
-            {" "}again.
+          <span
+            aria-hidden
+            className="block whitespace-nowrap text-muted-foreground/70"
+          >
+            shadcn's{" "}
+            <Slot glyphs={glyphsB} rotate={8} delay={1250} slotId="gb" />{" "}
+            ecosystem.
           </span>
         </h1>
-        <p className="lead mt-4 max-w-2xl max-sm:text-[17px] max-sm:leading-[26px]">
-          Free components, premium templates, and AI agents that work inside your product.
+        <p className="mt-4 max-w-2xl lead max-sm:text-[17px] max-sm:leading-[26px]">
+          HeroUI’s beautiful design, rebuilt for shadcn. Copy it and ship a UI
+          that looks designed.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3 max-sm:mt-7 max-sm:w-full max-sm:flex-col max-sm:gap-2.5">
           <Button className={ctaPrimary}>Browse components</Button>
@@ -227,24 +348,49 @@ export function Hero() {
 
 /* Trusted-by: 6 slots that cycle through the customer list (heroui.com swaps logos in a 6-col grid).
    Brands available in simple-icons render as SVG marks; the rest render as styled text wordmarks. */
-type Logo = { name: string; path?: string; label?: string; wide?: boolean; style?: string }
+type Logo = {
+  name: string
+  path?: string
+  label?: string
+  wide?: boolean
+  style?: string
+}
 const logos: Logo[] = [
   { name: "Apple", path: siApple.path },
-  { name: "Unisys", label: "unisys", style: "font-bold tracking-[0.18em] lowercase text-[15px]" },
+  {
+    name: "Unisys",
+    label: "unisys",
+    style: "font-bold tracking-[0.18em] lowercase text-[15px]",
+  },
   { name: "Hitachi", path: siHitachi.path, wide: true },
   { name: "BC Ferries", style: "font-black italic tracking-tight text-[17px]" },
   { name: "Mater Private", style: "font-medium tracking-tight text-[13px]" },
-  { name: "NMI", label: "nmi", style: "font-black tracking-tight lowercase text-[22px]" },
+  {
+    name: "NMI",
+    label: "nmi",
+    style: "font-black tracking-tight lowercase text-[22px]",
+  },
   { name: "Airbnb", path: siAirbnb.path },
   { name: "Stripe", path: siStripe.path },
   { name: "Winningtemp", style: "font-semibold tracking-tight text-[16px]" },
-  { name: "MrBeast", label: "MRBEAST", style: "font-black italic tracking-tight text-[16px]" },
+  {
+    name: "MrBeast",
+    label: "MRBEAST",
+    style: "font-black italic tracking-tight text-[16px]",
+  },
   { name: "Uber", path: siUber.path },
   { name: "Yazen", style: "font-bold lowercase text-[20px]" },
   { name: "Nubank", path: siNubank.path },
-  { name: "Higgsfield AI", style: "font-bold uppercase tracking-[0.14em] text-[12px]" },
+  {
+    name: "Higgsfield AI",
+    style: "font-bold uppercase tracking-[0.14em] text-[12px]",
+  },
   { name: "Nixtla", style: "font-bold tracking-[0.2em] uppercase text-[14px]" },
-  { name: "National Australia Bank", label: "NAB", style: "font-black tracking-[0.22em] text-[18px]" },
+  {
+    name: "National Australia Bank",
+    label: "NAB",
+    style: "font-black tracking-[0.22em] text-[18px]",
+  },
   { name: "Toptal", path: siToptal.path },
   { name: "ByteDance", path: siBytedance.path },
   { name: "FlutterFlow", path: siFlutter.path },
@@ -261,19 +407,30 @@ function LogoMark({ logo }: { logo: Logo }) {
   if (logo.path && logo.wide) {
     return <BrandIcon path={logo.path} title={logo.name} className="h-8 w-24" />
   }
-  if (logo.path && (logo.name === "Apple" || logo.name === "Airbnb" || logo.name === "Uber" || logo.name === "Nubank")) {
+  if (
+    logo.path &&
+    (logo.name === "Apple" ||
+      logo.name === "Airbnb" ||
+      logo.name === "Uber" ||
+      logo.name === "Nubank")
+  ) {
     return <BrandIcon path={logo.path} title={logo.name} className="size-7" />
   }
   if (logo.path) {
     return (
       <span className="flex items-center gap-2 whitespace-nowrap">
         <BrandIcon path={logo.path} title={logo.name} className="size-6" />
-        <span className="font-semibold text-[16px] tracking-tight">{logo.name}</span>
+        <span className="text-[16px] font-semibold tracking-tight">
+          {logo.name}
+        </span>
       </span>
     )
   }
   return (
-    <span aria-label={logo.name} className={cn("whitespace-nowrap text-center", logo.style)}>
+    <span
+      aria-label={logo.name}
+      className={cn("text-center whitespace-nowrap", logo.style)}
+    >
       {logo.label ?? logo.name}
     </span>
   )
@@ -288,19 +445,30 @@ export function TrustedBy() {
   }, [])
   return (
     <section className="site-container mt-[72px] sm:mt-[120px]">
-      <h2 className="text-center font-medium text-muted-foreground text-sm">Trusted by teams and builders at</h2>
+      <h2 className="text-center text-sm font-medium text-muted-foreground">
+        Trusted by teams and builders at
+      </h2>
       <ul className="sr-only">
         {logos.map((l) => (
           <li key={l.name}>{l.name}</li>
         ))}
       </ul>
-      <div aria-hidden className="mt-5 grid grid-cols-3 items-center gap-y-2 sm:mt-7 sm:gap-x-8 sm:gap-y-6 lg:grid-cols-6">
+      <div
+        aria-hidden
+        className="mt-5 grid grid-cols-3 items-center gap-y-2 sm:mt-7 sm:gap-x-8 sm:gap-y-6 lg:grid-cols-6"
+      >
         {Array.from({ length: 6 }).map((_, slot) => {
           // stagger: each slot advances one step later than the previous one
           const idx = (slot + 6 * Math.floor((tick + slot) / 6)) % logos.length
           return (
-            <div key={slot} className="relative flex h-12 w-full items-center justify-center text-muted-foreground/80">
-              <span key={idx} className="flex scale-[0.8] items-center justify-center animate-in fade-in slide-in-from-bottom-2 duration-500 sm:scale-95">
+            <div
+              key={slot}
+              className="relative flex h-12 w-full items-center justify-center text-muted-foreground/80"
+            >
+              <span
+                key={idx}
+                className="flex scale-[0.8] animate-in items-center justify-center duration-500 fade-in slide-in-from-bottom-2 sm:scale-95"
+              >
                 <LogoMark logo={logos[idx]} />
               </span>
             </div>

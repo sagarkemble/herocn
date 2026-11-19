@@ -39,3 +39,6 @@ bun-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 
+.agents
+skills-lock.json
+.cursor
