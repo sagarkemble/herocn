@@ -19,7 +19,7 @@ This is a **Next.js demo app + shadcn registry + agent skills** that restyles **
 |---|---|---|
 | **Demo site** | Marketing clone of heroui.com plus docs, theme builder, registry catalog | Browse https://herocn.sagarkemble.dev |
 | **`@herocn` registry** | shadcn registry JSON at `/r/{name}.json` | `npx shadcn@latest add @herocn/button` after registering the URL |
-| **Agent skills** | Three Cursor/Claude skills in `skills/` | `npx skills add sagarkemble/herocn --skill <name>` or download zips |
+| **Agent skills** | Cursor/Claude skills in `skills/` (restyle, customize, visualize, taste) | `npx skills add sagarkemble/herocn --skill <name>` or download zips |
 | **Preview templates** | Dashboard / mail / chat / finances / CRM shells | Theme page tabs + registry `template-*` items |
 
 This page is also the **design-system preview** of the restyle. `components/ui/*` is the canonical HeroUI-look implementation that the registry ships.
@@ -101,7 +101,7 @@ bun run registry:build      # generate + shadcn build → public/r/*.json
 | `/docs` | `app/docs/page.tsx` | Redirects to first component doc |
 | `/docs/react/components` | `app/docs/react/components/page.tsx` | Component index |
 | `/docs/react/components/[slug]` | `…/[slug]/page.tsx` | One page per ui primitive; static params from `data.json` |
-| `/docs/skills` | `app/docs/skills/page.tsx` | Install docs for the three agent skills |
+| `/docs/skills` | `app/docs/skills/page.tsx` | Install docs for the published agent skills |
 | `/themes` | `app/themes/page.tsx` | Theme builder (URL query = theme state) |
 | `/registry` | `app/registry/page.tsx` | Human catalog of registry items |
 | `/r/registry.json` | `public/r/registry.json` | Machine catalog |
@@ -139,6 +139,7 @@ skills/
   shadcn-to-heroui/           Skill: restyle any shadcn app
   heroui-customize/           Skill: apply a theme to an already-restyled app
   visualize-design-system/    Skill: copy landing + theme builder into another app
+  heroui-taste/               Skill: HeroUI marketing/docs composition (not ui restyle)
 scripts/
   generate-registry.mjs
   build-skills.mjs
@@ -289,6 +290,14 @@ Re-theme a project that **already** has `--surface`, `--primary-soft`, `pressibl
 ### `visualize-design-system`
 
 Copy **preview routes** into another shadcn app: `/demo-landing` and/or `/design-system`. Does **not** restyle `components/ui` and does **not** overwrite `/`. Asks first.
+
+### `heroui-taste`
+
+Page **composition** when the kit already looks like HeroUI. Landing, docs chrome, theme playground. Does **not** restyle `components/ui` and does not copy heroui.com assets.
+
+- `skills/heroui-taste/reference/taste.md` — personality, hierarchy, placement, do/don't
+- `skills/heroui-taste/reference/pages.md` — home / docs / themes notes from heroui.com
+- Official default-theme contract (cite only): https://heroui.com/react/DESIGN.md
 
 ## 16. Next.js 16 note
 

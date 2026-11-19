@@ -53,6 +53,23 @@ export const skills = [
     install: `npx skills add ${SKILLS_REPO} --skill visualize-design-system`,
     zipHref: "/skills/visualize-design-system.zip",
   },
+  {
+    name: "heroui-taste",
+    title: "HeroUI page taste",
+    description:
+      "Apply HeroUI's product taste — composition, placement, density, docs chrome — when the kit already looks like HeroUI but the landing or docs still feel generic. Does not restyle components/ui.",
+    bullets: [
+      "Use when rebuilding landing, docs, or the theme playground — not when restyling primitives.",
+      "Read reference/taste.md then the matching section in reference/pages.md.",
+      "Never invent tokens or copy heroui.com assets; Inter Tight is display on herocn.",
+    ],
+    prompts: [
+      "Rebuild this landing section with heroui-taste.",
+      "Make the docs pages feel like HeroUI, not a generic catalog.",
+    ],
+    install: `npx skills add ${SKILLS_REPO} --skill heroui-taste`,
+    zipHref: "/skills/heroui-taste.zip",
+  },
 ] as const;
 
 export type PublishedSkill = (typeof skills)[number];

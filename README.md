@@ -33,9 +33,10 @@ Docs: [/docs/skills](https://herocn.sagarkemble.dev/docs/skills). After this rep
 npx skills add sagarkemble/herocn --skill shadcn-to-heroui
 npx skills add sagarkemble/herocn --skill heroui-customize
 npx skills add sagarkemble/herocn --skill visualize-design-system
+npx skills add sagarkemble/herocn --skill heroui-taste
 ```
 
-Zips: [`/skills/shadcn-to-heroui.zip`](https://herocn.sagarkemble.dev/skills/shadcn-to-heroui.zip), [`/skills/heroui-customize.zip`](https://herocn.sagarkemble.dev/skills/heroui-customize.zip), [`/skills/visualize-design-system.zip`](https://herocn.sagarkemble.dev/skills/visualize-design-system.zip).
+Zips: [`/skills/shadcn-to-heroui.zip`](https://herocn.sagarkemble.dev/skills/shadcn-to-heroui.zip), [`/skills/heroui-customize.zip`](https://herocn.sagarkemble.dev/skills/heroui-customize.zip), [`/skills/visualize-design-system.zip`](https://herocn.sagarkemble.dev/skills/visualize-design-system.zip), [`/skills/heroui-taste.zip`](https://herocn.sagarkemble.dev/skills/heroui-taste.zip).
 
 ## Adding components (this repo)
 

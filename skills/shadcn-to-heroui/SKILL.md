@@ -7,7 +7,7 @@ description: Restyle an existing shadcn/ui project so it looks and feels like He
 
 Reskin, **not** a migration. Keep every component file, export, prop and primitive library. Change only CSS tokens, Tailwind classes and motion.
 The target look is **herocn** (MIT, github.com/Maqed/herocn): shadcn components rebuilt with HeroUI v3's design system. herocn was spot-checked against HeroUI v3.2.7 (6/6 core match; known deviations are in `reference/herocn-diff.md`).
-Live preview of the result (every component, docs, theme editor): https://herocn.sagarkemble.dev. To change the colours/radius/font afterwards, use the companion skill `heroui-customize`. To copy the marketing landing and/or theme builder into the app as `/demo-landing` and `/design-system`, use `visualize-design-system` (asks first; does not restyle `components/ui`).
+Live preview of the result (every component, docs, theme editor): https://herocn.sagarkemble.dev. To change the colours/radius/font afterwards, use the companion skill `heroui-customize`. To copy the marketing landing and/or theme builder into the app as `/demo-landing` and `/design-system`, use `visualize-design-system` (asks first; does not restyle `components/ui`). To compose landing/docs so they *feel* like heroui.com (placement, density, preview-first), use `heroui-taste`.
 
 ## Files
 
