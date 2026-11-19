@@ -1,3 +1,5 @@
+import {skills} from "@/lib/skills";
+
 import raw from "./data.json";
 
 export type DocSection = {
@@ -24,8 +26,30 @@ export const ordered: DocPage[] = groups.flatMap(([, slugs]) => slugs.map((s) =>
 export const docsHref = (slug: string) => `/docs/react/components/${slug}`;
 
 export type DocsNavItem = { href: string; title: string };
+export const skillHref = (name: string) => `/docs/skills/${name}`;
 export const docsNavGroups: [string, DocsNavItem[]][] = [
-	["Guides", [{ href: "/docs/skills", title: "Agent skills" }]],
+	[
+		"Getting Started",
+		[
+			{href: "/docs", title: "Introduction"},
+			{href: "/docs/installation", title: "Installation"},
+		],
+	],
+	[
+		"Handbook",
+		[
+			{href: "/docs/colors", title: "Colors"},
+			{href: "/docs/theming", title: "Theming"},
+			{href: "/docs/dark-mode", title: "Dark mode"},
+		],
+	],
+	[
+		"Skills",
+		[
+			{href: "/docs/skills", title: "Overview"},
+			...skills.map((skill) => ({href: skillHref(skill.name), title: skill.title})),
+		],
+	],
 	...groups.map(
 		([group, slugs]) => [group, slugs.map((slug) => ({ href: docsHref(slug), title: pageBySlug[slug].title }))] as [string, DocsNavItem[]],
 	),

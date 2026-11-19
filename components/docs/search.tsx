@@ -36,11 +36,11 @@ export function DocsSearch() {
 			<Button variant="tertiary" size="icon-sm" aria-label="Open Search" onClick={() => setOpen(true)}>
 				<SearchIcon />
 			</Button>
-			<CommandDialog open={open} onOpenChange={setOpen} title="Search components" description="Jump to a component page">
+			<CommandDialog open={open} onOpenChange={setOpen} title="Search docs" description="Jump to a guide or component page">
 				<Command>
-					<CommandInput placeholder="Search components..." />
+					<CommandInput placeholder="Search docs..." />
 					<CommandList>
-						<CommandEmpty>No components found.</CommandEmpty>
+						<CommandEmpty>No pages found.</CommandEmpty>
 						{docsNavGroups.map(([group, items]) => (
 							<CommandGroup key={group} heading={group}>
 								{items.map((item) => (

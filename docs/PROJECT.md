@@ -98,10 +98,15 @@ bun run registry:build      # generate + shadcn build → public/r/*.json
 | Route | File | Role |
 |---|---|---|
 | `/` | `app/page.tsx` | Marketing landing (heroui.com-inspired) |
-| `/docs` | `app/docs/page.tsx` | Redirects to first component doc |
-| `/docs/react/components` | `app/docs/react/components/page.tsx` | Component index |
+| `/docs` | `app/docs/page.tsx` | Introduction (not a redirect) |
+| `/docs/installation` | `app/docs/installation/page.tsx` | Register `@herocn` and add items |
+| `/docs/colors` | `app/docs/colors/page.tsx` | Token groups; live CSS-variable swatches |
+| `/docs/theming` | `app/docs/theming/page.tsx` | How to change tokens; links `/themes` |
+| `/docs/dark-mode` | `app/docs/dark-mode/page.tsx` | `class` strategy + hotkey **D** |
+| `/docs/skills` | `app/docs/skills/page.tsx` | Skill catalog, pipeline, install |
+| `/docs/skills/[name]` | `app/docs/skills/[name]/page.tsx` | One published skill |
+| `/docs/react/components` | `app/docs/react/components/page.tsx` | Redirects to first component (no index grid this pass) |
 | `/docs/react/components/[slug]` | `…/[slug]/page.tsx` | One page per ui primitive; static params from `data.json` |
-| `/docs/skills` | `app/docs/skills/page.tsx` | Install docs for the published agent skills |
 | `/themes` | `app/themes/page.tsx` | Theme builder (URL query = theme state) |
 | `/registry` | `app/registry/page.tsx` | Human catalog of registry items |
 | `/r/registry.json` | `public/r/registry.json` | Machine catalog |
@@ -202,18 +207,17 @@ Files live in `components/landing/`. Header wordmark is original bars + “hero�
 
 ## 12. Docs
 
-Goal: preview every restyled component the way heroui.com docs do (web only), without HeroUI’s AI copy-prompt, Web/Native switch, or API tables.
+Docs open on **Introduction**, then handbook and skills, then the component catalog. Chrome follows heroui.com; distribution copy follows shadcn. Still **web only**: no HeroUI AI copy-prompt, Web/Native switch, API tables, MCP server, llms.txt, or DESIGN.md clone.
 
-- Catalog: `components/docs/data.json` → typed in `data.ts`
-- Sidebar groups: Guides (Agent skills) + Buttons, Forms, Date and Time, Navigation, Overlays, Collections, Controls, Data Display, Feedback, Layout, AI
-- Each `[slug]` page: Installation (`ComponentInstall` with pnpm/npm/yarn/bun toggles) → Usage preview → example sections with Preview/Code
-- Example TSX: `components/docs/examples/*.tsx` (and `examples-extra/`)
-- Per-slug preview maps: `components/docs/previews/<slug>.tsx` loaded via `loaders.ts`
-- Chrome: `DocsShell` (264 | article | 228 toc at xl), `DocsSidebar`, `DocsTopbar` (⌘K), `DocsToc`
-- Highlight: `components/docs/highlight.ts` (shiki, heroui.com token colours)
-- Nested-button rule: previews that wrap interactive components must stay `inert` where the outer control is the Preview/Code toggle
+**Sidebar** (`docsNavGroups` in `components/docs/data.ts`): Getting Started (Introduction, Installation) · Handbook (Colors, Theming, Dark mode) · Skills (Overview + four skill pages) · component groups from `data.json`.
 
-`dynamicParams = false`; `generateStaticParams` from `pages` in `data.json`.
+**Guides** are TSX pages in `app/docs/*` (same `DocsShell` as components). `/registry` stays the item catalog; `/themes` stays the playground. Colors swatches bind to CSS variables (never invent hex). Theming explains View code + `heroui-customize`; the editor Default preset is computed and is not the static `globals.css` palette.
+
+**Skills:** catalog at `/docs/skills` (install, pipeline restyle → customize → visualize → taste). Per-skill routes under `/docs/skills/[name]`. After `@herocn` is in `components.json`, consumers may use **shadcn’s** MCP — we do not ship one.
+
+**Component pages** (`[slug]`): Installation (`ComponentInstall` with pnpm/npm/yarn/bun) → Usage preview → example sections with Preview/Code. Catalog: `components/docs/data.json`. Examples: `components/docs/examples/*.tsx`. Previews: `components/docs/previews/<slug>.tsx` via `loaders.ts`. `dynamicParams = false`; `generateStaticParams` from `pages`.
+
+Chrome: `DocsShell` (264 | article | 228 toc at xl), `DocsSidebar`, `DocsTopbar` (⌘K), `DocsToc`. Highlight: `components/docs/highlight.ts`. Nested-button rule: previews that wrap interactive components stay `inert` where the outer control is the Preview/Code toggle.
 
 ## 13. Theme builder (`/themes`)
 
@@ -332,6 +336,7 @@ When you change UI, layout, tokens, or routes:
 | Primitive looks wrong | `components/ui/<name>.tsx` + skill `reference/components/<name>.md` + regenerate registry |
 | Token / radius / ring | `app/globals.css` + `scripts/generate-registry.mjs` `style` block + skill `tokens.md` / `motion.md` |
 | Docs example | `components/docs/examples/`, `previews/`, maybe `data.json` |
+| Docs guides / skills catalog | `app/docs/**`, `components/docs/data.ts` `docsNavGroups` |
 | Landing section | `components/landing/*`, layout-only classes; no ui overrides |
 | Theme maths | `lib/theme-editor/*` then `bun run skills:build` (customize script is generated) |
 | New registry item | ui or template file + `bun run registry:build` |
@@ -346,4 +351,7 @@ When you change UI, layout, tokens, or routes:
 - **nova / base-nova** — shadcn style using Base UI, not Radix.
 - **pressible** — herocn press-scale utility.
 - **View code** — CSS dump from `/themes` (herocn token names).
+- **Guide** — a DocsShell article (Introduction, Installation, Colors, Theming, Dark mode).
+- **Skill page** — docs for one installable agent skill (`/docs/skills/[name]`).
+- **Component page** — primitive preview at `/docs/react/components/[slug]`.
 - **NOT FOUND** — required answer when a measured/official value does not exist; do not guess.

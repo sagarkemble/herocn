@@ -24,7 +24,7 @@ export function DocsNav({ onNavigate }: { onNavigate?: () => void }) {
 		if (r.top < vr.top || r.bottom > vr.bottom) viewport.scrollTop = Math.max(0, top);
 	}, [pathname]);
 	return (
-		<nav ref={ref} aria-label="Components" className="flex w-full flex-col gap-0.5 pt-1 pb-14">
+		<nav ref={ref} aria-label="Documentation" className="flex w-full flex-col gap-0.5 pt-1 pb-14">
 			{docsNavGroups.map(([group, items], gi) => (
 				<div key={group} className="flex flex-col gap-0.5">
 					<p
