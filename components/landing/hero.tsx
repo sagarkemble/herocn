@@ -162,7 +162,7 @@ export function ProPromo() {
   const [open, setOpen] = React.useState(true)
   if (!open) return null
   return (
-    <Card className="fixed start-6 bottom-6 z-50 w-[288px] gap-0 overflow-hidden rounded-[20px] border border-border p-0 shadow-xl">
+    <Card className="fixed start-6 bottom-6 z-50 w-[288px] gap-0 overflow-hidden p-0">
       <div className="relative flex h-[170px] flex-col items-center justify-center gap-2 bg-linear-to-br from-[#d9f3ff] via-[#cfe4ff] to-[#c9d0ff]">
         <div aria-hidden className="absolute -top-10 right-0 size-40 rounded-full bg-[#7dd3fc]/50 blur-3xl" />
         <button
