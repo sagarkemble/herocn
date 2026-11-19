@@ -100,7 +100,7 @@ function KanbanPreview() {
             </span>
             <span className="flex gap-0.5">
               <Button size="icon-xs" variant="ghost" aria-label="More"><MoreHorizontalIcon /></Button>
-              <Button size="icon-xs" variant="secondary" aria-label="Add"><PlusIcon /></Button>
+              <Button size="icon-xs" variant="tertiary" aria-label="Add"><PlusIcon /></Button>
             </span>
           </div>
           {col.cards.map((c) => (
@@ -306,7 +306,7 @@ function DashboardTemplate() {
           </div>
         </div>
         {dashNav.map((n, i) => (
-          <Button key={n.l} variant="ghost" size="sm" className={cn("justify-start gap-2 rounded-xl font-normal", i === 0 && "bg-default font-medium")}>
+          <Button key={n.l} variant="ghost" size="sm" className={cn("justify-start gap-2 font-normal", i === 0 && "bg-default font-medium")}>
             <n.i />
             <span className="flex-1 text-start">{n.l}</span>
             {n.badge && <Badge size="sm" variant="success">{n.badge}</Badge>}
